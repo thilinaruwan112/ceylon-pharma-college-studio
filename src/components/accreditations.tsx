@@ -26,7 +26,7 @@ export default function Accreditations() {
         <div className="mt-12">
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6 md:gap-x-12 lg:gap-x-16">
             {accreditations.map((accreditation, index) => (
-              <div key={index} className="relative h-16 w-32 grayscale hover:grayscale-0 transition-all duration-300">
+              <div key={index} className="relative h-16 w-32 transition-all duration-300">
                 <Image
                   src={accreditation.src}
                   alt={accreditation.alt}
