@@ -1,4 +1,8 @@
+
+"use client";
+
 import Image from 'next/image';
+import { useTranslation } from '@/context/language-context';
 
 const accreditations = [
   { src: 'https://www.pharmacollege.lk/assets/logo/skildevlopment.jpg', alt: 'Skill Development Council Canada' },
@@ -12,15 +16,16 @@ const accreditations = [
 ];
 
 export default function Accreditations() {
+  const { t } = useTranslation();
   return (
     <section id="accreditations" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
-            Ceylon Pharma College is accredited by,
+            {t('accreditationsTitle')}
           </h2>
           <p className="mt-4 max-w-4xl mx-auto text-muted-foreground font-body leading-relaxed">
-            At Ceylon Pharma College, we take pride in our strong collaborations with top-tier institutions and industry leaders, which enrich our academic programs and expand opportunities for our students. Our unwavering commitment to excellence in education has earned us numerous prestigious recognitions and esteemed accreditations, reinforcing our position as a leading institution in pharmaceutical education.
+            {t('accreditationsSubtitle')}
           </p>
         </div>
         <div className="mt-12">

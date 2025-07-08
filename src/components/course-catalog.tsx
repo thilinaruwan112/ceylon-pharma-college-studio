@@ -1,6 +1,10 @@
+
+"use client";
+
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { User, Clock, BookOpen } from "lucide-react";
+import { useTranslation } from "@/context/language-context";
 
 const courses = [
   {
@@ -34,13 +38,15 @@ const courses = [
 ];
 
 export default function CourseCatalog() {
+  const { t } = useTranslation();
+
   return (
     <section id="courses" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">Our Courses</h2>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">{t('courseCatalogTitle')}</h2>
           <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">
-            Choose from a range of programs designed to launch and advance your career in pharmacy.
+            {t('courseCatalogSubtitle')}
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -66,7 +72,7 @@ export default function CourseCatalog() {
                   </div>
                 </div>
                 <div className="mt-6">
-                  <Badge variant="secondary">Enrollment Open</Badge>
+                  <Badge variant="secondary">{t('courseCatalogEnrollmentOpen')}</Badge>
                 </div>
               </CardContent>
             </Card>

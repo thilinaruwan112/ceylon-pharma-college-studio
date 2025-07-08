@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -5,6 +6,7 @@ import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from '@/context/language-context';
 
 const courses = [
   {
@@ -46,12 +48,13 @@ const courses = [
 ];
 
 export default function CourseSlider() {
+  const { t } = useTranslation();
   return (
     <section id="courses" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
-            Explore Our Programs
+            {t('courseSliderTitle')}
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mt-2" />
         </div>

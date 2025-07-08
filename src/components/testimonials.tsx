@@ -1,8 +1,10 @@
+
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useTranslation } from "@/context/language-context";
 
 const testimonials = [
   {
@@ -29,13 +31,14 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+  const { t } = useTranslation();
   return (
     <section id="testimonials" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">What Our Community Says</h2>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">{t('testimonialsTitle')}</h2>
           <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">
-            Hear from our students, alumni, and partners who have experienced the Ceylon Pharma College difference.
+            {t('testimonialsSubtitle')}
           </p>
         </div>
         <Carousel

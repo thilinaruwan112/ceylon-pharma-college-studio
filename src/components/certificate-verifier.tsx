@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useActionState } from "react";
@@ -6,54 +7,60 @@ import { verifyCertificate } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle2, XCircle, Search, Loader2 } from "lucide-react";
+import { useTranslation } from "@/context/language-context";
 
-const VerifierLogo = () => (
-    <div className="flex items-center justify-center gap-3 mb-6 text-primary-foreground">
-        <div className="p-2 border-2 border-primary-foreground rounded-full">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                <path d="M12 8v8"/>
-                <path d="M8 12h8"/>
-            </svg>
+const VerifierLogo = () => {
+    const { t } = useTranslation();
+    return (
+        <div className="flex items-center justify-center gap-3 mb-6 text-primary-foreground">
+            <div className="p-2 border-2 border-primary-foreground rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                    <path d="M12 8v8"/>
+                    <path d="M8 12h8"/>
+                </svg>
+            </div>
+            <div className="text-left font-headline">
+                <p className="text-xs tracking-widest">{t('heroLogoLine1')}</p>
+                <p className="text-sm font-semibold tracking-wider">{t('heroLogoLine2')}</p>
+            </div>
         </div>
-        <div className="text-left font-headline">
-            <p className="text-xs tracking-widest">CEYLON</p>
-            <p className="text-sm font-semibold tracking-wider">PHARMA COLLEGE</p>
-        </div>
-    </div>
-);
+    );
+};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
+  const { t } = useTranslation();
   return (
     <Button type="submit" disabled={pending} size="icon" className="absolute right-1 top-1/2 h-10 w-10 -translate-y-1/2 rounded-lg bg-primary-foreground text-primary hover:bg-primary-foreground/90">
       {pending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Search className="h-5 w-5" />}
-      <span className="sr-only">Verify Certificate</span>
+      <span className="sr-only">{t('certVerifierButton')}</span>
     </Button>
   );
 }
 
 export default function CertificateVerifier() {
   const [state, formAction] = useActionState(verifyCertificate, { message: "", status: "", errors: null });
+  const { t } = useTranslation();
 
   return (
     <section id="verify" className="bg-primary py-16 md:py-24 text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6 text-center">
             <VerifierLogo />
             <h2 className="text-4xl md:text-5xl font-headline font-bold">
-                Certificate Verification
+                {t('certVerifierTitle')}
             </h2>
             <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                Secure, Fast, and Reliable: Verify your certificates with ease through our online platform.
+                {t('certVerifierSubtitle')}
             </p>
 
             <form action={formAction} className="mt-8 max-w-xl mx-auto">
                 <div className="relative">
                   <Input 
                     name="certificateNumber" 
-                    placeholder="Enter Index Number or Your Name? Eg: PA07454 or A. K. D. Jayesinghe" 
+                    placeholder={t('certVerifierInputPlaceholder')} 
                     required 
-                    aria-label="Certificate Number"
+                    aria-label={t('certVerifierButton')}
                     className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-6 pr-16 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50"
                   />
                   <SubmitButton />
@@ -73,7 +80,7 @@ export default function CertificateVerifier() {
             )}
 
             <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
-                The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number or scanning the QR code, users can instantly access verified information such as the student's name, course title, affiliated institute, date of issue, and current accreditation status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.
+                {t('certVerifierDescription')}
             </p>
         </div>
     </section>

@@ -1,9 +1,11 @@
+
 "use client";
 
 import { useState } from 'react';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTranslation } from '@/context/language-context';
 
 const videos = [
   {
@@ -30,13 +32,14 @@ const videos = [
 
 export default function Achievements() {
   const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+  const { t } = useTranslation();
 
   return (
     <section id="achievements" className="w-full py-16 md:py-24 bg-card/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
-            Our Achievements
+            {t('achievementsTitle')}
           </h2>
            <div className="w-24 h-1 bg-primary mx-auto mt-2" />
         </div>
@@ -63,7 +66,7 @@ export default function Achievements() {
 
           <div className="lg:col-span-1">
             <div className="flex flex-col gap-2">
-              <p className="font-headline font-semibold">Watch Next</p>
+              <p className="font-headline font-semibold">{t('achievementsWatchNext')}</p>
               {videos.map((video) => (
                 <button
                   key={video.id}

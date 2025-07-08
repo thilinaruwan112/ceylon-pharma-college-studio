@@ -1,4 +1,8 @@
+
+"use client";
+
 import Image from "next/image";
+import { useTranslation } from "@/context/language-context";
 
 const galleryImages = [
   { src: "https://images.unsplash.com/photo-1727519457936-1b24c507d4b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzdHVkZW50cyUyMGxhYm9yYXRvcnl8ZW58MHx8fHwxNzUxOTgwMDYwfDA&ixlib=rb-4.1.0&q=80&w=1080", alt: "Students in a modern science lab", hint: "students laboratory" },
@@ -10,13 +14,14 @@ const galleryImages = [
 ];
 
 export default function MultimediaGallery() {
+  const { t } = useTranslation();
   return (
     <section id="gallery" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">Campus Life Gallery</h2>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary">{t('galleryTitle')}</h2>
           <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">
-            A glimpse into the vibrant life at Ceylon Pharma College.
+            {t('gallerySubtitle')}
           </p>
         </div>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
