@@ -4,7 +4,7 @@ import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { Menu, GraduationCap, ChevronDown, Search, Minus } from 'lucide-react';
 import {
   DropdownMenu,
@@ -243,6 +243,7 @@ export default function Header() {
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
+                      <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                       <div className="p-4 border-b">
                           <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
                               <GraduationCap className="h-6 w-6 text-primary" />
