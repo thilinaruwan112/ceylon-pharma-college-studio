@@ -64,7 +64,7 @@ export default function CourseSlider() {
         >
           <CarouselContent className="-ml-2">
             {courses.map((course, index) => (
-              <CarouselItem key={index} className="pl-2 basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/5">
+              <CarouselItem key={index} className="pl-2 basis-3/4 md:basis-[43.5%] lg:basis-[30.3%] xl:basis-[23.25%]">
                 <Link href="#" className="block h-full group">
                   <div className="p-1 h-full">
                     <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
