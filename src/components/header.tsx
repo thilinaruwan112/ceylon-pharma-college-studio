@@ -57,16 +57,18 @@ const mainNavConfig = {
 
 const TopBar = () => (
   <div className="hidden bg-primary text-primary-foreground print:hidden lg:block">
-    <div className="container mx-auto flex h-10 items-center justify-end px-4 md:px-6">
+    <div className="container mx-auto flex h-10 items-center justify-between px-4 md:px-6">
       <nav className="flex items-center gap-x-6 text-xs font-medium">
         {topNavLinks.map((link) => (
           <Link key={link.label} href={link.href} className="transition-colors hover:text-primary-foreground/80">
             {link.label}
           </Link>
         ))}
-        <Link href="#" className="transition-colors hover:text-primary-foreground/80">Login</Link>
       </nav>
-      <div className="h-full ml-6">
+      <div className="flex h-full items-center">
+        <Link href="#" className="flex h-full items-center px-4 text-xs font-medium transition-colors hover:bg-primary-foreground/10">
+          Login
+        </Link>
          <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
             <Link href="/contact">Contact Us</Link>
         </Button>
