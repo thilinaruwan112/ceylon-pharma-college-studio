@@ -1,6 +1,6 @@
 import AboutUs from '@/components/about-us';
 import CertificateVerifier from '@/components/certificate-verifier';
-import CourseCatalog from '@/components/course-catalog';
+import CourseSlider from '@/components/course-slider';
 import EventCalendar from '@/components/event-calendar';
 import InquiryForm from '@/components/inquiry-form';
 import MultimediaGallery from '@/components/multimedia-gallery';
@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <CourseSlider />
       <AboutUs />
-      <CourseCatalog />
       <Testimonials />
       <EventCalendar />
       <MultimediaGallery />
