@@ -1,11 +1,9 @@
-
 "use client";
 
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Button } from '@/components/ui/button';
-import { Users } from 'lucide-react';
 
 const courses = [
   {
@@ -83,9 +81,8 @@ export default function CourseSlider() {
                         <div className="flex-grow" />
                         <div className="flex justify-between items-center mt-4">
                            <p className="font-bold text-lg font-body text-primary">LKR {course.price}</p>
-                           <Users className="w-5 h-5 text-muted-foreground" />
+                           <Button size="sm" className="font-bold">More Details</Button>
                         </div>
-                        <Button className="w-full font-bold mt-4">MORE DETAILS</Button>
                       </div>
                     </CardContent>
                   </Card>
@@ -93,8 +90,8 @@ export default function CourseSlider() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
+          <CarouselPrevious className="hidden sm:flex left-4" />
+          <CarouselNext className="hidden sm:flex right-4" />
         </Carousel>
       </div>
     </section>
