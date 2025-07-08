@@ -30,8 +30,8 @@ const topNavLinks = [
 const mainNavConfig = {
   links: [
     { href: '/', label: 'Home' },
+    { href: '/#verify', label: 'Certificate' },
     { href: '/courses', label: 'Courses' },
-    { href: '/contact', label: 'Contact' },
   ],
   dropdowns: [
     {
@@ -51,7 +51,9 @@ const mainNavConfig = {
       ],
     },
   ],
-  otherLinks: [],
+  otherLinks: [
+    { href: '/contact', label: 'Contact' },
+  ],
 };
 
 const TopBar = () => (
