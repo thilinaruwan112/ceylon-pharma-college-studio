@@ -1,0 +1,102 @@
+
+export const en = {
+  // Header Top Bar
+  alumni: 'Alumni',
+  qualityAssurance: 'Quality Assurance',
+  innovation: 'Innovation',
+  international: 'International',
+  resources: 'Resources',
+  medicalCenter: 'Medical Center',
+  library: 'Library',
+  login: 'Login',
+  contactUs: 'Contact Us',
+  // Main Nav
+  home: 'Home',
+  certificate: 'Certificate',
+  courses: 'Courses',
+  departments: 'Departments',
+  deptPharmaceutical: 'Department of Pharmaceutical',
+  deptEnglish: 'Department of English',
+  deptIct: 'Department of ICT',
+  students: 'Students',
+  studentLife: 'Student Life',
+  academicCalendar: 'Academic Calendar',
+  examinations: 'Examinations',
+  about: 'About',
+  contact: 'Contact',
+  // Footer
+  footerSlogan: 'Empowering the next generation of pharmaceutical professionals.',
+  quickLinks: 'Quick Links',
+  footerHome: 'Home',
+  footerAbout: 'About Us',
+  footerCourses: 'Courses',
+  footerContact: 'Contact',
+  footerVerify: 'Verify Certificate',
+  footerContactUs: 'Contact Us',
+  footerAddress: '123 Pharma Street, Colombo, Sri Lanka',
+  footerEmail: 'Email: ',
+  footerPhone: 'Phone: ',
+  copyright: '© {year} Ceylon Pharma College Hub. All Rights Reserved.',
+  poweredBy: 'Powered by ',
+  // Hero Section
+  heroTitle1: 'LEARNING TODAY',
+  heroTitle2: 'LEADING TOMORROW',
+  heroApplyNow: 'Apply Now',
+  heroStudentLogin: 'Student Login',
+  heroLogoLine1: 'CEYLON',
+  heroLogoLine2: 'PHARMA COLLEGE',
+  // Course Slider
+  courseSliderTitle: 'Explore Our Programs',
+  // Certificate Verifier
+  certVerifierTitle: 'Certificate Verification',
+  certVerifierSubtitle: 'Secure, Fast, and Reliable: Verify your certificates with ease through our online platform.',
+  certVerifierInputPlaceholder: 'Enter Index Number or Your Name? Eg: PA07454 or A. K. D. Jayesinghe',
+  certVerifierButton: 'Verify Certificate',
+  certVerifierDescription: "The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number or scanning the QR code, users can instantly access verified information such as the student's name, course title, affiliated institute, date of issue, and current accreditation status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.",
+  // Why Choose Us
+  whyChooseUsTitle: 'Why Choose Us?',
+  whyChooseUsPara1: "At Ceylon Pharma College, we believe in cultivating tomorrow's leaders today. Our commitment to excellence and innovation sets us apart. With a dedicated and talented academic staff, and a strong emphasis on practical learning, we provide a comprehensive education that prepares you for nothing but success in the real world.",
+  whyChooseUsPara2: "Choosing Ceylon Pharma College means choosing a future where your ambitions are realized. We're not just an institution; we're a launchpad for your dreams. At Ceylon Pharma College, you'll gain the knowledge, skills, and confidence needed to excel in your chosen field. Join us, and embark on a journey of personal and professional growth, all within an inspiring and supportive academic community.",
+  whyChooseUsStat1: 'Over 4729 students',
+  whyChooseUsStat2: 'OVER 6 COURSES',
+  // Achievements
+  achievementsTitle: 'Our Achievements',
+  achievementsWatchNext: 'Watch Next',
+  // Testimonials
+  testimonialsTitle: 'What Our Community Says',
+  testimonialsSubtitle: 'Hear from our students, alumni, and partners who have experienced the Ceylon Pharma College difference.',
+  // Event Calendar
+  eventsTitle: 'Upcoming Events',
+  eventsSubtitle: 'Stay updated with our calendar of events, workshops, and seminars.',
+  eventsLearnMore: 'Learn More',
+  // Multimedia Gallery
+  galleryTitle: 'Campus Life Gallery',
+  gallerySubtitle: 'A glimpse into the vibrant life at Ceylon Pharma College.',
+  // Accreditations
+  accreditationsTitle: 'Ceylon Pharma College is accredited by,',
+  accreditationsSubtitle: 'At Ceylon Pharma College, we take pride in our strong collaborations with top-tier institutions and industry leaders, which enrich our academic programs and expand opportunities for our students. Our unwavering commitment to excellence in education has earned us numerous prestigious recognitions and esteemed accreditations, reinforcing our position as a leading institution in pharmaceutical education.',
+  // About Page
+  aboutTitle: 'About Ceylon Pharma College',
+  aboutPara1: 'Founded with a vision to be a center of excellence in pharmaceutical education and research, Ceylon Pharma College has been a cornerstone of the healthcare community for over two decades. Our mission is to nurture knowledgeable, skilled, and ethical pharmacy professionals who can contribute effectively to the ever-evolving global health landscape.',
+  aboutPara2: 'We are fully accredited by the National Pharmacy Council and affiliated with leading universities. Our state-of-the-art facilities, experienced faculty, and a curriculum that blends theory with hands-on practice ensure our graduates are well-prepared for successful careers.',
+  // Contact Page
+  contactTitle: 'Contact Us',
+  contactSubtitle: "We're here to help. Reach out to us with any questions or inquiries.",
+  contactInfoTitle: 'Contact Information',
+  contactInfoGetInTouch: 'Get in Touch',
+  contactInfoOurLocations: 'Our Locations',
+  contactInfoViewMap: 'View on Google Maps',
+  // Inquiry Form
+  inquiryFormTitle: 'Have a Question?',
+  inquiryFormSubtitle: "Fill out the form below and we'll get back to you as soon as possible.",
+  inquiryFormNamePlaceholder: 'Your Name',
+  inquiryFormEmailPlaceholder: 'Your Email',
+  inquiryFormSubjectPlaceholder: 'Subject',
+  inquiryFormMessagePlaceholder: 'Your Message',
+  inquiryFormSubmitButton: 'Submit Inquiry',
+  inquiryFormSubmitting: 'Submitting...',
+  // Course Catalog
+  courseCatalogTitle: 'Our Courses',
+  courseCatalogSubtitle: 'Choose from a range of programs designed to launch and advance your career in pharmacy.',
+  courseCatalogEnrollmentOpen: 'Enrollment Open',
+};
