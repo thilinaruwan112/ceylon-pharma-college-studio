@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -38,12 +37,20 @@ const Preloader = () => {
     >
       <div className="animate-pulse">
         <Image
+          src="https://pharmacollege.lk/assets/images/logo.png"
+          alt="Ceylon Pharma College Logo"
+          width={200}
+          height={62}
+          priority
+          className="dark:hidden"
+        />
+        <Image
           src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
           alt="Ceylon Pharma College Logo"
           width={200}
           height={62}
           priority
-          className="dark:brightness-0 dark:invert"
+          className="hidden dark:block dark:brightness-0 dark:invert"
         />
       </div>
       <Progress value={progress} className="w-56 mt-4 h-2 bg-primary/20" />
