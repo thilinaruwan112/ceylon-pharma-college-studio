@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
 const accreditations = [
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/skill-development.png', alt: 'Skill Development Council Canada' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/actd.png', alt: 'American Council of Training and Development' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/iaf.png', alt: 'International Accreditation Forum' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/scc.png', alt: 'SCC Accredited CB-MS' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/iqa.png', alt: 'International Qualifications & Assessments' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/wes.png', alt: 'World Education Services' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/uk.png', alt: 'Accreditation UK' },
-  { src: 'https://www.pharmacollege.lk/assets/images/accreditations/gatehouse.png', alt: 'Gatehouse Awards' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/skildevlopment.jpg', alt: 'Skill Development Council Canada' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/actd.png', alt: 'American Council of Training and Development' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/iaf.jpg', alt: 'International Accreditation Forum' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/scc.png', alt: 'SCC Accredited CB-MS' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/iqa.png', alt: 'International Qualifications & Assessments' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/wes.svg', alt: 'World Education Services' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/acuk.png', alt: 'Accreditation UK' },
+  { src: 'https://www.pharmacollege.lk/assets/logo/gatehouse.png', alt: 'Gatehouse Awards' },
 ];
 
 export default function Accreditations() {
