@@ -70,11 +70,11 @@ const mainNavConfig = {
 };
 
 const TopBar = () => (
-  <div className="bg-[#800000] text-white print:hidden">
+  <div className="bg-primary text-primary-foreground print:hidden">
     <div className="container mx-auto flex h-10 items-center justify-end px-4 md:px-6">
       <nav className="hidden items-center gap-x-6 text-xs font-medium lg:flex">
         {topNavLinks.map((link) => (
-          <Link key={link.label} href={link.href} className="transition-colors hover:text-white/80">
+          <Link key={link.label} href={link.href} className="transition-colors hover:text-primary-foreground/80">
             {link.label}
           </Link>
         ))}
