@@ -11,36 +11,42 @@ import { useTranslation } from '@/context/language-context';
 const courses = [
   {
     title: "Diploma in Pharmacy Practice",
+    slug: "diploma-in-pharmacy-practice",
     image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
     price: "2,500.00",
     hint: "student pharmacist smiling"
   },
   {
     title: "Advanced Community Pharmacy",
+    slug: "advanced-community-pharmacy",
     image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
     price: "10,000.00",
     hint: "woman pharmacist teaching"
   },
   {
     title: "Pharmaceutical Compounding",
+    slug: "advanced-community-pharmacy", // placeholder
     image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
     price: "15,000.00",
     hint: "pharmacist lab coat"
   },
   {
     title: "Clinical Pharmacology",
+    slug: "diploma-in-pharmacy-practice", // placeholder
     image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
     price: "15,000.00",
     hint: "woman pharmacist glasses"
   },
   {
     title: "Hospital Pharmacy Management",
+    slug: "advanced-community-pharmacy", // placeholder
     image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
     price: "15,000.00",
     hint: "pharmacist working"
   },
     {
     title: "Advanced Pharmacy Degree",
+    slug: "diploma-in-pharmacy-practice", // placeholder
     image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
     price: "20,000.00",
     hint: "pharmacist smiling"
@@ -68,7 +74,7 @@ export default function CourseSlider() {
           <CarouselContent className="-ml-2">
             {courses.map((course, index) => (
               <CarouselItem key={index} className="pl-2 basis-3/4 md:basis-[43.5%] lg:basis-[30.3%] xl:basis-[23.25%]">
-                <Link href="#" className="block h-full group">
+                <Link href={`/courses/${course.slug}`} className="block h-full group">
                   <div className="p-1 h-full">
                     <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                       <CardContent className="p-0 flex flex-col flex-grow">
