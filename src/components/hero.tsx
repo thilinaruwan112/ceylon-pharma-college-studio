@@ -4,25 +4,7 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTranslation } from '@/context/language-context';
-
-const HeroLogo = () => {
-    const { t } = useTranslation();
-    return (
-        <div className="flex items-center gap-3 mb-6 text-white">
-            <div className="p-2 border-2 border-white rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                    <path d="M12 8v8"/>
-                    <path d="M8 12h8"/>
-                </svg>
-            </div>
-            <div className="text-left font-headline">
-                <p className="text-xs tracking-widest">{t('heroLogoLine1')}</p>
-                <p className="text-sm font-semibold tracking-wider">{t('heroLogoLine2')}</p>
-            </div>
-        </div>
-    );
-};
+import Image from 'next/image';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -40,7 +22,16 @@ export default function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
       <div className="container mx-auto px-4 md:px-6 text-center flex flex-col items-center">
-        <HeroLogo />
+        <div className="mb-6">
+          <Image
+            src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+            alt="Ceylon Pharma College Logo"
+            width={240}
+            height={75}
+            className="brightness-0 invert"
+            priority
+          />
+        </div>
         <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg tracking-wider leading-tight">
           {t('heroTitle1')}<br />{t('heroTitle2')}
         </h1>
