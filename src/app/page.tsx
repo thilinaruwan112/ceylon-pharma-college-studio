@@ -1,3 +1,4 @@
+import Accreditations from '@/components/accreditations';
 import CertificateVerifier from '@/components/certificate-verifier';
 import CourseSlider from '@/components/course-slider';
 import EventCalendar from '@/components/event-calendar';
@@ -18,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <EventCalendar />
       <MultimediaGallery />
+      <Accreditations />
     </main>
   );
 }
