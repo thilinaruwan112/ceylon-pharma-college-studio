@@ -20,11 +20,8 @@ export default function Footer() {
             <Link href="/" className="hover:text-primary transition-colors">Home</Link>
             <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
             <Link href="/courses" className="hover:text-primary transition-colors">Courses</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Alumni</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Students</Link>
-            <Link href="#" className="hover:text-primary transition-colors">Research</Link>
-            <Link href="#verify" className="hover:text-primary transition-colors">Verify Certificate</Link>
             <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
+            <Link href="#verify" className="hover:text-primary transition-colors">Verify Certificate</Link>
           </div>
         </div>
         <div className="grid gap-4">
@@ -42,10 +39,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t">
-        <div className="container mx-auto flex items-center justify-between px-4 py-4 text-sm md:px-6">
-          <p className="font-body">&copy; {new Date().getFullYear()} Ceylon Pharma College Hub.</p>
+        <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 px-4 py-4 text-sm md:px-6 text-center sm:text-left">
+          <p className="font-body">&copy; {new Date().getFullYear()} Ceylon Pharma College Hub. All Rights Reserved.</p>
           <p className="font-body">
-            Professionally Designed.
+            Powered by <a href="https://payshia.com" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors font-semibold">Payshia Software Solutions</a>
           </p>
         </div>
       </div>
