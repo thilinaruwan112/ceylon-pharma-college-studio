@@ -17,6 +17,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from '@/lib/utils';
 import { useTranslation } from '@/context/language-context';
 import LanguageSwitcher from '@/components/language-switcher';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const TopBar = () => {
     const { t } = useTranslation();
@@ -112,7 +113,7 @@ const DesktopNav = () => {
               isActive ? "text-primary" : "text-foreground"
           )}>
               {children}
-              {isActive && <span className="absolute -bottom-1 left-0 w-full h-1 bg-primary" />}
+              {isActive && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
           </Link>
       );
   };
@@ -270,7 +271,7 @@ export default function Header() {
         </Link>
         
         <div className="flex items-center gap-4">
-          <div className="ml-auto">
+          <div className="ml-auto hidden md:flex items-center gap-2">
             <DesktopNav />
           </div>
           
@@ -279,6 +280,9 @@ export default function Header() {
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Search</span>
               </Button>
+              <div className="hidden md:block">
+                <ThemeToggle />
+              </div>
               <div className="md:hidden">
                 <Sheet open={isOpen} onOpenChange={setIsOpen}>
                   <SheetTrigger asChild>
@@ -296,6 +300,7 @@ export default function Header() {
                           </Link>
                           <div className="flex items-center">
                               <LanguageSwitcher />
+                              <ThemeToggle />
                           </div>
                       </div>
                       <div className="flex-grow overflow-y-auto">
