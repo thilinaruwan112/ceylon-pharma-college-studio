@@ -211,34 +211,36 @@ export default function Header() {
             </div>
         </Link>
         
-        <DesktopNav />
-        
-        <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" className="hidden md:inline-flex">
-                <Search className="h-5 w-5" />
-                <span className="sr-only">Search</span>
-            </Button>
-            <div className="md:hidden">
-              <Sheet open={isOpen} onOpenChange={setIsOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="outline" size="icon">
-                    <Menu className="h-6 w-6" />
-                    <span className="sr-only">Toggle navigation menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
-                    <div className="p-4 border-b">
-                        <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
-                            <GraduationCap className="h-6 w-6 text-primary" />
-                            <span>Ceylon Pharma College</span>
-                        </Link>
-                    </div>
-                    <div className="flex-grow overflow-y-auto">
-                        <MobileNav closeSheet={closeSheet} />
-                    </div>
-                </SheetContent>
-              </Sheet>
-            </div>
+        <div className="flex items-center gap-4">
+          <DesktopNav />
+          
+          <div className="flex items-center gap-2">
+              <Button variant="ghost" size="icon" className="hidden md:inline-flex">
+                  <Search className="h-5 w-5" />
+                  <span className="sr-only">Search</span>
+              </Button>
+              <div className="md:hidden">
+                <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                  <SheetTrigger asChild>
+                    <Button variant="outline" size="icon">
+                      <Menu className="h-6 w-6" />
+                      <span className="sr-only">Toggle navigation menu</span>
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
+                      <div className="p-4 border-b">
+                          <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
+                              <GraduationCap className="h-6 w-6 text-primary" />
+                              <span>Ceylon Pharma College</span>
+                          </Link>
+                      </div>
+                      <div className="flex-grow overflow-y-auto">
+                          <MobileNav closeSheet={closeSheet} />
+                      </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
+          </div>
         </div>
       </div>
     </header>
