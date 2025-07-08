@@ -50,22 +50,6 @@ const mainNavConfig = {
         { href: '#', label: 'Examinations' },
       ],
     },
-    {
-      title: 'Staff',
-      items: [
-        { href: '#', label: 'Academic Staff' },
-        { href: '#', label: 'Administrative Staff' },
-        { href: '#', label: 'Staff Vacancies' },
-      ],
-    },
-    {
-      title: 'Research',
-      items: [
-        { href: '#', label: 'Research Highlights' },
-        { href: '#', label: 'Publications' },
-        { href: '#', label: 'Grants & Funding' },
-      ],
-    },
   ],
   otherLinks: [],
 };
