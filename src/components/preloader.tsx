@@ -3,15 +3,20 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Progress } from '@/components/ui/progress';
+import { usePathname } from 'next/navigation';
 
 const Preloader = () => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
+    setLoading(true);
+    setProgress(0);
+
     const loadingTimer = setTimeout(() => {
       setLoading(false);
-    }, 1500);
+    }, 1000);
 
     const progressTimer = setInterval(() => {
       setProgress((prev) => {
@@ -19,15 +24,15 @@ const Preloader = () => {
           clearInterval(progressTimer);
           return 100;
         }
-        return prev + 1;
+        return prev + 2;
       });
-    }, 13);
+    }, 18);
 
     return () => {
       clearTimeout(loadingTimer);
       clearInterval(progressTimer);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <div
