@@ -69,7 +69,7 @@ export default function CourseSlider() {
                 <div className="p-1">
                   <Card className="overflow-hidden">
                     <CardContent className="p-0">
-                      <div className="relative aspect-[3/4]">
+                      <div className="relative aspect-square">
                         <Image
                           src={course.image}
                           alt={course.title}
