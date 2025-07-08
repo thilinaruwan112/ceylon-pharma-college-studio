@@ -1,6 +1,7 @@
+
 "use client";
 
-import { useState, useRef, Fragment } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -14,73 +15,80 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { cn } from '@/lib/utils';
+import { useTranslation } from '@/context/language-context';
+import LanguageSwitcher from '@/components/language-switcher';
 
-const topNavLinks = [
-  { href: '#', label: 'Alumni' },
-  { href: '#', label: 'Quality Assurance' },
-  { href: '#', label: 'Innovation' },
-  { href: '#', label: 'International' },
-  { href: '#', label: 'Resources' },
-  { href: '#', label: 'Medical Center' },
-  { href: '#', label: 'Library' },
-];
+const TopBar = () => {
+    const { t } = useTranslation();
+    const topNavLinks = [
+      { key: 'alumni', href: '#' },
+      { key: 'qualityAssurance', href: '#' },
+      { key: 'innovation', href: '#' },
+      { key: 'international', href: '#' },
+      { key: 'resources', href: '#' },
+      { key: 'medicalCenter', href: '#' },
+      { key: 'library', href: '#' },
+    ];
 
-const mainNavConfig = {
-  links: [
-    { href: '/', label: 'Home' },
-    { href: '/#verify', label: 'Certificate' },
-    { href: '/courses', label: 'Courses' },
-  ],
-  dropdowns: [
-    {
-      title: 'Departments',
-      items: [
-        { href: '#', label: 'Department of Pharmaceutical' },
-        { href: '#', label: 'Department of English' },
-        { href: '#', label: 'Department of ICT' },
-      ],
-    },
-    {
-      title: 'Students',
-      items: [
-        { href: '#', label: 'Student Life' },
-        { href: '#', label: 'Academic Calendar' },
-        { href: '#', label: 'Examinations' },
-      ],
-    },
-  ],
-  otherLinks: [
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
-  ],
+    return (
+      <div className="hidden bg-primary text-primary-foreground print:hidden lg:block">
+        <div className="container mx-auto flex h-10 items-center justify-between px-4 md:px-6">
+          <nav className="flex items-center gap-x-6 text-xs font-medium">
+            {topNavLinks.map((link) => (
+              <Link key={link.key} href={link.href} className="transition-colors hover:text-primary-foreground/80">
+                {t(link.key as any)}
+              </Link>
+            ))}
+          </nav>
+          <div className="flex h-full items-center">
+            <LanguageSwitcher />
+            <Link href="#" className="flex h-full items-center px-4 text-xs font-medium transition-colors hover:bg-primary-foreground/10">
+              {t('login')}
+            </Link>
+             <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
+                <Link href="/contact">{t('contactUs')}</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    );
 };
 
-const TopBar = () => (
-  <div className="hidden bg-primary text-primary-foreground print:hidden lg:block">
-    <div className="container mx-auto flex h-10 items-center justify-between px-4 md:px-6">
-      <nav className="flex items-center gap-x-6 text-xs font-medium">
-        {topNavLinks.map((link) => (
-          <Link key={link.label} href={link.href} className="transition-colors hover:text-primary-foreground/80">
-            {link.label}
-          </Link>
-        ))}
-      </nav>
-      <div className="flex h-full items-center">
-        <Link href="#" className="flex h-full items-center px-4 text-xs font-medium transition-colors hover:bg-primary-foreground/10">
-          Login
-        </Link>
-         <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
-            <Link href="/contact">Contact Us</Link>
-        </Button>
-      </div>
-    </div>
-  </div>
-);
-
 const DesktopNav = () => {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const timerRef = useRef<number | null>(null);
+
+  const mainNavConfig = {
+    links: [
+      { key: 'home', href: '/' },
+      { key: 'certificate', href: '/#verify' },
+      { key: 'courses', href: '/courses' },
+    ],
+    dropdowns: [
+      {
+        titleKey: 'departments',
+        items: [
+          { key: 'deptPharmaceutical', href: '#' },
+          { key: 'deptEnglish', href: '#' },
+          { key: 'deptIct', href: '#' },
+        ],
+      },
+      {
+        titleKey: 'students',
+        items: [
+          { key: 'studentLife', href: '#' },
+          { key: 'academicCalendar', href: '#' },
+          { key: 'examinations', href: '#' },
+        ],
+      },
+    ],
+    otherLinks: [
+      { key: 'about', href: '/about' },
+      { key: 'contact', href: '/contact' },
+    ],
+  };
 
   const handleMouseEnter = (title: string) => {
     if (timerRef.current) {
@@ -112,32 +120,32 @@ const DesktopNav = () => {
   return (
     <nav className="hidden h-full items-center gap-x-6 md:flex">
       {mainNavConfig.links.map((link) => (
-        <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
+        <NavLink key={link.key} href={link.href}>{t(link.key as any)}</NavLink>
       ))}
       {mainNavConfig.dropdowns.map((dropdown) => (
         <DropdownMenu 
-            key={dropdown.title} 
-            open={openDropdown === dropdown.title} 
-            onOpenChange={(isOpen) => setOpenDropdown(isOpen ? dropdown.title : null)}
+            key={dropdown.titleKey} 
+            open={openDropdown === dropdown.titleKey} 
+            onOpenChange={(isOpen) => setOpenDropdown(isOpen ? dropdown.titleKey : null)}
         >
-          <div onMouseEnter={() => handleMouseEnter(dropdown.title)} onMouseLeave={handleMouseLeave} className="h-full flex items-center">
+          <div onMouseEnter={() => handleMouseEnter(dropdown.titleKey)} onMouseLeave={handleMouseLeave} className="h-full flex items-center">
             <DropdownMenuTrigger
               className="flex items-center gap-1 text-sm font-medium text-foreground outline-none transition-colors hover:text-primary data-[state=open]:text-primary"
             >
-              {dropdown.title}
+              {t(dropdown.titleKey as any)}
               <ChevronDown className="h-4 w-4 transition-transform duration-200" />
             </DropdownMenuTrigger>
           </div>
           <DropdownMenuContent 
             align="start"
-            onMouseEnter={() => handleMouseEnter(dropdown.title)}
+            onMouseEnter={() => handleMouseEnter(dropdown.titleKey)}
             onMouseLeave={handleMouseLeave}
           >
             {dropdown.items.map((item) => (
-              <DropdownMenuItem key={item.label} asChild>
+              <DropdownMenuItem key={item.key} asChild>
                 <Link href={item.href}>
                   <Minus className="mr-2" />
-                  {item.label}
+                  {t(item.key as any)}
                 </Link>
               </DropdownMenuItem>
             ))}
@@ -145,59 +153,103 @@ const DesktopNav = () => {
         </DropdownMenu>
       ))}
       {mainNavConfig.otherLinks.map((link) => (
-        <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
+        <NavLink key={link.key} href={link.href}>{t(link.key as any)}</NavLink>
       ))}
     </nav>
   );
 };
 
-const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
-    <div className="flex flex-col h-full text-base">
-      <div className="p-4 space-y-2 border-b">
-        <h3 className="px-2 font-semibold text-muted-foreground text-sm">Main Menu</h3>
-        {mainNavConfig.links.map((link) => (
-            <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
-                {link.label}
-            </Link>
-        ))}
-        <Accordion type="multiple" className="w-full">
-            {mainNavConfig.dropdowns.map((dropdown) => (
-                <AccordionItem value={dropdown.title} key={dropdown.title} className="border-b-0">
-                    <AccordionTrigger className="px-2 py-2 text-foreground no-underline hover:text-primary rounded-md hover:bg-secondary hover:no-underline">
-                        {dropdown.title}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                        <div className="flex flex-col pl-6">
-                            {dropdown.items.map((item) => (
-                                <Link key={item.label} href={item.href} onClick={closeSheet} className="flex items-center gap-3 py-2.5 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
-                                    <Minus className="h-4 w-4" />
-                                    <span>{item.label}</span>
-                                </Link>
-                            ))}
-                        </div>
-                    </AccordionContent>
-                </AccordionItem>
+const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
+    const { t } = useTranslation();
+
+    const topNavLinks = [
+      { key: 'alumni', href: '#' },
+      { key: 'qualityAssurance', href: '#' },
+      { key: 'innovation', href: '#' },
+      { key: 'international', href: '#' },
+      { key: 'resources', href: '#' },
+      { key: 'medicalCenter', href: '#' },
+      { key: 'library', href: '#' },
+    ];
+    
+    const mainNavConfig = {
+      links: [
+        { key: 'home', href: '/' },
+        { key: 'certificate', href: '/#verify' },
+        { key: 'courses', href: '/courses' },
+      ],
+      dropdowns: [
+        {
+          titleKey: 'departments',
+          items: [
+            { key: 'deptPharmaceutical', href: '#' },
+            { key: 'deptEnglish', href: '#' },
+            { key: 'deptIct', href: '#' },
+          ],
+        },
+        {
+          titleKey: 'students',
+          items: [
+            { key: 'studentLife', href: '#' },
+            { key: 'academicCalendar', href: '#' },
+            { key: 'examinations', href: '#' },
+          ],
+        },
+      ],
+      otherLinks: [
+        { key: 'about', href: '/about' },
+        { key: 'contact', href: '/contact' },
+      ],
+    };
+
+    return (
+        <div className="flex flex-col h-full text-base">
+          <div className="p-4 space-y-2 border-b">
+            <h3 className="px-2 font-semibold text-muted-foreground text-sm">Main Menu</h3>
+            {mainNavConfig.links.map((link) => (
+                <Link key={link.key} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
+                    {t(link.key as any)}
+                </Link>
             ))}
-        </Accordion>
-        {mainNavConfig.otherLinks.map((link) => (
-             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
-                {link.label}
-            </Link>
-        ))}
-      </div>
-      <div className="p-4">
-         <h3 className="px-2 font-semibold text-muted-foreground text-sm mb-3">Quick Links</h3>
-          <div className="grid grid-cols-2 gap-x-4 gap-y-2 px-2 text-base">
-            {topNavLinks.map((link) => (
-              <Link key={link.label} href={link.href} onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">
-                  {link.label}
-              </Link>
+            <Accordion type="multiple" className="w-full">
+                {mainNavConfig.dropdowns.map((dropdown) => (
+                    <AccordionItem value={t(dropdown.titleKey as any)} key={dropdown.titleKey} className="border-b-0">
+                        <AccordionTrigger className="px-2 py-2 text-foreground no-underline hover:text-primary rounded-md hover:bg-secondary hover:no-underline">
+                            {t(dropdown.titleKey as any)}
+                        </AccordionTrigger>
+                        <AccordionContent>
+                            <div className="flex flex-col pl-6">
+                                {dropdown.items.map((item) => (
+                                    <Link key={item.key} href={item.href} onClick={closeSheet} className="flex items-center gap-3 py-2.5 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
+                                        <Minus className="h-4 w-4" />
+                                        <span>{t(item.key as any)}</span>
+                                    </Link>
+                                ))}
+                            </div>
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </Accordion>
+            {mainNavConfig.otherLinks.map((link) => (
+                 <Link key={link.key} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
+                    {t(link.key as any)}
+                </Link>
             ))}
-             <Link href="#" onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">Login</Link>
           </div>
-      </div>
-    </div>
-);
+          <div className="p-4">
+             <h3 className="px-2 font-semibold text-muted-foreground text-sm mb-3">Quick Links</h3>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2 px-2 text-base">
+                {topNavLinks.map((link) => (
+                  <Link key={link.key} href={link.href} onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">
+                      {t(link.key as any)}
+                  </Link>
+                ))}
+                 <Link href="#" onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">{t('login')}</Link>
+              </div>
+          </div>
+        </div>
+    );
+};
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -236,12 +288,15 @@ export default function Header() {
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
-                      <div className="p-4 border-b">
-                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                      <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                      <div className="p-4 border-b flex justify-between items-center">
                           <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
                               <GraduationCap className="h-6 w-6 text-primary" />
                               <span>Ceylon Pharma College</span>
                           </Link>
+                          <div className="flex items-center">
+                              <LanguageSwitcher />
+                          </div>
                       </div>
                       <div className="flex-grow overflow-y-auto">
                           <MobileNav closeSheet={closeSheet} />
