@@ -50,8 +50,8 @@ const mainNavConfig = {
     },
   ],
   otherLinks: [
-    { href: '/contact', label: 'Contact' },
     { href: '/about', label: 'About' },
+    { href: '/contact', label: 'Contact' },
   ],
 };
 
@@ -104,7 +104,7 @@ const DesktopNav = () => {
               isActive ? "text-primary" : "text-foreground"
           )}>
               {children}
-              {isActive && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
+              {isActive && <span className="absolute -bottom-1 left-0 w-full h-1 bg-primary" />}
           </Link>
       );
   };
