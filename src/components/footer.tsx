@@ -18,13 +18,13 @@ export default function Footer() {
           <h4 className="font-headline text-base font-semibold text-foreground">Quick Links</h4>
           <div className="grid grid-cols-2 gap-2 text-sm font-body">
             <Link href="/about" className="hover:text-primary transition-colors">About Us</Link>
-            <Link href="#courses" className="hover:text-primary transition-colors">Courses</Link>
+            <Link href="/courses" className="hover:text-primary transition-colors">Courses</Link>
             <Link href="#achievements" className="hover:text-primary transition-colors">Achievements</Link>
             <Link href="#testimonials" className="hover:text-primary transition-colors">Testimonials</Link>
             <Link href="#events" className="hover:text-primary transition-colors">Events</Link>
             <Link href="#gallery" className="hover:text-primary transition-colors">Gallery</Link>
             <Link href="#verify" className="hover:text-primary transition-colors">Verify Certificate</Link>
-            <Link href="#contact" className="hover:text-primary transition-colors">Inquire</Link>
+            <Link href="/contact" className="hover:text-primary transition-colors">Contact</Link>
           </div>
         </div>
         <div className="grid gap-4">
