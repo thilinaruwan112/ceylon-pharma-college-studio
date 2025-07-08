@@ -16,10 +16,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { cn } from '@/lib/utils';
 
 const topNavLinks = [
-  { href: '/about', label: 'About' },
   { href: '#', label: 'Alumni' },
   { href: '#', label: 'Quality Assurance' },
-  { href: '#', label: 'Login' },
   { href: '#', label: 'Innovation' },
   { href: '#', label: 'International' },
   { href: '#', label: 'Resources' },
@@ -53,6 +51,7 @@ const mainNavConfig = {
   ],
   otherLinks: [
     { href: '/contact', label: 'Contact' },
+    { href: '/about', label: 'About' },
   ],
 };
 
@@ -71,6 +70,7 @@ const TopBar = () => (
             {link.label}
           </Link>
         ))}
+        <Link href="#" className="transition-colors hover:text-primary-foreground/80">Login</Link>
       </nav>
 
       {/* Original contact button */}
@@ -102,14 +102,16 @@ const DesktopNav = () => {
   };
   
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-      const isActive = pathname === href;
+      const isActive = pathname === href && href !== '/#verify';
+      const isVerifyActive = pathname === '/' && href === '/#verify';
+
       return (
           <Link href={href} className={cn(
               "relative flex h-full items-center text-sm font-medium transition-colors hover:text-primary",
-              isActive ? "text-primary" : "text-foreground"
+              isActive || isVerifyActive ? "text-primary" : "text-foreground"
           )}>
               {children}
-              {isActive && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
+              {(isActive || isVerifyActive) && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
           </Link>
       );
   };
@@ -139,9 +141,9 @@ const DesktopNav = () => {
             onMouseLeave={handleMouseLeave}
           >
             {dropdown.items.map((item) => (
-              <DropdownMenuItem key={item.label} asChild className="gap-3 px-4 py-2.5">
+              <DropdownMenuItem key={item.label} asChild>
                 <Link href={item.href}>
-                  <Minus />
+                  <Minus className="mr-2" />
                   {item.label}
                 </Link>
               </DropdownMenuItem>
@@ -192,14 +194,11 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
       </div>
       <div className="p-4">
          <h3 className="px-2 font-semibold text-muted-foreground text-sm mb-3">Quick Links</h3>
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-2 text-base">
-            {topNavLinks.map((link, index) => (
-                <Fragment key={link.label}>
-                    <Link href={link.href} onClick={closeSheet} className="text-foreground transition-colors hover:text-primary hover:underline">
-                        {link.label}
-                    </Link>
-                    {index < topNavLinks.length - 1 && <span className="text-muted-foreground/50">|</span>}
-                </Fragment>
+          <div className="grid grid-cols-2 gap-x-4 gap-y-2 px-2 text-base">
+            {topNavLinks.map((link) => (
+              <Link key={link.label} href={link.href} onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">
+                  {link.label}
+              </Link>
             ))}
           </div>
       </div>
