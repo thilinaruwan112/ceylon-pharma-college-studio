@@ -51,7 +51,7 @@ export default function CourseSlider() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
-            Explore our programs
+            Explore Our Programs
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mt-2" />
         </div>
