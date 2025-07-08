@@ -58,7 +58,13 @@ const mainNavConfig = {
 
 const TopBar = () => (
   <div className="bg-primary text-primary-foreground print:hidden">
-    <div className="container mx-auto flex h-10 items-center justify-end px-4 md:px-6">
+    <div className="container mx-auto flex h-10 items-center justify-between px-4 md:px-6 lg:justify-end">
+      {/* New login button for mobile */}
+      <Button asChild variant="ghost" className="h-full rounded-none px-4 text-xs font-bold text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground lg:hidden">
+          <Link href="#">Login</Link>
+      </Button>
+
+      {/* Original desktop nav */}
       <nav className="hidden items-center gap-x-6 text-xs font-medium lg:flex">
         {topNavLinks.map((link) => (
           <Link key={link.label} href={link.href} className="transition-colors hover:text-primary-foreground/80">
@@ -66,7 +72,9 @@ const TopBar = () => (
           </Link>
         ))}
       </nav>
-      <div className="ml-auto h-full">
+
+      {/* Original contact button */}
+      <div className="h-full lg:ml-6">
          <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
             <Link href="/contact">Contact Us</Link>
         </Button>
@@ -212,7 +220,9 @@ export default function Header() {
         </Link>
         
         <div className="flex items-center gap-4">
-          <DesktopNav />
+          <div className="ml-auto">
+            <DesktopNav />
+          </div>
           
           <div className="flex items-center gap-2">
               <Button variant="ghost" size="icon" className="hidden md:inline-flex">
