@@ -7,6 +7,7 @@ import MultimediaGallery from '@/components/multimedia-gallery';
 import Testimonials from '@/components/testimonials';
 import Hero from '@/components/hero';
 import WhyChooseUs from '@/components/why-choose-us';
+import Achievements from '@/components/achievements';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <CourseSlider />
       <CertificateVerifier />
       <WhyChooseUs />
+      <Achievements />
       <AboutUs />
       <Testimonials />
       <EventCalendar />
