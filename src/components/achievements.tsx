@@ -7,16 +7,24 @@ import { cn } from "@/lib/utils";
 
 const videos = [
   {
-    id: "1-R5b3QhSso",
-    title: "Understanding Pharmacy in Sri Lanka",
+    id: "oRBmtQicXG4",
+    title: "Ceylon Pharma College - A Journey of Excellence",
   },
   {
-    id: "PGLCoH8b2w0",
-    title: "Convocation Ceremony Highlights",
+    id: "fCFonZdEZGg",
+    title: "Student Testimonials & Campus Life",
   },
   {
-    id: "bN5-iJm0Ljg",
-    title: "Nugasewana Program Feature",
+    id: "d-aWudT5_3s",
+    title: "Inside Our State-of-the-Art Labs",
+  },
+  {
+    id: "XvazXU-saP4",
+    title: "Annual Convocation Ceremony",
+  },
+  {
+    id: "pqPiXXjDyAE",
+    title: "A Message from Our Chairman",
   },
 ];
 
