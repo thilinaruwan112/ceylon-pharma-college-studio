@@ -6,11 +6,10 @@ export default function WhyChooseUs() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center px-4 md:px-6">
         <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="https://placehold.co/600x800.png"
-            alt="A pharmacist mentoring a student in a lab setting"
+            src="https://www.pharmacollege.lk/assets/images/why-chose.jpg"
+            alt="Students listening to a lecture at Ceylon Pharma College"
             fill
             className="object-cover"
-            data-ai-hint="pharmacist student"
           />
         </div>
         <div className="flex flex-col justify-center">
