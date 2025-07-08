@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, Fragment } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -190,13 +190,18 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
             </Link>
         ))}
       </div>
-      <div className="p-4 space-y-2">
-         <h3 className="px-2 font-semibold text-muted-foreground text-sm">Quick Links</h3>
-         {topNavLinks.map((link) => (
-             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
-                 {link.label}
-             </Link>
-         ))}
+      <div className="p-4">
+         <h3 className="px-2 font-semibold text-muted-foreground text-sm mb-3">Quick Links</h3>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-2 px-2 text-base">
+            {topNavLinks.map((link, index) => (
+                <Fragment key={link.label}>
+                    <Link href={link.href} onClick={closeSheet} className="text-foreground transition-colors hover:text-primary hover:underline">
+                        {link.label}
+                    </Link>
+                    {index < topNavLinks.length - 1 && <span className="text-muted-foreground/50">|</span>}
+                </Fragment>
+            ))}
+          </div>
       </div>
     </div>
 );
