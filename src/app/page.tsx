@@ -12,14 +12,16 @@ export default function Home() {
     <main className="flex flex-col">
       <Hero />
       <CourseSlider />
+      <CertificateVerifier />
       <AboutUs />
       <Testimonials />
       <EventCalendar />
       <MultimediaGallery />
       <section id="contact" className="py-16 md:py-24 bg-secondary/20">
-        <div className="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 px-4 md:px-6">
-          <InquiryForm />
-          <CertificateVerifier />
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto">
+            <InquiryForm />
+          </div>
         </div>
       </section>
     </main>
