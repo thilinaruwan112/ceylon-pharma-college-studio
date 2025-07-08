@@ -263,11 +263,19 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center">
           <Image
+            src="https://pharmacollege.lk/assets/images/logo.png"
+            alt="Ceylon Pharma College Logo"
+            width={200}
+            height={62}
+            className="h-14 w-auto dark:hidden"
+            priority
+          />
+          <Image
             src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
             alt="Ceylon Pharma College Logo"
             width={200}
             height={62}
-            className="h-14 w-auto dark:brightness-0 dark:invert"
+            className="h-14 w-auto hidden dark:block dark:brightness-0 dark:invert"
             priority
           />
         </Link>
@@ -298,11 +306,19 @@ export default function Header() {
                       <div className="p-4 border-b flex justify-between items-center">
                           <Link href="/" onClick={closeSheet}>
                             <Image
+                              src="https://pharmacollege.lk/assets/images/logo.png"
+                              alt="Ceylon Pharma College Logo"
+                              width={160}
+                              height={50}
+                              className="h-10 w-auto dark:hidden"
+                              priority
+                            />
+                            <Image
                               src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
                               alt="Ceylon Pharma College Logo"
                               width={160}
                               height={50}
-                              className="h-10 w-auto dark:brightness-0 dark:invert"
+                              className="h-10 w-auto hidden dark:block dark:brightness-0 dark:invert"
                               priority
                             />
                           </Link>
