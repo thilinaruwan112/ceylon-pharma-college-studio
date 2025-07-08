@@ -7,7 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, GraduationCap } from 'lucide-react';
 
 const navLinks = [
-  { href: '#about', label: 'About Us' },
+  { href: '/about', label: 'About Us' },
   { href: '#courses', label: 'Courses' },
   { href: '#achievements', label: 'Achievements' },
   { href: '#testimonials', label: 'Testimonials' },
