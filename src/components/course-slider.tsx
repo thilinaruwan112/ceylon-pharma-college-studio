@@ -1,9 +1,10 @@
 "use client";
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Button } from '@/components/ui/button';
+import { ArrowRight } from 'lucide-react';
 
 const courses = [
   {
@@ -64,34 +65,36 @@ export default function CourseSlider() {
           <CarouselContent className="-ml-4">
             {courses.map((course, index) => (
               <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/5">
-                <div className="p-1 h-full">
-                  <Card className="overflow-hidden h-full flex flex-col group transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <CardContent className="p-0 flex flex-col flex-grow">
-                      <div className="relative aspect-square">
-                        <Image
-                          src={course.image}
-                          alt={course.title}
-                          fill
-                          className="object-cover transition-transform duration-300 group-hover:scale-105"
-                          data-ai-hint={course.hint}
-                        />
-                      </div>
-                      <div className="p-4 bg-card border-t flex flex-col flex-grow">
-                        <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.title}</h3>
-                        <div className="flex-grow" />
-                        <div className="flex justify-between items-center mt-4">
-                           <p className="font-bold text-lg font-body text-primary">LKR {course.price}</p>
-                           <Button size="sm" className="font-bold">More Details</Button>
+                <Link href="#" className="block h-full group">
+                  <div className="p-1 h-full">
+                    <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+                      <CardContent className="p-0 flex flex-col flex-grow">
+                        <div className="relative aspect-square">
+                          <Image
+                            src={course.image}
+                            alt={course.title}
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={course.hint}
+                          />
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                        <div className="p-4 bg-card border-t flex flex-col flex-grow">
+                          <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.title}</h3>
+                          <div className="flex-grow" />
+                          <div className="flex justify-between items-center mt-4">
+                            <p className="font-bold text-lg font-body text-primary">LKR {course.price}</p>
+                            <ArrowRight className="h-5 w-5 text-primary opacity-0 transform -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex left-4" />
-          <CarouselNext className="hidden sm:flex right-4" />
+          <CarouselPrevious className="hidden sm:flex" />
+          <CarouselNext className="hidden sm:flex" />
         </Carousel>
       </div>
     </section>
