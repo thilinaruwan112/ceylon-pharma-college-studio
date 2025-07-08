@@ -7,6 +7,7 @@ import Footer from '@/components/footer';
 import { LanguageProvider } from '@/context/language-context';
 import { ThemeProvider } from '@/components/theme-provider';
 import Preloader from '@/components/preloader';
+import { PageProgressBar } from '@/components/page-progress-bar';
 
 export const metadata: Metadata = {
   title: 'Ceylon Pharma College Hub',
@@ -33,6 +34,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <PageProgressBar />
             <Preloader />
             <Header />
             {children}

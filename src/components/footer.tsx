@@ -14,13 +14,20 @@ export default function Footer() {
     <footer className="bg-muted/60 text-muted-foreground">
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div className="flex flex-col items-start gap-4">
-          <Link href="/">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="https://pharmacollege.lk/assets/images/logo.png"
+              alt="Ceylon Pharma College Logo"
+              width={180}
+              height={56}
+              className="h-auto w-40 dark:hidden"
+            />
             <Image
               src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
               alt="Ceylon Pharma College Logo"
               width={180}
               height={56}
-              className="h-auto w-40 dark:brightness-0 dark:invert"
+              className="h-auto w-40 hidden dark:block dark:brightness-0 dark:invert"
             />
           </Link>
           <p className="text-sm font-body">
