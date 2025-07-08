@@ -6,6 +6,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { LanguageProvider } from '@/context/language-context';
 import { ThemeProvider } from '@/components/theme-provider';
+import Preloader from '@/components/preloader';
 
 export const metadata: Metadata = {
   title: 'Ceylon Pharma College Hub',
@@ -32,6 +33,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <LanguageProvider>
+            <Preloader />
             <Header />
             {children}
             <Footer />

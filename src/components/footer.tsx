@@ -2,7 +2,8 @@
 "use client";
 
 import Link from 'next/link';
-import { GraduationCap, Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import Image from 'next/image';
 import { useTranslation } from '@/context/language-context';
 
 export default function Footer() {
@@ -13,9 +14,14 @@ export default function Footer() {
     <footer className="bg-muted/60 text-muted-foreground">
       <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
         <div className="flex flex-col items-start gap-4">
-          <Link href="/" className="flex items-center gap-2 font-headline text-lg font-semibold text-foreground">
-            <GraduationCap className="h-6 w-6 text-primary" />
-            <span>Ceylon Pharma College</span>
+          <Link href="/">
+            <Image
+              src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+              alt="Ceylon Pharma College Logo"
+              width={180}
+              height={56}
+              className="h-auto w-40 dark:brightness-0 dark:invert"
+            />
           </Link>
           <p className="text-sm font-body">
             {t('footerSlogan')}

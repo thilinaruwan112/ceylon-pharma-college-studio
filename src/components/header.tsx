@@ -3,10 +3,11 @@
 
 import { useState, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
-import { Menu, GraduationCap, ChevronDown, Search, Minus } from 'lucide-react';
+import { Menu, ChevronDown, Search, Minus } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -260,14 +261,15 @@ export default function Header() {
     <header className="sticky top-0 z-50 w-full bg-background shadow-md print:hidden">
       <TopBar />
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-3">
-            <div className="bg-primary/10 rounded-full p-1.5">
-                <GraduationCap className="h-8 w-8 text-primary" />
-            </div>
-            <div>
-                <p className="font-headline font-bold text-lg text-primary leading-tight">Ceylon Pharma College</p>
-                <p className="text-xs text-muted-foreground font-body tracking-wider">GATEWAY TO KNOWLEDGE</p>
-            </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+            alt="Ceylon Pharma College Logo"
+            width={200}
+            height={62}
+            className="h-14 w-auto dark:brightness-0 dark:invert"
+            priority
+          />
         </Link>
         
         <div className="flex items-center gap-4">
@@ -294,9 +296,15 @@ export default function Header() {
                   <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
                       <SheetTitle className="sr-only">Main Menu</SheetTitle>
                       <div className="p-4 border-b flex justify-between items-center">
-                          <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
-                              <GraduationCap className="h-6 w-6 text-primary" />
-                              <span>Ceylon Pharma College</span>
+                          <Link href="/" onClick={closeSheet}>
+                            <Image
+                              src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+                              alt="Ceylon Pharma College Logo"
+                              width={160}
+                              height={50}
+                              className="h-10 w-auto dark:brightness-0 dark:invert"
+                              priority
+                            />
                           </Link>
                           <div className="flex items-center">
                               <LanguageSwitcher />
