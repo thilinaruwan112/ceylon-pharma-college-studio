@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
@@ -98,6 +98,21 @@ const TopBar = () => (
 
 const DesktopNav = () => {
   const pathname = usePathname();
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const timerRef = useRef<number | null>(null);
+
+  const handleMouseEnter = (title: string) => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+    setOpenDropdown(title);
+  };
+
+  const handleMouseLeave = () => {
+    timerRef.current = window.setTimeout(() => {
+      setOpenDropdown(null);
+    }, 150);
+  };
   
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
       const isActive = pathname === href;
@@ -118,12 +133,24 @@ const DesktopNav = () => {
         <NavLink key={link.label} href={link.href}>{link.label}</NavLink>
       ))}
       {mainNavConfig.dropdowns.map((dropdown) => (
-        <DropdownMenu key={dropdown.title}>
-          <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-foreground transition-colors hover:text-primary focus:outline-none data-[state=open]:text-primary">
-            {dropdown.title}
-            <ChevronDown className="h-4 w-4 transition-transform duration-200" />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="start">
+        <DropdownMenu 
+            key={dropdown.title} 
+            open={openDropdown === dropdown.title} 
+            onOpenChange={(isOpen) => setOpenDropdown(isOpen ? dropdown.title : null)}
+        >
+          <div onMouseEnter={() => handleMouseEnter(dropdown.title)} onMouseLeave={handleMouseLeave} className="h-full flex items-center">
+            <DropdownMenuTrigger
+              className="flex items-center gap-1 text-sm font-medium text-foreground outline-none transition-colors hover:text-primary data-[state=open]:text-primary"
+            >
+              {dropdown.title}
+              <ChevronDown className="h-4 w-4 transition-transform duration-200" />
+            </DropdownMenuTrigger>
+          </div>
+          <DropdownMenuContent 
+            align="start"
+            onMouseEnter={() => handleMouseEnter(dropdown.title)}
+            onMouseLeave={handleMouseLeave}
+          >
             {dropdown.items.map((item) => (
               <DropdownMenuItem key={item.label} asChild>
                 <Link href={item.href}>{item.label}</Link>
