@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { verifyCertificate } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,7 +34,7 @@ function SubmitButton() {
 }
 
 export default function CertificateVerifier() {
-  const [state, formAction] = useFormState(verifyCertificate, { message: "", status: "", errors: null });
+  const [state, formAction] = useActionState(verifyCertificate, { message: "", status: "", errors: null });
 
   return (
     <section id="verify" className="bg-primary py-16 md:py-24 text-primary-foreground">

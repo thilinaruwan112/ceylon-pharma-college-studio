@@ -1,6 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { useEffect, useRef } from "react";
 
 import { submitInquiry } from "@/app/actions";
@@ -20,7 +21,7 @@ function SubmitButton() {
 }
 
 export default function InquiryForm() {
-  const [state, formAction] = useFormState(submitInquiry, { message: "", errors: null });
+  const [state, formAction] = useActionState(submitInquiry, { message: "", errors: null });
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
