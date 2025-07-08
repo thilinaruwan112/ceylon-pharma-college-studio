@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
@@ -56,41 +56,41 @@ const TopBar = () => {
     );
 };
 
+const mainNavConfig = {
+  links: [
+    { key: 'home', href: '/' },
+    { key: 'certificate', href: '/#verify' },
+    { key: 'courses', href: '/courses' },
+  ],
+  dropdowns: [
+    {
+      titleKey: 'departments',
+      items: [
+        { key: 'deptPharmaceutical', href: '/departments/pharmaceutical' },
+        { key: 'deptEnglish', href: '/departments/english' },
+        { key: 'deptIct', href: '/departments/ict' },
+      ],
+    },
+    {
+      titleKey: 'students',
+      items: [
+        { key: 'studentLife', href: '#' },
+        { key: 'academicCalendar', href: '#' },
+        { key: 'examinations', href: '#' },
+      ],
+    },
+  ],
+  otherLinks: [
+    { key: 'about', href: '/about' },
+    { key: 'contact', href: '/contact' },
+  ],
+};
+
 const DesktopNav = () => {
   const { t } = useTranslation();
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const timerRef = useRef<number | null>(null);
-
-  const mainNavConfig = {
-    links: [
-      { key: 'home', href: '/' },
-      { key: 'certificate', href: '/#verify' },
-      { key: 'courses', href: '/courses' },
-    ],
-    dropdowns: [
-      {
-        titleKey: 'departments',
-        items: [
-          { key: 'deptPharmaceutical', href: '#' },
-          { key: 'deptEnglish', href: '#' },
-          { key: 'deptIct', href: '#' },
-        ],
-      },
-      {
-        titleKey: 'students',
-        items: [
-          { key: 'studentLife', href: '#' },
-          { key: 'academicCalendar', href: '#' },
-          { key: 'examinations', href: '#' },
-        ],
-      },
-    ],
-    otherLinks: [
-      { key: 'about', href: '/about' },
-      { key: 'contact', href: '/contact' },
-    ],
-  };
 
   const handleMouseEnter = (title: string) => {
     if (timerRef.current) {
@@ -173,36 +173,6 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
       { key: 'medicalCenter', href: '#' },
       { key: 'library', href: '#' },
     ];
-    
-    const mainNavConfig = {
-      links: [
-        { key: 'home', href: '/' },
-        { key: 'certificate', href: '/#verify' },
-        { key: 'courses', href: '/courses' },
-      ],
-      dropdowns: [
-        {
-          titleKey: 'departments',
-          items: [
-            { key: 'deptPharmaceutical', href: '#' },
-            { key: 'deptEnglish', href: '#' },
-            { key: 'deptIct', href: '#' },
-          ],
-        },
-        {
-          titleKey: 'students',
-          items: [
-            { key: 'studentLife', href: '#' },
-            { key: 'academicCalendar', href: '#' },
-            { key: 'examinations', href: '#' },
-          ],
-        },
-      ],
-      otherLinks: [
-        { key: 'about', href: '/about' },
-        { key: 'contact', href: '/contact' },
-      ],
-    };
 
     return (
         <div className="flex flex-col h-full text-base">
