@@ -3,30 +3,12 @@
 
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
+import Image from 'next/image';
 import { verifyCertificate } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { CheckCircle2, XCircle, Search, Loader2 } from "lucide-react";
 import { useTranslation } from "@/context/language-context";
-
-const VerifierLogo = () => {
-    const { t } = useTranslation();
-    return (
-        <div className="flex items-center justify-center gap-3 mb-6 text-primary-foreground">
-            <div className="p-2 border-2 border-primary-foreground rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
-                    <path d="M12 8v8"/>
-                    <path d="M8 12h8"/>
-                </svg>
-            </div>
-            <div className="text-left font-headline">
-                <p className="text-xs tracking-widest">{t('heroLogoLine1')}</p>
-                <p className="text-sm font-semibold tracking-wider">{t('heroLogoLine2')}</p>
-            </div>
-        </div>
-    );
-};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -46,7 +28,16 @@ export default function CertificateVerifier() {
   return (
     <section id="verify" className="bg-primary py-16 md:py-24 text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6 text-center">
-            <VerifierLogo />
+            <div className="mb-6">
+              <Image
+                src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+                alt="Ceylon Pharma College Logo"
+                width={200}
+                height={62}
+                className="brightness-0 invert mx-auto"
+                priority
+              />
+            </div>
             <h2 className="text-4xl md:text-5xl font-headline font-bold">
                 {t('certVerifierTitle')}
             </h2>
