@@ -10,37 +10,37 @@ import { Users } from 'lucide-react';
 const courses = [
   {
     title: "Pharmacy Practice",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
     price: "2,500.00",
     hint: "student pharmacist smiling"
   },
   {
     title: "Pharmacy Practice",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
     price: "10,000.00",
     hint: "woman pharmacist teaching"
   },
   {
     title: "Pharmacy Practice",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
     price: "15,000.00",
     hint: "pharmacist lab coat"
   },
   {
     title: "Pharmaceuticals",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
     price: "15,000.00",
     hint: "woman pharmacist glasses"
   },
   {
     title: "Pharmacist",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
     price: "15,000.00",
     hint: "pharmacist working"
   },
     {
     title: "Advanced Pharmacy",
-    image: "https://placehold.co/300x400.png",
+    image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
     price: "20,000.00",
     hint: "pharmacist smiling"
   },
