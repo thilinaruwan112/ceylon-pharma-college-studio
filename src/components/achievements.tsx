@@ -62,7 +62,7 @@ export default function Achievements() {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2">
               <p className="font-headline font-semibold">Watch Next</p>
               {videos.map((video) => (
                 <button
