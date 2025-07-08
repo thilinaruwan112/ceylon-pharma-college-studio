@@ -96,16 +96,15 @@ const DesktopNav = () => {
   };
   
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
-      const isActive = pathname === href && href !== '/#verify';
-      const isVerifyActive = pathname === '/' && href === '/#verify';
+      const isActive = pathname === href;
 
       return (
           <Link href={href} className={cn(
               "relative flex h-full items-center text-sm font-medium transition-colors hover:text-primary",
-              isActive || isVerifyActive ? "text-primary" : "text-foreground"
+              isActive ? "text-primary" : "text-foreground"
           )}>
               {children}
-              {(isActive || isVerifyActive) && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
+              {isActive && <span className="absolute bottom-0 left-0 w-full h-1 bg-primary" />}
           </Link>
       );
   };
