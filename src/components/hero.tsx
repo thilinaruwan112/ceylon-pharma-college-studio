@@ -1,5 +1,4 @@
 import { Button } from '@/components/ui/button';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const HeroLogo = () => (
@@ -21,14 +20,16 @@ const HeroLogo = () => (
 export default function Hero() {
   return (
     <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center text-white">
-      <Image
-        src="https://placehold.co/1600x900.png"
-        alt="Graduating students from Ceylon Pharma College"
-        priority
-        fill
-        className="object-cover absolute z-[-1]"
-        data-ai-hint="graduating students happy"
-      />
+      <video 
+        autoPlay 
+        loop 
+        muted 
+        playsInline 
+        className="absolute z-[-1] w-full h-full object-cover"
+      >
+        <source src="https://www.pharmacollege.lk/assets/videos/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
       <div className="container mx-auto px-4 md:px-6 text-center flex flex-col items-center">
         <HeroLogo />
