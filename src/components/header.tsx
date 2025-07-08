@@ -56,15 +56,9 @@ const mainNavConfig = {
 };
 
 const TopBar = () => (
-  <div className="bg-primary text-primary-foreground print:hidden">
-    <div className="container mx-auto flex h-10 items-center justify-between px-4 md:px-6 lg:justify-end">
-      {/* New login button for mobile */}
-      <Button asChild variant="ghost" className="h-full rounded-none px-4 text-xs font-bold text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground lg:hidden">
-          <Link href="#">Login</Link>
-      </Button>
-
-      {/* Original desktop nav */}
-      <nav className="hidden items-center gap-x-6 text-xs font-medium lg:flex">
+  <div className="hidden bg-primary text-primary-foreground print:hidden lg:block">
+    <div className="container mx-auto flex h-10 items-center justify-end px-4 md:px-6">
+      <nav className="flex items-center gap-x-6 text-xs font-medium">
         {topNavLinks.map((link) => (
           <Link key={link.label} href={link.href} className="transition-colors hover:text-primary-foreground/80">
             {link.label}
@@ -72,9 +66,7 @@ const TopBar = () => (
         ))}
         <Link href="#" className="transition-colors hover:text-primary-foreground/80">Login</Link>
       </nav>
-
-      {/* Original contact button */}
-      <div className="h-full lg:ml-6">
+      <div className="h-full ml-6">
          <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
             <Link href="/contact">Contact Us</Link>
         </Button>
@@ -200,6 +192,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
                   {link.label}
               </Link>
             ))}
+             <Link href="#" onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">Login</Link>
           </div>
       </div>
     </div>
@@ -242,8 +235,8 @@ export default function Header() {
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="w-full max-w-sm p-0 flex flex-col">
-                      <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                       <div className="p-4 border-b">
+                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                           <Link href="/" onClick={closeSheet} className="flex items-center gap-2 font-headline text-lg font-semibold">
                               <GraduationCap className="h-6 w-6 text-primary" />
                               <span>Ceylon Pharma College</span>
