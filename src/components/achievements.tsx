@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from 'react';
+import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 const videos = [
   {
@@ -19,8 +21,10 @@ const videos = [
 ];
 
 export default function Achievements() {
+  const [selectedVideo, setSelectedVideo] = useState(videos[0]);
+
   return (
-    <section id="achievements" className="w-full py-16 md:py-24 bg-background">
+    <section id="achievements" className="w-full py-16 md:py-24 bg-card/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">
@@ -28,37 +32,56 @@ export default function Achievements() {
           </h2>
            <div className="w-24 h-1 bg-primary mx-auto mt-2" />
         </div>
-        <Carousel
-          opts={{
-            align: "start",
-          }}
-          className="w-full max-w-5xl mx-auto"
-        >
-          <CarouselContent className="-ml-4">
-            {videos.map((video) => (
-              <CarouselItem key={video.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                    <Card className="overflow-hidden rounded-lg shadow-md">
-                        <CardContent className="p-0">
-                            <div className="aspect-video">
-                                <iframe
-                                    className="w-full h-full"
-                                    src={`https://www.youtube.com/embed/${video.id}`}
-                                    title={video.title}
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                ></iframe>
-                            </div>
-                        </CardContent>
-                    </Card>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="lg:col-span-2">
+            <Card className="overflow-hidden rounded-lg shadow-lg">
+              <CardContent className="p-0">
+                <div className="aspect-video">
+                  <iframe
+                    key={selectedVideo.id}
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0`}
+                    title={selectedVideo.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  ></iframe>
                 </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden sm:flex" />
-          <CarouselNext className="hidden sm:flex" />
-        </Carousel>
+              </CardContent>
+            </Card>
+            <h3 className="text-xl font-headline font-bold mt-4">{selectedVideo.title}</h3>
+          </div>
+
+          <div className="lg:col-span-1">
+            <div className="flex flex-col gap-4">
+              <p className="font-headline font-semibold">Watch Next</p>
+              {videos.map((video) => (
+                <button
+                  key={video.id}
+                  onClick={() => setSelectedVideo(video)}
+                  className={cn(
+                    "w-full text-left p-2 rounded-lg transition-colors duration-200 flex gap-4 items-center bg-background",
+                    selectedVideo.id === video.id
+                      ? "ring-2 ring-primary shadow-md"
+                      : "hover:bg-secondary/50"
+                  )}
+                  aria-current={selectedVideo.id === video.id}
+                >
+                  <div className="relative w-28 h-16 rounded-md overflow-hidden shrink-0">
+                    <Image
+                      src={`https://img.youtube.com/vi/${video.id}/mqdefault.jpg`}
+                      alt={`Thumbnail for ${video.title}`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="font-body font-medium text-sm leading-tight">{video.title}</p>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
