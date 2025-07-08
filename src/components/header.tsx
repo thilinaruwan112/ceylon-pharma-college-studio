@@ -34,19 +34,11 @@ const mainNavConfig = {
   ],
   dropdowns: [
     {
-      title: 'Faculties',
+      title: 'Departments',
       items: [
-        { href: '#', label: 'Humanities and Social Sciences' },
-        { href: '#', label: 'Applied Sciences' },
-        { href: '#', label: 'Management Studies and Commerce' },
-        { href: '#', label: 'Medical Sciences' },
-        { href: '#', label: 'Graduate Studies' },
-        { href: '#', label: 'Technology' },
-        { href: '#', label: 'Engineering' },
-        { href: '#', label: 'Allied Health Sciences' },
-        { href: '#', label: 'Dental Sciences' },
-        { href: '#', label: 'Urban and Aquatic Bioresources' },
-        { href: '#', label: 'Computing' },
+        { href: '#', label: 'Department of Pharmaceutical' },
+        { href: '#', label: 'Department of English' },
+        { href: '#', label: 'Department of ICT' },
       ],
     },
     {
