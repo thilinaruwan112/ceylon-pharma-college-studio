@@ -6,6 +6,7 @@ import InquiryForm from '@/components/inquiry-form';
 import MultimediaGallery from '@/components/multimedia-gallery';
 import Testimonials from '@/components/testimonials';
 import Hero from '@/components/hero';
+import WhyChooseUs from '@/components/why-choose-us';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <CourseSlider />
       <CertificateVerifier />
+      <WhyChooseUs />
       <AboutUs />
       <Testimonials />
       <EventCalendar />
