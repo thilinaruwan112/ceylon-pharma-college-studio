@@ -193,7 +193,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
       <div className="p-4 space-y-2">
          <h3 className="px-2 font-semibold text-muted-foreground text-sm">Quick Links</h3>
          {topNavLinks.map((link) => (
-             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
+             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
                  {link.label}
              </Link>
          ))}
