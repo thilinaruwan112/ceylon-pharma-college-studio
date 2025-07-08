@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, GraduationCap, ChevronDown, Search } from 'lucide-react';
+import { Menu, GraduationCap, ChevronDown, Search, Minus } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -145,8 +145,11 @@ const DesktopNav = () => {
             onMouseLeave={handleMouseLeave}
           >
             {dropdown.items.map((item) => (
-              <DropdownMenuItem key={item.label} asChild>
-                <Link href={item.href}>{item.label}</Link>
+              <DropdownMenuItem key={item.label} asChild className="gap-3 px-4 py-2.5">
+                <Link href={item.href}>
+                  <Minus />
+                  {item.label}
+                </Link>
               </DropdownMenuItem>
             ))}
           </DropdownMenuContent>
@@ -177,8 +180,9 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
                     <AccordionContent>
                         <div className="flex flex-col pl-6">
                             {dropdown.items.map((item) => (
-                                <Link key={item.label} href={item.href} onClick={closeSheet} className="block py-2 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
-                                    {item.label}
+                                <Link key={item.label} href={item.href} onClick={closeSheet} className="flex items-center gap-3 py-2.5 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                    <Minus className="h-4 w-4" />
+                                    <span>{item.label}</span>
                                 </Link>
                             ))}
                         </div>
