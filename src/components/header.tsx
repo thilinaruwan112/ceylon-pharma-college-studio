@@ -167,20 +167,20 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
       <div className="p-4 space-y-2 border-b">
         <h3 className="px-2 font-semibold text-muted-foreground text-sm">Main Menu</h3>
         {mainNavConfig.links.map((link) => (
-            <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+            <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
                 {link.label}
             </Link>
         ))}
         <Accordion type="multiple" className="w-full">
             {mainNavConfig.dropdowns.map((dropdown) => (
                 <AccordionItem value={dropdown.title} key={dropdown.title} className="border-b-0">
-                    <AccordionTrigger className="px-2 py-2 text-foreground no-underline hover:text-primary rounded-md hover:bg-muted hover:no-underline">
+                    <AccordionTrigger className="px-2 py-2 text-foreground no-underline hover:text-primary rounded-md hover:bg-secondary hover:no-underline">
                         {dropdown.title}
                     </AccordionTrigger>
                     <AccordionContent>
                         <div className="flex flex-col pl-6">
                             {dropdown.items.map((item) => (
-                                <Link key={item.label} href={item.href} onClick={closeSheet} className="flex items-center gap-3 py-2.5 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+                                <Link key={item.label} href={item.href} onClick={closeSheet} className="flex items-center gap-3 py-2.5 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
                                     <Minus className="h-4 w-4" />
                                     <span>{item.label}</span>
                                 </Link>
@@ -191,7 +191,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
             ))}
         </Accordion>
         {mainNavConfig.otherLinks.map((link) => (
-             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
                 {link.label}
             </Link>
         ))}
@@ -199,7 +199,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => (
       <div className="p-4 space-y-2">
          <h3 className="px-2 font-semibold text-muted-foreground text-sm">Quick Links</h3>
          {topNavLinks.map((link) => (
-             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-muted">
+             <Link key={link.label} href={link.href} onClick={closeSheet} className="block px-2 py-2 text-muted-foreground transition-colors hover:text-primary rounded-md hover:bg-secondary">
                  {link.label}
              </Link>
          ))}
