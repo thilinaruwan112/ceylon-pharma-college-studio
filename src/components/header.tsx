@@ -31,6 +31,7 @@ const mainNavConfig = {
   links: [
     { href: '/', label: 'Home' },
     { href: '/courses', label: 'Courses' },
+    { href: '/contact', label: 'Contact' },
   ],
   dropdowns: [
     {
@@ -66,7 +67,7 @@ const mainNavConfig = {
       ],
     },
   ],
-  otherLinks: [{ href: '#', label: 'PIM' }],
+  otherLinks: [],
 };
 
 const TopBar = () => (
