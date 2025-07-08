@@ -36,9 +36,17 @@ const mainNavConfig = {
     {
       title: 'Faculties',
       items: [
-        { href: '#', label: 'Faculty of Medical Sciences' },
-        { href: '#', label: 'Faculty of Pharmaceutical Sciences' },
-        { href: '#', label: 'Faculty of Technology' },
+        { href: '#', label: 'Humanities and Social Sciences' },
+        { href: '#', label: 'Applied Sciences' },
+        { href: '#', label: 'Management Studies and Commerce' },
+        { href: '#', label: 'Medical Sciences' },
+        { href: '#', label: 'Graduate Studies' },
+        { href: '#', label: 'Technology' },
+        { href: '#', label: 'Engineering' },
+        { href: '#', label: 'Allied Health Sciences' },
+        { href: '#', label: 'Dental Sciences' },
+        { href: '#', label: 'Urban and Aquatic Bioresources' },
+        { href: '#', label: 'Computing' },
       ],
     },
     {
