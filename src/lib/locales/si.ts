@@ -242,4 +242,14 @@ export const si = {
   resultsIssueDate: 'නිකුත් කළ දිනය',
   resultsPrint: 'මුද්‍රණය කරන්න',
   resultsDownload: 'PDF බාගන්න',
+
+  // E-Certificate
+  certCompletionTitle: 'සම්පූර්ණ කිරීමේ සහතිකය',
+  certThisCertifies: 'මෙයින් සහතික කරන්නේ',
+  certSuccessfullyCompleted: 'සාර්ථකව නිම කර ඇති බවයි',
+  certOnDate: '{date} දින',
+  certDirector: 'අධ්‍යක්ෂ',
+  certRegistrar: 'ලේඛකාධිකාරී',
+  certVerified: 'තහවුරු කරන ලදී',
+  certNotCompleted: 'පාඨමාලාව සම්පූර්ණ කර නැත',
 };

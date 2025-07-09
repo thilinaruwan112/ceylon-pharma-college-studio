@@ -258,4 +258,14 @@ export const en = {
   resultsIssueDate: 'Date of Issue',
   resultsPrint: 'Print',
   resultsDownload: 'Download PDF',
+  
+  // E-Certificate
+  certCompletionTitle: 'Certificate of Completion',
+  certThisCertifies: 'This is to certify that',
+  certSuccessfullyCompleted: 'has successfully completed the',
+  certOnDate: 'on {date}',
+  certDirector: 'Director',
+  certRegistrar: 'Registrar',
+  certVerified: 'Verified',
+  certNotCompleted: 'Course Not Completed',
 };

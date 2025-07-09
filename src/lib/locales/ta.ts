@@ -134,7 +134,7 @@ export const ta = {
   assessmentMethodTitle1: 'மதிப்பீடுகள்',
   assessmentMethodDesc1: 'உங்கள் முன்னேற்றத்தைக் கண்காணிக்க பாடநெறியின் போது மதிப்பீடுகள்.',
   assessmentMethodTitle2: 'வினாடி வினாக்கள்',
-  assessmentMethodDesc2: 'உங்கள் அறிவை வலுப்படுத்த வழக்கமான வினாடி வினாக்கள்.',
+  assessmentMethodDesc1: 'உங்கள் அறிவை வலுப்படுத்த வழக்கமான வினாடி வினாக்கள்.',
   assessmentMethodTitle3: 'இடை மற்றும் இறுதித் தேர்வு',
   assessmentMethodDesc3: 'உங்கள் நடைமுறைத் திறன்களின் கையேடு மதிப்பீடு.',
 
@@ -242,4 +242,14 @@ export const ta = {
   resultsIssueDate: 'வெளியீட்டுத் தேதி',
   resultsPrint: 'அச்சிடுக',
   resultsDownload: 'PDF பதிவிறக்கவும்',
+
+  // E-Certificate
+  certCompletionTitle: 'நிறைவுச் சான்றிதழ்',
+  certThisCertifies: 'இதன் மூலம் சான்றளிக்கப்படுகிறது',
+  certSuccessfullyCompleted: 'வெற்றிகரமாக முடித்துள்ளார்',
+  certOnDate: '{date} அன்று',
+  certDirector: 'இயக்குநர்',
+  certRegistrar: 'பதிவாளர்',
+  certVerified: 'சரிபார்க்கப்பட்டது',
+  certNotCompleted: 'பாடநெறி முடிக்கப்படவில்லை',
 };
