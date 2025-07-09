@@ -226,4 +226,20 @@ export const si = {
   programNameEnglishBusiness: 'ව්‍යාපාරික ඉංග්‍රීසි සන්නිවේදනය',
   programNameIctDip: 'තොරතුරු තාක්ෂණ ඩිප්ලෝමාව',
   programNameIctWeb: 'උසස් වෙබ් සංවර්ධනය',
+
+  // Results Page
+  resultsTitle: 'ප්‍රතිඵල ප්‍රකාශය',
+  resultsSubtitle: 'නිල අධ්‍යයන පිටපත.',
+  resultsStudentName: 'ශිෂ්‍යයාගේ නම',
+  resultsStudentId: 'ශිෂ්‍ය හැඳුනුම්පත',
+  resultsCourseName: 'පාඨමාලාවේ නම',
+  resultsBatchCode: 'කණ්ඩායම් කේතය',
+  resultsSummaryTitle: 'ප්‍රතිඵල සාරාංශය',
+  resultsModule: 'මොඩියුලය',
+  resultsAttempt: 'උත්සාහය',
+  resultsGrade: 'ශ්‍රේණිය',
+  resultsOverallGrade: 'සමස්ත ශ්‍රේණිය:',
+  resultsIssueDate: 'නිකුත් කළ දිනය',
+  resultsPrint: 'මුද්‍රණය කරන්න',
+  resultsDownload: 'PDF බාගන්න',
 };

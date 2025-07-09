@@ -226,4 +226,20 @@ export const ta = {
   programNameEnglishBusiness: 'வணிக ஆங்கிலத் தொடர்பு',
   programNameIctDip: 'தகவல் தொழில்நுட்பத்தில் டிப்ளோமா',
   programNameIctWeb: 'மேம்பட்ட வலை அபிவிருத்தி',
+
+  // Results Page
+  resultsTitle: 'முடிவுகளின் அறிக்கை',
+  resultsSubtitle: 'அதிகாரப்பூர்வ கல்விப் படியெடுத்தல்.',
+  resultsStudentName: 'மாணவர் பெயர்',
+  resultsStudentId: 'மாணவர் அடையாள அட்டை',
+  resultsCourseName: 'பாடநெறியின் பெயர்',
+  resultsBatchCode: 'தொகுப்புக் குறியீடு',
+  resultsSummaryTitle: 'முடிவுகளின் சுருக்கம்',
+  resultsModule: 'தொகுதி',
+  resultsAttempt: 'முயற்சி',
+  resultsGrade: 'தரம்',
+  resultsOverallGrade: 'ஒட்டுமொத்த தரம்:',
+  resultsIssueDate: 'வெளியீட்டுத் தேதி',
+  resultsPrint: 'அச்சிடுக',
+  resultsDownload: 'PDF பதிவிறக்கவும்',
 };

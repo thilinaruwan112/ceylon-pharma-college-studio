@@ -242,4 +242,20 @@ export const en = {
   programNameEnglishBusiness: 'Business English Communication',
   programNameIctDip: 'Diploma in ICT',
   programNameIctWeb: 'Advanced Web Development',
+
+  // Results Page
+  resultsTitle: 'Statement of Results',
+  resultsSubtitle: 'Official academic transcript.',
+  resultsStudentName: 'Student Name',
+  resultsStudentId: 'Student ID',
+  resultsCourseName: 'Course Name',
+  resultsBatchCode: 'Batch Code',
+  resultsSummaryTitle: 'Results Summary',
+  resultsModule: 'Module',
+  resultsAttempt: 'Attempt',
+  resultsGrade: 'Grade',
+  resultsOverallGrade: 'Overall Grade:',
+  resultsIssueDate: 'Date of Issue',
+  resultsPrint: 'Print',
+  resultsDownload: 'Download PDF',
 };

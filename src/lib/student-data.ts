@@ -1,0 +1,51 @@
+
+export const studentResultsData = [
+    {
+        studentId: "STU001",
+        studentName: "A. K. D. Jayesinghe",
+        userName: "akd.jayesinghe",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Diploma in Pharmacy Practice",
+        batchCode: "DPP2023JAN",
+        issueDate: "2023-12-15",
+        overallGrade: "Distinction",
+        results: [
+            { module: "Introduction to Pharmacy", attempt: 1, grade: "A" },
+            { module: "Basic Pharmacology", attempt: 1, grade: "A-" },
+            { module: "Pharmaceutical Calculations", attempt: 1, grade: "A" },
+            { module: "Pharmacy Law and Ethics", attempt: 1, grade: "B+" },
+            { module: "Patient Counseling", attempt: 1, grade: "A" },
+        ],
+    },
+    {
+        studentId: "STU002",
+        studentName: "Nimali Fernando",
+        userName: "n.fernando",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Advanced Community Pharmacy",
+        batchCode: "ACP2022JUL",
+        issueDate: "2023-01-20",
+        overallGrade: "Merit",
+        results: [
+            { module: "Advanced Therapeutics", attempt: 1, grade: "B+" },
+            { module: "Community Health Management", attempt: 1, grade: "A-" },
+            { module: "Pharmacoeconomics", attempt: 1, grade: "B" },
+            { module: "Clinical Research", attempt: 1, grade: "B+" },
+        ],
+    },
+    {
+        studentId: "STU003",
+        studentName: "Sanjay Kumar",
+        userName: "s.kumar",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Certificate in Pharmacy Practice",
+        batchCode: "CPP2021MAY",
+        issueDate: "2021-11-30",
+        overallGrade: "Pass",
+        results: [
+            { module: "Fundamentals of Pharmacy", attempt: 1, grade: "C+" },
+            { module: "Dispensing Practice", attempt: 2, grade: "C" },
+            { module: "Customer Service in Pharmacy", attempt: 1, grade: "B-" },
+        ],
+    },
+];
