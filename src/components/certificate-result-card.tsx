@@ -34,7 +34,7 @@ const StarRating = ({ rating }: { rating: number }) => (
 export default function CertificateResultCard({ data }: ResultCardProps) {
   const { t } = useTranslation();
   const { studentName, grade, course, rating, batchCode, userName } = data;
-  const resultUrl = `/results?CourseCode=${batchCode}&LoggedUser=${userName}`;
+  const resultUrl = `/result-view?CourseCode=${batchCode}&LoggedUser=${userName}`;
   
   return (
     <Card className="text-left bg-background/10 border-primary-foreground/20 text-primary-foreground animate-in fade-in-50">
