@@ -48,6 +48,15 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/result-view.php',
+        destination: '/result-view',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
