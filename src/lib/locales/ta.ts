@@ -227,7 +227,7 @@ export const ta = {
   programNameIctDip: 'தகவல் தொழில்நுட்பத்தில் டிப்ளோமா',
   programNameIctWeb: 'மேம்பட்ட வலை அபிவிருத்தி',
 
-  // Results Page
+  // Results Page / Transcript Page
   resultsTitle: 'முடிவுகளின் அறிக்கை',
   resultsSubtitle: 'அதிகாரப்பூர்வ கல்விப் படியெடுத்தல்.',
   resultsStudentName: 'மாணவர் பெயர்',
@@ -243,7 +243,7 @@ export const ta = {
   resultsPrint: 'அச்சிடுக',
   resultsDownload: 'PDF பதிவிறக்கவும்',
 
-  // E-Certificate
+  // E-Certificate View Page
   certCompletionTitle: 'நிறைவுச் சான்றிதழ்',
   certThisCertifies: 'இதன் மூலம் சான்றளிக்கப்படுகிறது',
   certSuccessfullyCompleted: 'வெற்றிகரமாக முடித்துள்ளார்',
@@ -252,4 +252,5 @@ export const ta = {
   certRegistrar: 'பதிவாளர்',
   certVerified: 'சரிபார்க்கப்பட்டது',
   certNotCompleted: 'பாடநெறி முடிக்கப்படவில்லை',
+  viewTranscript: 'படியெடுப்பைக் காண்க',
 };

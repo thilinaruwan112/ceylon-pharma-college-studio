@@ -227,7 +227,7 @@ export const si = {
   programNameIctDip: 'තොරතුරු තාක්ෂණ ඩිප්ලෝමාව',
   programNameIctWeb: 'උසස් වෙබ් සංවර්ධනය',
 
-  // Results Page
+  // Results Page / Transcript Page
   resultsTitle: 'ප්‍රතිඵල ප්‍රකාශය',
   resultsSubtitle: 'නිල අධ්‍යයන පිටපත.',
   resultsStudentName: 'ශිෂ්‍යයාගේ නම',
@@ -243,7 +243,7 @@ export const si = {
   resultsPrint: 'මුද්‍රණය කරන්න',
   resultsDownload: 'PDF බාගන්න',
 
-  // E-Certificate
+  // E-Certificate View Page
   certCompletionTitle: 'සම්පූර්ණ කිරීමේ සහතිකය',
   certThisCertifies: 'මෙයින් සහතික කරන්නේ',
   certSuccessfullyCompleted: 'සාර්ථකව නිම කර ඇති බවයි',
@@ -252,4 +252,5 @@ export const si = {
   certRegistrar: 'ලේඛකාධිකාරී',
   certVerified: 'තහවුරු කරන ලදී',
   certNotCompleted: 'පාඨමාලාව සම්පූර්ණ කර නැත',
+  viewTranscript: 'පිටපත බලන්න',
 };

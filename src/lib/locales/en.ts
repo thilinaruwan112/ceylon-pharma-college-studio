@@ -243,7 +243,7 @@ export const en = {
   programNameIctDip: 'Diploma in ICT',
   programNameIctWeb: 'Advanced Web Development',
 
-  // Results Page
+  // Results Page / Transcript Page
   resultsTitle: 'Statement of Results',
   resultsSubtitle: 'Official academic transcript.',
   resultsStudentName: 'Student Name',
@@ -259,7 +259,7 @@ export const en = {
   resultsPrint: 'Print',
   resultsDownload: 'Download PDF',
   
-  // E-Certificate
+  // E-Certificate View Page
   certCompletionTitle: 'Certificate of Completion',
   certThisCertifies: 'This is to certify that',
   certSuccessfullyCompleted: 'has successfully completed the',
@@ -268,4 +268,5 @@ export const en = {
   certRegistrar: 'Registrar',
   certVerified: 'Verified',
   certNotCompleted: 'Course Not Completed',
+  viewTranscript: 'View Transcript',
 };

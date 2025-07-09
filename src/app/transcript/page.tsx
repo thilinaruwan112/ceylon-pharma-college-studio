@@ -8,11 +8,11 @@ import { Button } from '@/components/ui/button';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
-import { FileDown, Printer, User, BookOpen, Calendar, Award } from 'lucide-react';
+import { FileDown, Printer } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { studentResultsData } from '@/lib/student-data';
 
-export default function ResultsPage() {
+export default function TranscriptPage() {
     const searchParams = useSearchParams();
     const courseCode = searchParams.get('CourseCode');
     const loggedUser = searchParams.get('LoggedUser');
@@ -32,7 +32,7 @@ export default function ResultsPage() {
         <main className="bg-muted/40 py-12 md:py-16">
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                 <Card className="overflow-hidden shadow-lg">
-                    <CardHeader className="bg-card p-6 border-b">
+                    <CardHeader className="bg-card p-6 border-b print:hidden">
                          <div className="flex justify-between items-start">
                             <div>
                                 <Image
@@ -108,7 +108,7 @@ export default function ResultsPage() {
                         </div>
 
                     </CardContent>
-                    <CardFooter className="bg-card p-6 flex justify-between items-center">
+                    <CardFooter className="bg-card p-6 flex justify-between items-center print:hidden">
                         <div>
                             <p className="text-xs text-muted-foreground">{t('resultsIssueDate')}</p>
                             <p className="text-sm font-medium">{studentData.issueDate}</p>
