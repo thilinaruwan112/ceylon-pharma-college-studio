@@ -3,9 +3,10 @@
 
 import { useSearchParams, notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CheckCircle, XCircle, Award, Star, FileText } from 'lucide-react';
+import { CheckCircle, XCircle, FileText, GraduationCap } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { studentResultsData } from '@/lib/student-data';
 import { Button } from '@/components/ui/button';
@@ -26,14 +27,6 @@ export default function ResultsViewPage() {
     }
     
     const isSuccess = ['Distinction', 'Merit', 'Pass'].includes(studentData.overallGrade);
-
-    const handleViewTranscript = () => {
-        const params = new URLSearchParams({
-            CourseCode: courseCode || '',
-            LoggedUser: loggedUser || ''
-        });
-        router.push(`/transcript?${params.toString()}`);
-    }
 
     return (
         <main className="bg-muted/40 py-12 md:py-16">
@@ -59,6 +52,7 @@ export default function ResultsViewPage() {
                                         <div>
                                             <p className="text-sm font-medium text-muted-foreground">{t('resultsCourseName')}</p>
                                             <p className="font-semibold">{studentData.courseName}</p>
+                                            <p className="text-sm text-muted-foreground mt-1">{studentData.courseDescription}</p>
                                         </div>
                                         <div>
                                             <p className="text-sm font-medium text-muted-foreground">{t('resultsOverallGrade')}</p>
@@ -69,9 +63,11 @@ export default function ResultsViewPage() {
                                             <p className="font-semibold">{studentData.issueDate}</p>
                                         </div>
 
-                                        <Button onClick={handleViewTranscript} className="w-full">
-                                            <FileText className="mr-2 h-4 w-4" />
-                                            {t('viewTranscript')}
+                                        <Button asChild className="w-full">
+                                            <Link href={`/courses/${studentData.courseSlug}`}>
+                                                <GraduationCap className="mr-2 h-4 w-4" />
+                                                {t('viewCourseDetails')}
+                                            </Link>
                                         </Button>
 
                                     </CardContent>
@@ -149,7 +145,7 @@ export default function ResultsViewPage() {
                                         <p className="text-sm font-medium text-muted-foreground">{t('resultsStudentId')}</p>
                                         <p className="font-semibold text-xl text-foreground">{studentData.studentId}</p>
                                     </div>
-                                    <Button onClick={handleViewTranscript} variant="secondary" className="w-full">
+                                    <Button onClick={() => router.push(`/transcript?CourseCode=${courseCode}&LoggedUser=${loggedUser}`)} variant="secondary" className="w-full">
                                         <FileText className="mr-2 h-4 w-4" />
                                         {t('viewTranscript')}
                                     </Button>

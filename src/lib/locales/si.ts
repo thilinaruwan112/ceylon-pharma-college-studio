@@ -253,4 +253,5 @@ export const si = {
   certVerified: 'තහවුරු කරන ලදී',
   certNotCompleted: 'පාඨමාලාව සම්පූර්ණ කර නැත',
   viewTranscript: 'පිටපත බලන්න',
+  viewCourseDetails: 'පාඨමාලා විස්තර බලන්න',
 };

@@ -253,4 +253,5 @@ export const ta = {
   certVerified: 'சரிபார்க்கப்பட்டது',
   certNotCompleted: 'பாடநெறி முடிக்கப்படவில்லை',
   viewTranscript: 'படியெடுப்பைக் காண்க',
+  viewCourseDetails: 'பாடநெறி விவரங்களைக் காண்க',
 };

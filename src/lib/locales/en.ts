@@ -269,4 +269,5 @@ export const en = {
   certVerified: 'Verified',
   certNotCompleted: 'Course Not Completed',
   viewTranscript: 'View Transcript',
+  viewCourseDetails: 'View Course Details',
 };
