@@ -1,3 +1,4 @@
+
 "use server";
 
 import { z } from "zod";
@@ -26,15 +27,41 @@ export async function submitInquiry(prevState: any, formData: FormData) {
   
   console.log("New Inquiry:", validatedFields.data);
 
-  return { message: "Thank you for your inquiry! We will get back to you shortly.", errors: null };
+  return { message: "Thank you for your inquiry! We will get back to you shortly.", errors: null, data: null };
 }
 
 
 const certificateSchema = z.object({
-    certificateNumber: z.string().regex(/^[A-Z0-9]{8,12}$/, { message: "Please enter a valid certificate number (8-12 alphanumeric characters)." }),
+    certificateNumber: z.string().min(1, { message: "Please enter a valid certificate number." }),
 });
 
-const validCertificates = ["CPC2023001", "CPC2022105", "CPC2021050"];
+// Mock database of certificates
+const validCertificates: Record<string, any> = {
+  "CPC2023001": {
+    studentName: "A. K. D. Jayesinghe",
+    grade: "Distinction",
+    course: "Diploma in Pharmacy Practice",
+    rating: 5,
+    batchCode: "DPP2023JAN",
+    userName: "akd.jayesinghe",
+  },
+  "CPC2022105": {
+    studentName: "Nimali Fernando",
+    grade: "Merit",
+    course: "Advanced Community Pharmacy",
+    rating: 4,
+    batchCode: "ACP2022JUL",
+    userName: "n.fernando",
+  },
+  "CPC2021050": {
+    studentName: "Sanjay Kumar",
+    grade: "Pass",
+    course: "Certificate in Pharmacy Practice",
+    rating: 3,
+    batchCode: "CPP2021MAY",
+    userName: "s.kumar",
+  },
+};
 
 export async function verifyCertificate(prevState: any, formData: FormData) {
   const validatedFields = certificateSchema.safeParse({
@@ -45,15 +72,28 @@ export async function verifyCertificate(prevState: any, formData: FormData) {
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: "Validation failed.",
-      status: 'error'
+      status: 'error',
+      data: null,
     };
   }
 
   const { certificateNumber } = validatedFields.data;
+  const upperCaseCertNumber = certificateNumber.toUpperCase();
 
-  if (validCertificates.includes(certificateNumber.toUpperCase())) {
-    return { message: `Certificate ${certificateNumber} is valid and authentic.`, status: 'success', errors: null };
+  if (Object.keys(validCertificates).includes(upperCaseCertNumber)) {
+    const studentData = validCertificates[upperCaseCertNumber];
+    return { 
+      message: `Certificate ${upperCaseCertNumber} is valid.`, 
+      status: 'success', 
+      errors: null,
+      data: studentData
+    };
   } else {
-    return { message: `Certificate ${certificateNumber} is not valid or could not be found.`, status: 'error', errors: null };
+    return { 
+      message: `Certificate ${certificateNumber} is not valid or could not be found.`, 
+      status: 'error', 
+      errors: null,
+      data: null,
+    };
   }
 }

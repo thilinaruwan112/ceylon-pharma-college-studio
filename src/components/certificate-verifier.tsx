@@ -7,8 +7,9 @@ import Image from 'next/image';
 import { verifyCertificate } from "@/app/actions";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle2, XCircle, Search, Loader2 } from "lucide-react";
+import { XCircle, Search, Loader2 } from "lucide-react";
 import { useTranslation } from "@/context/language-context";
+import CertificateResultCard from "./certificate-result-card";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -22,7 +23,7 @@ function SubmitButton() {
 }
 
 export default function CertificateVerifier() {
-  const [state, formAction] = useActionState(verifyCertificate, { message: "", status: "", errors: null });
+  const [state, formAction] = useActionState(verifyCertificate, { message: "", status: "", errors: null, data: null });
   const { t } = useTranslation();
 
   return (
@@ -59,16 +60,19 @@ export default function CertificateVerifier() {
                 {state.errors?.certificateNumber && <p className="text-sm font-medium text-yellow-300 pt-2">{state.errors.certificateNumber[0]}</p>}
             </form>
             
-            {state.message && state.status && (
-              <div className="mt-6">
-                <div className={`inline-flex items-center gap-2 rounded-md px-4 py-2 ${state.status === 'success' ? 'bg-primary-foreground/10' : 'bg-red-500/20'}`}>
-                    {state.status === 'success' ? <CheckCircle2 className="h-5 w-5" /> : <XCircle className="h-5 w-5" />}
-                    <p className="font-body text-base font-medium text-primary-foreground">
-                        {state.message}
-                    </p>
-                </div>
-              </div>
-            )}
+            <div className="mt-6 max-w-xl mx-auto">
+              {state.status === 'success' && state.data && <CertificateResultCard data={state.data} />}
+
+              {state.status === 'error' && state.message && (
+                  <div className="inline-flex items-center gap-2 rounded-md px-4 py-2 bg-red-500/20">
+                      <XCircle className="h-5 w-5" />
+                      <p className="font-body text-base font-medium text-primary-foreground">
+                          {state.message}
+                      </p>
+                  </div>
+              )}
+            </div>
+
 
             <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
                 {t('certVerifierDescription')}

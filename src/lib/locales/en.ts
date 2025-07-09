@@ -50,9 +50,17 @@ export const en = {
   // Certificate Verifier
   certVerifierTitle: 'Certificate Verification',
   certVerifierSubtitle: 'Secure, Fast, and Reliable: Verify your certificates with ease through our online platform.',
-  certVerifierInputPlaceholder: 'Enter Index Number or Your Name? Eg: PA07454 or A. K. D. Jayesinghe',
+  certVerifierInputPlaceholder: 'Enter your Certificate Number. Eg: CPC2023001',
   certVerifierButton: 'Verify Certificate',
-  certVerifierDescription: "The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number or scanning the QR code, users can instantly access verified information such as the student's name, course title, affiliated institute, date of issue, and current accreditation status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.",
+  certVerifierDescription: "The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number, users can instantly access verified information such as the student's name, course title, and status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.",
+  // Certificate Result Card
+  certResultTitle: 'Certificate Verified',
+  certResultSubtitle: 'Basic details are shown below.',
+  certResultRating: 'Overall Rating',
+  certResultStudentName: 'Student Name',
+  certResultCourse: 'Course',
+  certResultGrade: 'Grade',
+  certResultViewButton: 'View Full Information',
   // Why Choose Us
   whyChooseUsTitle: 'Why Choose Us?',
   whyChooseUsPara1: "At Ceylon Pharma College, we believe in cultivating tomorrow's leaders today. Our commitment to excellence and innovation sets us apart. With a dedicated and talented academic staff, and a strong emphasis on practical learning, we provide a comprehensive education that prepares you for nothing but success in the real world.",
