@@ -10,8 +10,9 @@ import { CheckCircle, XCircle, FileText, GraduationCap } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { studentResultsData } from '@/lib/student-data';
 import { Button } from '@/components/ui/button';
+import { Suspense } from 'react';
 
-export default function ResultsViewPage() {
+function ResultsViewComponent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const courseCode = searchParams.get('CourseCode');
@@ -156,5 +157,13 @@ export default function ResultsViewPage() {
                 </div>
             </div>
         </main>
+    )
+}
+
+export default function ResultsViewPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <ResultsViewComponent />
+        </Suspense>
     )
 }

@@ -11,8 +11,9 @@ import { Badge } from '@/components/ui/badge';
 import { FileDown, Printer } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { studentResultsData } from '@/lib/student-data';
+import { Suspense } from 'react';
 
-export default function TranscriptPage() {
+function TranscriptComponent() {
     const searchParams = useSearchParams();
     const courseCode = searchParams.get('CourseCode');
     const loggedUser = searchParams.get('LoggedUser');
@@ -127,5 +128,13 @@ export default function TranscriptPage() {
                 </Card>
             </div>
         </main>
+    )
+}
+
+export default function TranscriptPage() {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <TranscriptComponent />
+        </Suspense>
     )
 }
