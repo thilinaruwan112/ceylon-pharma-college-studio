@@ -1,3 +1,4 @@
+
 export const header = {
   alumni: 'ආදි ශිෂ්‍ය',
   qualityAssurance: 'තත්ත්ව සහතිකය',
@@ -11,7 +12,7 @@ export const header = {
   departments: 'දෙපාර්තමේන්තු',
   students: 'ශිෂ්‍යයන්',
   deptPharmaceutical: 'ඖෂධවේදී විද්‍යා',
-  deptEnglish: 'ඉංග්‍රීසි භාෂා',
+  deptEnglish: 'ඉංග්‍රීසි',
   deptIct: 'තොරතුරු තාක්ෂණ',
   studentLife: 'ශිෂ්‍ය ජීවිතය',
   academicCalendar: 'අධ්‍යයන දින දර්ශනය',

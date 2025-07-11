@@ -1,3 +1,4 @@
+
 export const header = {
   // Top Bar
   alumni: 'Alumni',
@@ -16,7 +17,7 @@ export const header = {
 
   // Dropdowns
   deptPharmaceutical: 'Pharmaceutical Sciences',
-  deptEnglish: 'English Language',
+  deptEnglish: 'English',
   deptIct: 'ICT',
   studentLife: 'Student Life',
   academicCalendar: 'Academic Calendar',
