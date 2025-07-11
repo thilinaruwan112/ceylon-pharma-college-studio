@@ -1,0 +1,15 @@
+export const footer = {
+  footerSlogan: 'Empowering the next generation of pharmaceutical professionals.',
+  quickLinks: 'Quick Links',
+  footerHome: 'Home',
+  footerAbout: 'About Us',
+  footerCourses: 'Courses',
+  footerContact: 'Contact',
+  footerVerify: 'Verify Certificate',
+  footerContactUs: 'Contact Us',
+  footerAddress: '123 Pharma Street, Colombo, Sri Lanka',
+  footerEmail: 'Email: ',
+  footerPhone: 'Phone: ',
+  copyright: '© {year} Ceylon Pharma College Hub. All Rights Reserved.',
+  poweredBy: 'Powered by ',
+};

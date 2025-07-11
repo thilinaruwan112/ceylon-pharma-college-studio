@@ -1,0 +1,15 @@
+export const footer = {
+  footerSlogan: 'மருந்தியல் வல்லுநர்களின் அடுத்த தலைமுறையை வலுப்படுத்துதல்.',
+  quickLinks: 'விரைவு இணைப்புகள்',
+  footerHome: 'முகப்பு',
+  footerAbout: 'எங்களைப் பற்றி',
+  footerCourses: 'படிப்புகள்',
+  footerContact: 'தொடர்பு',
+  footerVerify: 'சான்றிதழைச் சரிபார்க்கவும்',
+  footerContactUs: 'தொடர்பு கொள்ள',
+  footerAddress: '123 பார்மா தெரு, கொழும்பு, இலங்கை',
+  footerEmail: 'மின்னஞ்சல்: ',
+  footerPhone: 'தொலைபேசி: ',
+  copyright: '© {year} சிலோன் பார்மா கல்லூரி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+  poweredBy: 'ஆதரவுடன் ',
+};

@@ -1,7 +1,7 @@
 
-import { en } from './locales/en';
-import { si } from './locales/si';
-import { ta } from './locales/ta';
+import { en } from './locales/en/index';
+import { si } from './locales/si/index';
+import { ta } from './locales/ta/index';
 
 export const translations = {
   en,
