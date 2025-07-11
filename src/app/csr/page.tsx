@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useTranslation } from '@/context/language-context';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Heart, Users, Droplets } from 'lucide-react';
+import { Heart, Users, Droplets, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 const projects = [
@@ -13,19 +13,22 @@ const projects = [
     image: "https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&w=2071&auto=format&fit=crop",
     titleKey: 'csrProjectTitle1',
     descKey: 'csrProjectDesc1',
-    hint: 'community health fair'
+    hint: 'community health fair',
+    slug: 'health-checkup-camp'
   },
   {
     image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop",
     titleKey: 'csrProjectTitle2',
     descKey: 'csrProjectDesc2',
-    hint: 'blood donation drive'
+    hint: 'blood donation drive',
+    slug: 'blood-donation-drive'
   },
   {
     image: "https://images.unsplash.com/photo-1627843563931-a28a255f0564?q=80&w=2070&auto=format&fit=crop",
     titleKey: 'csrProjectTitle3',
     descKey: 'csrProjectDesc3',
-    hint: 'environmental cleanup'
+    hint: 'environmental cleanup',
+    slug: 'tree-planting-campaign'
   },
 ];
 
@@ -92,13 +95,21 @@ export default function CsrPage() {
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             {projects.map((project) => (
               <Card key={project.titleKey} className="overflow-hidden group flex flex-col">
-                 <div className="relative aspect-video">
-                  <Image src={project.image} alt={t(project.titleKey as any)} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={project.hint} />
-                </div>
+                 <Link href={`/csr/${project.slug}`} className="block">
+                    <div className="relative aspect-video">
+                        <Image src={project.image} alt={t(project.titleKey as any)} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={project.hint} />
+                    </div>
+                 </Link>
                 <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="font-headline text-xl font-bold">{t(project.titleKey as any)}</h3>
+                    <h3 className="font-headline text-xl font-bold">
+                         <Link href={`/csr/${project.slug}`} className="hover:text-primary transition-colors">{t(project.titleKey as any)}</Link>
+                    </h3>
                     <p className="text-muted-foreground text-sm mt-2 flex-grow">{t(project.descKey as any)}</p>
-                    <Button variant="link" className="p-0 h-auto self-start mt-4">{t('eventsLearnMore')} &rarr;</Button>
+                    <Button variant="link" asChild className="p-0 h-auto self-start mt-4 font-semibold">
+                       <Link href={`/csr/${project.slug}`}>
+                        {t('eventsLearnMore')} <ArrowRight className="ml-1 h-4 w-4" />
+                       </Link>
+                    </Button>
                 </div>
               </Card>
             ))}

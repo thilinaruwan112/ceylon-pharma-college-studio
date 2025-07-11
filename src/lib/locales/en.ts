@@ -353,4 +353,23 @@ export const en = {
   csrProjectDesc3: 'Our students and faculty participated in a large-scale tree planting event to promote green cover and environmental awareness.',
   csrPartnerTitle: 'Partner With Us',
   csrPartnerSubtitle: 'Join us in our efforts to create a healthier, stronger community. We welcome collaborations with organizations that share our vision.',
+
+  // CSR Detail Page
+  csrProjectDetailDesc1: 'In our commitment to community well-being, Ceylon Pharma College organized a comprehensive Free Health Checkup Camp. The event provided essential health screenings, consultations with medical professionals, and free medication to over 250 residents from the local area. Our students and faculty volunteered their time and expertise, gaining valuable practical experience while making a tangible difference. The camp was a resounding success, fostering goodwill and reinforcing our dedication to public health.',
+  csrProjectDetailDesc2: 'Addressing a critical need, our college hosted a Blood Donation Drive in collaboration with the National Blood Bank. The event saw an overwhelming response from students, staff, and local community members, with over 120 individuals donating blood. This initiative not only helped save lives but also raised awareness about the importance of regular blood donation. We are proud of our community for coming together for such a noble cause.',
+  csrProjectDetailDesc3: 'As part of our commitment to environmental sustainability, Ceylon Pharma College launched a large-scale Tree Planting Campaign. Volunteers planted over 500 saplings across a 5-acre area, contributing to local biodiversity and promoting a greener environment. This hands-on initiative educated participants on the importance of conservation and demonstrated our dedication to creating a healthier planet for future generations.',
+  csrProjectAboutTitle: 'About the Project',
+  csrProjectImpactTitle: 'Key Impact',
+  csrProjectGalleryTitle: 'Project Gallery',
+  csrProjectGallerySubtitle: 'Moments captured from the event.',
+  csrStatLabel1: 'People Served',
+  csrStatLabel2: 'Student Volunteers',
+  csrStatLabel3: 'Partner Organizations',
+  csrStatLabel4: 'Pints of Blood Donated',
+  csrStatLabel5: 'Donors',
+  csrStatLabel6: 'Volunteer Effort',
+  csrStatLabel7: 'Trees Planted',
+  csrStatLabel8: 'Volunteers',
+  csrStatLabel9: 'Area Covered',
+
 };
