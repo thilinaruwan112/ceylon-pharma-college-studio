@@ -32,4 +32,5 @@ export const departments = {
   programNameIctDip: 'Diploma in ICT',
   programNameIctWeb: 'Advanced Web Development',
   programDescComingSoon: 'Coming soon. Inquire for more details.',
+  programDescPharma: 'A comprehensive program for aspiring pharmacy professionals.',
 };

@@ -24,4 +24,5 @@ export const departments = {
   programNameIctDip: 'තොරතුරු තාක්ෂණ ඩිප්ලෝමාව',
   programNameIctWeb: 'උසස් වෙබ් සංවර්ධනය',
   programDescComingSoon: 'ළඟදීම. වැඩි විස්තර සඳහා විමසන්න.',
+  programDescPharma: 'අපේක්ෂා සහගත ඖෂධ වෘත්තිකයන් සඳහා පුළුල් වැඩසටහනකි.',
 };

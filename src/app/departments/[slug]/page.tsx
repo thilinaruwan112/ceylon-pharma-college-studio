@@ -22,8 +22,8 @@ const departmentsData: any = {
     descriptionKey: "deptDescPharmaceutical",
     image: "https://images.unsplash.com/photo-1584982239339-59b7b85c57e2?q=80&w=2070&auto=format&fit=crop",
     programs: [
-      { nameKey: "courseTitleDPP", slug: "diploma-in-pharmacy-practice", descriptionKey: "" },
-      { nameKey: "courseTitleACP", slug: "advanced-community-pharmacy", descriptionKey: "" },
+      { nameKey: "courseTitleDPP", slug: "diploma-in-pharmacy-practice", descriptionKey: "programDescPharma" },
+      { nameKey: "courseTitleACP", slug: "advanced-community-pharmacy", descriptionKey: "programDescPharma" },
     ],
     faculty: [
       {
@@ -150,20 +150,21 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                         <h2 className="text-3xl font-headline font-bold text-foreground">{t('deptPagePrograms')}</h2>
                         <div className="w-20 h-1 bg-primary mt-2 mb-4" />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {department.programs.map((program: any) => (
-                                <Link href={program.slug.startsWith('#') ? '#' : `/courses/${program.slug}`} key={program.slug} className={`block group ${program.slug.startsWith('#') ? 'cursor-default' : ''}`}>
-                                  <Card className="h-full hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                            {department.programs.map((program: any, index: number) => (
+                                <Link href={program.slug.startsWith('#') ? '#' : `/courses/${program.slug}`} key={index} className={`block group h-full ${program.slug.startsWith('#') ? 'cursor-default' : ''}`}>
+                                  <Card className="h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                                       <CardHeader>
-                                          <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{t(program.nameKey)}</CardTitle>
+                                          <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{t(program.nameKey as any)}</CardTitle>
                                           {program.descriptionKey && (
-                                            <CardDescription>{t(program.descriptionKey)}</CardDescription>
+                                            <CardDescription className="text-sm">{t(program.descriptionKey as any)}</CardDescription>
                                           )}
                                       </CardHeader>
-                                      <CardContent className="mt-auto">
+                                      <CardContent className="mt-auto flex justify-end">
                                         {!program.slug.startsWith('#') && (
-                                          <p className="text-sm text-primary font-semibold flex items-center gap-2">
-                                              {t('deptPageViewProgram')} <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                                          </p>
+                                          <div className="text-sm text-primary font-semibold flex items-center gap-1">
+                                              {t('deptPageViewProgram')}
+                                              <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                          </div>
                                         )}
                                       </CardContent>
                                   </Card>
@@ -185,7 +186,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                                             <AvatarFallback>{member.name.split(' ').map((n: string) => n[0]).join('')}</AvatarFallback>
                                         </Avatar>
                                         <h3 className="font-headline font-semibold text-foreground">{member.name}</h3>
-                                        <p className="text-sm text-primary">{t(member.titleKey)}</p>
+                                        <p className="text-sm text-primary">{t(member.titleKey as any)}</p>
                                     </CardContent>
                                 </Card>
                             ))}
