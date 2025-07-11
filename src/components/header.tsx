@@ -28,7 +28,7 @@ const TopBar = () => {
       { key: 'innovation', href: '#' },
       { key: 'international', href: '#' },
       { key: 'resources', href: '#' },
-      { key: 'medicalCenter', href: '#' },
+      { key: 'csrProjects', href: '/csr' },
       { key: 'library', href: '#' },
     ];
 
@@ -170,7 +170,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
       { key: 'innovation', href: '#' },
       { key: 'international', href: '#' },
       { key: 'resources', href: '#' },
-      { key: 'medicalCenter', href: '#' },
+      { key: 'csrProjects', href: '/csr' },
       { key: 'library', href: '#' },
     ];
 
