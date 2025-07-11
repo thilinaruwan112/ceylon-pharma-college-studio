@@ -50,8 +50,8 @@ const departmentsData: any = {
     image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2070&auto=format&fit=crop",
     programs: [
       { nameKey: "programNameEnglishFree", slug: "#", descriptionKey: "programDescEnglishFree" },
-      { nameKey: "programNameEnglishProf", slug: "#", descriptionKey: "" },
-      { nameKey: "programNameEnglishBusiness", slug: "#", descriptionKey: "" },
+      { nameKey: "programNameEnglishProf", slug: "#", descriptionKey: "programDescComingSoon" },
+      { nameKey: "programNameEnglishBusiness", slug: "#", descriptionKey: "programDescComingSoon" },
     ],
     faculty: [
       {
@@ -77,8 +77,8 @@ const departmentsData: any = {
     descriptionKey: "deptDescIct",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
     programs: [
-      { nameKey: "programNameIctDip", slug: "#", descriptionKey: "" },
-      { nameKey: "programNameIctWeb", slug: "#", descriptionKey: "" },
+      { nameKey: "programNameIctDip", slug: "#", descriptionKey: "programDescComingSoon" },
+      { nameKey: "programNameIctWeb", slug: "#", descriptionKey: "programDescComingSoon" },
     ],
     faculty: [
       {
@@ -151,7 +151,7 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                         <div className="w-20 h-1 bg-primary mt-2 mb-4" />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {department.programs.map((program: any) => (
-                                <Link href={program.slug.startsWith('#') ? '#' : `/courses/${program.slug}`} key={program.slug} className="block group">
+                                <Link href={program.slug.startsWith('#') ? '#' : `/courses/${program.slug}`} key={program.slug} className={`block group ${program.slug.startsWith('#') ? 'cursor-default' : ''}`}>
                                   <Card className="h-full hover:shadow-lg transition-shadow duration-300 flex flex-col">
                                       <CardHeader>
                                           <CardTitle className="font-headline text-lg group-hover:text-primary transition-colors">{t(program.nameKey)}</CardTitle>
@@ -160,9 +160,11 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
                                           )}
                                       </CardHeader>
                                       <CardContent className="mt-auto">
+                                        {!program.slug.startsWith('#') && (
                                           <p className="text-sm text-primary font-semibold flex items-center gap-2">
                                               {t('deptPageViewProgram')} <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                                           </p>
+                                        )}
                                       </CardContent>
                                   </Card>
                                 </Link>

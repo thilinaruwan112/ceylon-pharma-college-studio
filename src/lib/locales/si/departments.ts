@@ -23,4 +23,5 @@ export const departments = {
   programNameEnglishBusiness: 'ව්‍යාපාරික ඉංග්‍රීසි සන්නිවේදනය',
   programNameIctDip: 'තොරතුරු තාක්ෂණ ඩිප්ලෝමාව',
   programNameIctWeb: 'උසස් වෙබ් සංවර්ධනය',
+  programDescComingSoon: 'ළඟදීම. වැඩි විස්තර සඳහා විමසන්න.',
 };

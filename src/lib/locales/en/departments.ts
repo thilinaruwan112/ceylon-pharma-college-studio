@@ -31,4 +31,5 @@ export const departments = {
   programNameEnglishBusiness: 'Business English Communication',
   programNameIctDip: 'Diploma in ICT',
   programNameIctWeb: 'Advanced Web Development',
+  programDescComingSoon: 'Coming soon. Inquire for more details.',
 };
