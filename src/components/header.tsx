@@ -23,7 +23,7 @@ import { ThemeToggle } from '@/components/theme-toggle';
 const TopBar = () => {
     const { t } = useTranslation();
     const topNavLinks = [
-      { key: 'alumni', href: '#' },
+      { key: 'alumni', href: '/alumni' },
       { key: 'qualityAssurance', href: '#' },
       { key: 'innovation', href: '#' },
       { key: 'international', href: '#' },
@@ -165,7 +165,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
     const { t } = useTranslation();
 
     const topNavLinks = [
-      { key: 'alumni', href: '#' },
+      { key: 'alumni', href: '/alumni' },
       { key: 'qualityAssurance', href: '#' },
       { key: 'innovation', href: '#' },
       { key: 'international', href: '#' },
