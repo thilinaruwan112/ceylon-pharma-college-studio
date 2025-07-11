@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useTranslation } from '@/context/language-context';
 import Image from 'next/image';
+import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -37,13 +38,17 @@ export default function Hero() {
         </h1>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-bold w-48">
-            <Link href="#contact">{t('heroApplyNow')}</Link>
+            <Link href="/contact">{t('heroApplyNow')}</Link>
           </Button>
           <Button asChild size="lg" variant="accent" className="font-bold w-48">
             <Link href="#">{t('heroStudentLogin')}</Link>
           </Button>
         </div>
       </div>
+      <Link href="#courses" className="absolute bottom-10 animate-bounce bg-white/20 p-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors">
+        <ChevronDown className="h-6 w-6 text-white" />
+        <span className="sr-only">Scroll down</span>
+      </Link>
     </section>
   );
 }
