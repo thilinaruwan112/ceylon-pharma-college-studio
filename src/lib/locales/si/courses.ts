@@ -2,6 +2,8 @@ export const courses = {
   courseCatalogTitle: 'අපගේ පාඨමාලා',
   courseCatalogSubtitle: 'ඔබේ ඖෂධවේදී වෘත්තිය දියත් කිරීමට සහ ඉදිරියට ගෙන යාමට නිර්මාණය කර ඇති වැඩසටහන් පරාසයකින් තෝරන්න.',
   courseCatalogEnrollmentOpen: 'ලියාපදිංචිය විවෘතයි',
+  bpharmTitle: 'B.Pharm (ඉහළ නැංවීම)',
+
   coursePageSubtitle: 'අපගේ පුළුල් උසස් සහතික පත්‍ර වැඩසටහන සමඟ ඔබේ ඖෂධවේදී වෘත්තිය ආරම්භ කරන්න.',
   downloadSyllabus: 'විෂය නිර්දේශය බාගන්න',
   whatYouWillLearn: "ඔබ ඉගෙන ගන්නා දේ",

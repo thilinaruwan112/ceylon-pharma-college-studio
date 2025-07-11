@@ -3,6 +3,7 @@ export const courses = {
   courseCatalogTitle: 'Our Courses',
   courseCatalogSubtitle: 'Choose from a range of programs designed to launch and advance your career in pharmacy.',
   courseCatalogEnrollmentOpen: 'Enrollment Open',
+  bpharmTitle: 'B.Pharm (Top-Up)',
 
   // Course Detail Page
   coursePageSubtitle: 'Start your career in pharmacy with our comprehensive advanced certificate program.',
