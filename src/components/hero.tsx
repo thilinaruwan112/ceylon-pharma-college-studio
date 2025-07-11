@@ -10,19 +10,20 @@ import { ChevronDown } from 'lucide-react';
 export default function Hero() {
   const { t } = useTranslation();
   return (
-    <section className="relative h-[80vh] md:h-screen w-full flex items-center justify-center text-white">
+    <section className="relative h-[80vh] md:h-screen w-full">
       <video 
         autoPlay 
         loop 
         muted 
         playsInline 
-        className="absolute z-[-1] w-full h-full object-cover"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-2]"
       >
         <source src="https://www.pharmacollege.lk/assets/videos/hero-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/50 z-[-1]"></div>
-      <div className="container mx-auto px-4 md:px-6 text-center flex flex-col items-center">
+      
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
         <div className="mb-6">
           <Image
             src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
@@ -44,11 +45,12 @@ export default function Hero() {
             <Link href="#">{t('heroStudentLogin')}</Link>
           </Button>
         </div>
+        
+        <Link href="#courses" className="absolute bottom-10 animate-bounce bg-white/20 p-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors">
+          <ChevronDown className="h-6 w-6 text-white" />
+          <span className="sr-only">Scroll down</span>
+        </Link>
       </div>
-      <Link href="#courses" className="absolute bottom-10 animate-bounce bg-white/20 p-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors">
-        <ChevronDown className="h-6 w-6 text-white" />
-        <span className="sr-only">Scroll down</span>
-      </Link>
     </section>
   );
 }
