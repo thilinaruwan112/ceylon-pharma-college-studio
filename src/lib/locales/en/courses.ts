@@ -4,6 +4,11 @@ export const courses = {
   courseCatalogSubtitle: 'Choose from a range of programs designed to launch and advance your career in pharmacy.',
   courseCatalogEnrollmentOpen: 'Enrollment Open',
   bpharmTitle: 'B.Pharm (Top-Up)',
+  filterTitle: 'Filters',
+  filterCategory: 'Category',
+  filterPriceRange: 'Price Range',
+  noCoursesFoundTitle: 'No Courses Found',
+  noCoursesFoundSubtitle: 'Try adjusting your filters to find what you are looking for.',
 
   // Course Detail Page
   coursePageSubtitle: 'Start your career in pharmacy with our comprehensive advanced certificate program.',

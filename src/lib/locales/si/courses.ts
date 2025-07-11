@@ -3,6 +3,11 @@ export const courses = {
   courseCatalogSubtitle: 'ඔබේ ඖෂධවේදී වෘත්තිය දියත් කිරීමට සහ ඉදිරියට ගෙන යාමට නිර්මාණය කර ඇති වැඩසටහන් පරාසයකින් තෝරන්න.',
   courseCatalogEnrollmentOpen: 'ලියාපදිංචිය විවෘතයි',
   bpharmTitle: 'B.Pharm (ඉහළ නැංවීම)',
+  filterTitle: 'පෙරහන්',
+  filterCategory: 'ප්‍රවර්ගය',
+  filterPriceRange: 'මිල පරාසය',
+  noCoursesFoundTitle: 'පාඨමාලා සොයාගත නොහැකි විය',
+  noCoursesFoundSubtitle: 'ඔබ සොයන දේ සොයා ගැනීමට ඔබේ පෙරහන් සීරුමාරු කිරීමට උත්සාහ කරන්න.',
 
   coursePageSubtitle: 'අපගේ පුළුල් උසස් සහතික පත්‍ර වැඩසටහන සමඟ ඔබේ ඖෂධවේදී වෘත්තිය ආරම්භ කරන්න.',
   downloadSyllabus: 'විෂය නිර්දේශය බාගන්න',

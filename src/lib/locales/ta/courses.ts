@@ -3,6 +3,11 @@ export const courses = {
   courseCatalogSubtitle: 'உங்கள் மருந்தியல் வாழ்க்கையைத் தொடங்கவும் மேம்படுத்தவும் வடிவமைக்கப்பட்ட பலதரப்பட்ட திட்டங்களிலிருந்து தேர்வு செய்யவும்.',
   courseCatalogEnrollmentOpen: 'சேர்க்கை திறந்துள்ளது',
   bpharmTitle: 'B.Pharm (மேம்படுத்துதல்)',
+  filterTitle: 'வடிப்பான்கள்',
+  filterCategory: 'வகை',
+  filterPriceRange: 'விலை வரம்பு',
+  noCoursesFoundTitle: 'படிப்புகள் எதுவும் இல்லை',
+  noCoursesFoundSubtitle: 'நீங்கள் தேடுவதைக் கண்டுபிடிக்க உங்கள் வடிப்பான்களை சரிசெய்ய முயற்சிக்கவும்.',
 
   coursePageSubtitle: 'எங்கள் விரிவான மேம்பட்ட சான்றிதழ் திட்டத்துடன் மருந்தியல் துறையில் உங்கள் வாழ்க்கையைத் தொடங்குங்கள்.',
   downloadSyllabus: 'பாடத்திட்டத்தைப் பதிவிறக்கவும்',
