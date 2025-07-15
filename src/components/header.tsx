@@ -61,6 +61,7 @@ const mainNavConfig = {
     { key: 'home', href: '/' },
     { key: 'certificate', href: '/#verify' },
     { key: 'courses', href: '/courses' },
+    { key: 'reviews', href: '/reviews'},
   ],
   dropdowns: [
     {

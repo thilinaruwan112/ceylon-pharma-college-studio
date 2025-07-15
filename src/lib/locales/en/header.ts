@@ -14,6 +14,7 @@ export const header = {
   certificate: 'Certificate',
   departments: 'Departments',
   students: 'Students',
+  reviews: 'Reviews',
 
   // Dropdowns
   deptPharmaceutical: 'Pharmaceutical Sciences',

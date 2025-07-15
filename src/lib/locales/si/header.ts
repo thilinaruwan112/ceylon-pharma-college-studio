@@ -11,6 +11,7 @@ export const header = {
   certificate: 'සහතිකය',
   departments: 'දෙපාර්තමේන්තු',
   students: 'ශිෂ්‍යයන්',
+  reviews: 'සමාලෝචන',
   deptPharmaceutical: 'ඖෂධවේදී විද්‍යා',
   deptEnglish: 'ඉංග්‍රීසි',
   deptIct: 'තොරතුරු තාක්ෂණ',

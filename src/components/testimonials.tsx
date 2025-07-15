@@ -8,30 +8,8 @@ import { useTranslation } from "@/context/language-context";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import { PenSquare } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Nimali Fernando",
-    role: "Alumni, Class of 2022",
-    avatar: "NF",
-    image: "https://placehold.co/100x100.png",
-    quote: "The practical experience I gained at Ceylon Pharma College was invaluable. The faculty are not just teachers, but mentors who guided me every step of the way.",
-  },
-  {
-    name: "Sanjay Kumar",
-    role: "Current Student, Diploma Program",
-    avatar: "SK",
-    image: "https://placehold.co/100x100.png",
-    quote: "The learning environment is so supportive. The labs are modern and well-equipped, which makes learning engaging and fun. I'm confident about my future.",
-  },
-  {
-    name: "Dr. Aisha Rahman",
-    role: "Industry Partner, CEO of Medico Labs",
-    avatar: "AR",
-    image: "https://placehold.co/100x100.png",
-    quote: "Graduates from Ceylon Pharma College consistently demonstrate a high level of professionalism and knowledge. They are a great asset to our organization.",
-  },
-];
+import { reviewsData } from "@/lib/reviews-data";
+import ReviewCard from "./review-card";
 
 export default function Testimonials() {
   const { t } = useTranslation();
@@ -46,27 +24,13 @@ export default function Testimonials() {
         </div>
         <Carousel
           opts={{ align: "start", loop: true }}
-          className="w-full max-w-4xl mx-auto mt-12"
+          className="w-full max-w-5xl mx-auto mt-12"
         >
           <CarouselContent>
-            {testimonials.map((testimonial, index) => (
-              <CarouselItem key={index} className="md:basis-1/2">
-                <div className="p-1 h-full">
-                  <Card className="h-full bg-card">
-                    <CardContent className="flex flex-col items-center justify-center p-6 text-center h-full">
-                      <p className="font-body text-base text-muted-foreground italic flex-grow">"{testimonial.quote}"</p>
-                      <div className="mt-6 flex items-center gap-4">
-                        <Avatar>
-                          <AvatarImage src={testimonial.image} alt={testimonial.name} data-ai-hint="person portrait" />
-                          <AvatarFallback>{testimonial.avatar}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                          <p className="font-semibold font-body">{testimonial.name}</p>
-                          <p className="text-sm text-muted-foreground font-body">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+            {reviewsData.map((review, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-2 h-full">
+                  <ReviewCard review={review} />
                 </div>
               </CarouselItem>
             ))}
@@ -79,7 +43,7 @@ export default function Testimonials() {
             <Button asChild>
                 <Link href="/reviews/new">
                     <PenSquare className="mr-2 h-4 w-4" />
-                    Write a Review
+                    {t('writeReviewButton')}
                 </Link>
             </Button>
         </div>

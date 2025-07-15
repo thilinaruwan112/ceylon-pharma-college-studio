@@ -86,4 +86,9 @@ export const students = {
   examCourseDPP: 'Diploma in Pharmacy Practice',
   examCourseACP: 'Advanced Community Pharmacy',
   examCourseCPP: 'Certificate in Pharmacy Practice',
+
+  // Reviews
+  reviewsPageTitle: 'What Our Community Says',
+  reviewsPageSubtitle: 'Hear from our students, alumni, and partners who have experienced the Ceylon Pharma College difference.',
+  writeReviewButton: 'Write a Review',
 };
