@@ -97,3 +97,31 @@ export async function verifyCertificate(prevState: any, formData: FormData) {
     };
   }
 }
+
+const reviewSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  role: z.string().min(3, { message: "Role must be at least 3 characters." }),
+  rating: z.coerce.number().min(1, { message: "Please select a rating." }).max(5),
+  review: z.string().min(15, { message: "Review must be at least 15 characters." }),
+});
+
+export async function submitReview(prevState: any, formData: FormData) {
+  const validatedFields = reviewSchema.safeParse({
+    name: formData.get("name"),
+    role: formData.get("role"),
+    rating: formData.get("rating"),
+    review: formData.get("review"),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      errors: validatedFields.error.flatten().fieldErrors,
+      message: "Please correct the errors below.",
+    };
+  }
+  
+  // In a real application, you would save this to a database for moderation.
+  console.log("New Review Submitted:", validatedFields.data);
+
+  return { message: "Thank you for your review! It has been submitted for approval.", errors: null, data: validatedFields.data };
+}

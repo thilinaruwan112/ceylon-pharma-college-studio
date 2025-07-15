@@ -5,6 +5,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTranslation } from "@/context/language-context";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { PenSquare } from "lucide-react";
 
 const testimonials = [
   {
@@ -71,6 +74,15 @@ export default function Testimonials() {
           <CarouselPrevious className="hidden sm:flex" />
           <CarouselNext className="hidden sm:flex" />
         </Carousel>
+
+        <div className="mt-12 text-center">
+            <Button asChild>
+                <Link href="/reviews/new">
+                    <PenSquare className="mr-2 h-4 w-4" />
+                    Write a Review
+                </Link>
+            </Button>
+        </div>
       </div>
     </section>
   );
