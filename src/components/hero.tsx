@@ -34,7 +34,7 @@ export default function Hero() {
             priority
           />
         </div>
-        <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg tracking-wider leading-tight">
+        <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg leading-tight">
           {t('heroSloganLine1')}
           <br />
           {t('heroSloganLine2')}
