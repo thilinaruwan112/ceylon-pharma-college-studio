@@ -10,7 +10,7 @@ import { ChevronDown } from 'lucide-react';
 export default function Hero() {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full min-h-screen">
+    <section className="relative w-full h-[calc(100vh-7.5rem)]">
       <video 
         autoPlay 
         loop 
@@ -23,8 +23,8 @@ export default function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       
-      <div className="relative z-20 h-full min-h-screen flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
-        <div className="mb-6">
+      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
+        <div className="mb-4">
           <Image
             src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
             alt="Ceylon Pharma College Logo"
@@ -34,12 +34,12 @@ export default function Hero() {
             priority
           />
         </div>
-        <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg leading-tight">
+        <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg leading-tight tracking-wider">
           {t('heroSloganLine1')}
           <br />
           {t('heroSloganLine2')}
         </h1>
-        <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-bold w-48">
             <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('heroApplyNow')}</a>
           </Button>
