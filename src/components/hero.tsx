@@ -10,7 +10,7 @@ import { ChevronDown } from 'lucide-react';
 export default function Hero() {
   const { t } = useTranslation();
   return (
-    <section className="relative w-full h-screen">
+    <section className="relative w-full min-h-screen">
       <video 
         autoPlay 
         loop 
@@ -23,7 +23,7 @@ export default function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/50 z-10"></div>
       
-      <div className="relative z-20 h-full flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
+      <div className="relative z-20 h-full min-h-screen flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
         <div className="mb-6">
           <Image
             src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
@@ -39,14 +39,14 @@ export default function Hero() {
         </h1>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-bold w-48">
-            <Link href="/contact">{t('heroApplyNow')}</Link>
+            <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('heroApplyNow')}</a>
           </Button>
           <Button asChild size="lg" variant="accent" className="font-bold w-48">
-            <Link href="#">{t('heroStudentLogin')}</Link>
+            <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer">{t('heroStudentLogin')}</a>
           </Button>
         </div>
         
-        <Link href="#courses" className="absolute bottom-10 animate-bounce bg-white/20 p-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors">
+        <Link href="#courses" className="absolute bottom-10 animate-bounce bg-white/20 p-2 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors z-30">
           <ChevronDown className="h-6 w-6 text-white" />
           <span className="sr-only">Scroll down</span>
         </Link>

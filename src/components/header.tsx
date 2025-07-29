@@ -44,9 +44,9 @@ const TopBar = () => {
           </nav>
           <div className="flex h-full items-center">
             <LanguageSwitcher />
-            <Link href="#" className="flex h-full items-center px-4 text-xs font-medium transition-colors hover:bg-primary-foreground/10">
+            <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer" className="flex h-full items-center px-4 text-xs font-medium transition-colors hover:bg-primary-foreground/10">
               {t('login')}
-            </Link>
+            </a>
              <Button asChild className="h-full rounded-none bg-[#FFC72C] px-6 text-xs font-bold text-black hover:bg-[#FFC72C]/90">
                 <Link href="/contact">{t('contactUs')}</Link>
             </Button>
@@ -217,7 +217,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
                       {t(link.key as any)}
                   </Link>
                 ))}
-                 <Link href="#" onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">{t('login')}</Link>
+                 <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer" onClick={closeSheet} className="block py-1 text-foreground transition-colors hover:text-primary hover:underline">{t('login')}</a>
               </div>
           </div>
         </div>

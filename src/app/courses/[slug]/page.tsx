@@ -206,7 +206,9 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <h1 className="text-4xl md:text-5xl font-headline font-bold">{t(course.titleKey as any)}</h1>
             <p className="mt-2 text-lg text-primary-foreground/90 max-w-3xl">{t('coursePageSubtitle')}</p>
              <div className="mt-6 flex gap-4">
-                <Button size="lg" variant="secondary" className="font-bold">{t('enrollNow')}</Button>
+                <Button asChild size="lg" variant="secondary" className="font-bold">
+                    <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
+                </Button>
                 <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold">{t('downloadSyllabus')}</Button>
             </div>
         </div>
@@ -369,7 +371,9 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                                         ))}
                                     </ul>
                                 </div>
-                                <Button className="w-full mt-6 font-bold text-lg" size="lg">{t('enrollNow')}</Button>
+                                <Button asChild className="w-full mt-6 font-bold text-lg" size="lg">
+                                  <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
+                                </Button>
                                 <p className="text-xs text-center text-muted-foreground mt-2">{t('enrollNowSubtext')}</p>
 
                                 <div className="my-6 border-t"></div>
@@ -422,10 +426,11 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                 </div>
             </div>
             <p className="mt-12 font-headline text-lg">{t('startYourCareer')}</p>
-            <Button size="lg" variant="secondary" className="mt-4 font-bold">{t('applyNow')}</Button>
+            <Button asChild size="lg" variant="secondary" className="mt-4 font-bold">
+              <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
+            </Button>
         </div>
       </section>
     </div>
   );
 }
-
