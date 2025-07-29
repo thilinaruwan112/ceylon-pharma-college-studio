@@ -1,5 +1,5 @@
 export const footer = {
-  footerSlogan: 'Empowering the next generation of pharmaceutical professionals.',
+  footerSlogan: 'Learn, Play & Level up your Skill',
   quickLinks: 'Quick Links',
   footerHome: 'Home',
   footerAbout: 'About Us',

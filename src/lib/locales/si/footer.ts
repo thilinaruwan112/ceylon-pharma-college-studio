@@ -1,5 +1,5 @@
 export const footer = {
-  footerSlogan: 'เภสัช වෘත්තිකයන්ගේ මීළඟ පරම්පරාව සවිබල ගැන්වීම.',
+  footerSlogan: 'ඉගෙන ගන්න, ක්‍රීඩා කරන්න සහ ඔබේ කුසලතා වර්ධනය කරගන්න',
   quickLinks: 'ඉක්මන් සබැඳි',
   footerHome: 'මුල් පිටුව',
   footerAbout: 'අපි ගැන',
