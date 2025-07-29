@@ -35,7 +35,9 @@ export default function Hero() {
           />
         </div>
         <h1 className="text-4xl md:text-6xl font-headline font-bold drop-shadow-lg tracking-wider leading-tight">
-          {t('heroSlogan')}
+          {t('heroSloganLine1')}
+          <br />
+          {t('heroSloganLine2')}
         </h1>
         <div className="mt-8 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-bold w-48">

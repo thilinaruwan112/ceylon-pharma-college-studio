@@ -1,5 +1,6 @@
 export const home = {
-  heroSlogan: 'ඉගෙන ගන්න, ක්‍රීඩා කරන්න සහ ඔබේ කුසලතා වර්ධනය කරගන්න',
+  heroSloganLine1: 'ඉගෙන ගන්න, ක්‍රීඩා කරන්න සහ',
+  heroSloganLine2: 'ඔබේ කුසලතා වර්ධනය කරගන්න',
   heroApplyNow: 'දැන්ම අයදුම් කරන්න',
   heroStudentLogin: 'ශිෂ්‍ය පිවිසුම',
   heroLogoLine1: 'සිලෝන්',
