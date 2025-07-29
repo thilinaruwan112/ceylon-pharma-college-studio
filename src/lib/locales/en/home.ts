@@ -1,7 +1,6 @@
 export const home = {
   // Hero Section
-  heroTitle1: 'LEARNING TODAY',
-  heroTitle2: 'LEADING TOMORROW',
+  heroSlogan: 'Learn, Play & Level up your Skill',
   heroApplyNow: 'Apply Now',
   heroStudentLogin: 'Student Login',
   heroLogoLine1: 'CEYLON',

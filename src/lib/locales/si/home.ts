@@ -1,6 +1,5 @@
 export const home = {
-  heroTitle1: 'අද ඉගෙනුම',
-  heroTitle2: 'හෙට නායකත්වය',
+  heroSlogan: 'ඉගෙන ගන්න, ක්‍රීඩා කරන්න සහ ඔබේ කුසලතා වර්ධනය කරගන්න',
   heroApplyNow: 'දැන්ම අයදුම් කරන්න',
   heroStudentLogin: 'ශිෂ්‍ය පිවිසුම',
   heroLogoLine1: 'සිලෝන්',
