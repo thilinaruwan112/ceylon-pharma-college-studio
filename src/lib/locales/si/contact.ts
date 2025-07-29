@@ -1,3 +1,4 @@
+
 export const contact = {
   contactTitle: 'අප අමතන්න',
   contactSubtitle: "අපි උදව් කිරීමට මෙහි සිටිමු. ඕනෑම ප්‍රශ්නයක් හෝ විමසීමක් සමඟ අප හා සම්බන්ධ වන්න.",
@@ -5,6 +6,11 @@ export const contact = {
   contactInfoGetInTouch: 'සම්බන්ධ වන්න',
   contactInfoOurLocations: 'අපගේ ස්ථාන',
   contactInfoViewMap: 'ගූගල් සිතියම් මත බලන්න',
+  contactHeadOffice: 'ප්‍රධාන කාර්යාලය',
+  contactHeadOfficeAddress: 'සිලෝන් ෆාමා විද්‍යාලය (පුද්) සමාගම, L35, බටහිර කුළුණ, ලෝක වෙළඳ මධ්‍යස්ථානය, කොළඹ 01, ශ්‍රී ලංකාව',
+  contactOperationsBranch: 'මෙහෙයුම් ශාඛාව',
+  contactOperationsBranchAddress: 'මිදිගහමුල්ල, පැල්මඩුල්ල',
+
   inquiryFormTitle: 'ප්‍රශ්නයක් තිබේද?',
   inquiryFormSubtitle: "පහත පෝරමය පුරවන්න, අපි හැකි ඉක්මනින් ඔබ හා සම්බන්ධ වන්නෙමු.",
   inquiryFormNamePlaceholder: 'ඔබගේ නම',

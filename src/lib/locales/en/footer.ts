@@ -1,3 +1,4 @@
+
 export const footer = {
   footerSlogan: 'Learn, Play & Level up your Skill',
   quickLinks: 'Quick Links',
@@ -7,9 +8,9 @@ export const footer = {
   footerContact: 'Contact',
   footerVerify: 'Verify Certificate',
   footerContactUs: 'Contact Us',
-  footerAddress: '123 Pharma Street, Colombo, Sri Lanka',
+  footerAddress: 'L35, West Tower, World Trade Center, Colombo 01',
   footerEmail: 'Email: ',
-  footerPhone: 'Phone: ',
+  footerPhone: 'Customer Service: ',
   copyright: '© {year} Ceylon Pharma College Hub. All Rights Reserved.',
   poweredBy: 'Powered by ',
 };

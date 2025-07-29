@@ -48,8 +48,8 @@ export default function Footer() {
           <h4 className="font-headline text-base font-semibold text-foreground">{t('footerContactUs')}</h4>
           <div className="text-sm font-body space-y-1">
             <p>{t('footerAddress')}</p>
-            <p>{t('footerEmail')}<a href="mailto:info@ceylonpharma.lk" className="hover:text-primary transition-colors">info@ceylonpharma.lk</a></p>
-            <p>{t('footerPhone')}<a href="tel:+94112345678" className="hover:text-primary transition-colors">+94 11 234 5678</a></p>
+            <p>{t('footerEmail')}<a href="mailto:info@pharmacollege.lk" className="hover:text-primary transition-colors">info@pharmacollege.lk</a></p>
+            <p>{t('footerPhone')}<a href="tel:0117494335" className="hover:text-primary transition-colors">011 74 94 335</a></p>
           </div>
           <div className="flex items-center gap-4 mt-2">
             <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></a>

@@ -7,25 +7,20 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 
 const contactInfo = {
-  phone: ['+94 11 234 5678', '+94 77 123 4567'],
-  email: ['info@ceylonpharma.lk', 'admissions@ceylonpharma.lk'],
+  phone: ['011 74 94 335', '0715 884 884'],
+  email: ['info@pharmacollege.lk'],
 };
 
 const locations = [
   {
-    name: 'Colombo Head Office',
-    address: '123 Pharma Street, Colombo 08, Sri Lanka',
-    mapLink: 'https://www.google.com/maps/search/?api=1&query=Ceylon+Pharma+College+Colombo',
+    name: 'contactHeadOffice',
+    address: 'contactHeadOfficeAddress',
+    mapLink: 'https://www.google.com/maps/search/?api=1&query=World+Trade+Center+Colombo',
   },
   {
-    name: 'Kandy Branch',
-    address: '456 Lake Road, Kandy, Sri Lanka',
-    mapLink: 'https://www.google.com/maps/search/?api=1&query=Pharmacy+Kandy',
-  },
-  {
-    name: 'Galle Branch',
-    address: '789 Fort Street, Galle, Sri Lanka',
-    mapLink: 'https://www.google.com/maps/search/?api=1&query=Pharmacy+Galle',
+    name: 'contactOperationsBranch',
+    address: 'contactOperationsBranchAddress',
+    mapLink: 'https://www.google.com/maps/search/?api=1&query=Pelmadulla',
   },
 ];
 
@@ -58,8 +53,8 @@ const ContactDetails = () => {
           <div className="space-y-6 pl-9">
             {locations.map((location) => (
               <div key={location.name}>
-                <h4 className="font-semibold text-foreground">{location.name}</h4>
-                <p className="text-muted-foreground">{location.address}</p>
+                <h4 className="font-semibold text-foreground">{t(location.name as any)}</h4>
+                <p className="text-muted-foreground">{t(location.address as any)}</p>
                 <a
                   href={location.mapLink}
                   target="_blank"

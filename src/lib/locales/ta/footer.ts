@@ -1,3 +1,4 @@
+
 export const footer = {
   footerSlogan: 'கற்றுக்கொள்ளுங்கள், விளையாடுங்கள் மற்றும் உங்கள் திறமையை மேம்படுத்துங்கள்',
   quickLinks: 'விரைவு இணைப்புகள்',
@@ -7,9 +8,9 @@ export const footer = {
   footerContact: 'தொடர்பு',
   footerVerify: 'சான்றிதழைச் சரிபார்க்கவும்',
   footerContactUs: 'தொடர்பு கொள்ள',
-  footerAddress: '123 பார்மா தெரு, கொழும்பு, இலங்கை',
+  footerAddress: 'L35, மேற்கு கோபுரம், உலக வர்த்தக மையம், கொழும்பு 01',
   footerEmail: 'மின்னஞ்சல்: ',
-  footerPhone: 'தொலைபேசி: ',
+  footerPhone: 'வாடிக்கையாளர் சேவை: ',
   copyright: '© {year} சிலோன் பார்மா கல்லூரி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
   poweredBy: 'ஆதரவுடன் ',
 };
