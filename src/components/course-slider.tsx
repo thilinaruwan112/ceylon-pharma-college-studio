@@ -1,60 +1,61 @@
 
 "use client";
 
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
+import { Skeleton } from './ui/skeleton';
 
-const courses = [
-  {
-    title: "Diploma in Pharmacy Practice",
-    slug: "diploma-in-pharmacy-practice",
-    image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
-    price: "2,500.00",
-    hint: "student pharmacist smiling"
-  },
-  {
-    title: "Advanced Community Pharmacy",
-    slug: "advanced-community-pharmacy",
-    image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
-    price: "10,000.00",
-    hint: "woman pharmacist teaching"
-  },
-  {
-    title: "Pharmaceutical Compounding",
-    slug: "advanced-community-pharmacy", // placeholder
-    image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
-    price: "15,000.00",
-    hint: "pharmacist lab coat"
-  },
-  {
-    title: "Clinical Pharmacology",
-    slug: "diploma-in-pharmacy-practice", // placeholder
-    image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
-    price: "15,000.00",
-    hint: "woman pharmacist glasses"
-  },
-  {
-    title: "Hospital Pharmacy Management",
-    slug: "advanced-community-pharmacy", // placeholder
-    image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
-    price: "15,000.00",
-    hint: "pharmacist working"
-  },
-    {
-    title: "Advanced Pharmacy Degree",
-    slug: "diploma-in-pharmacy-practice", // placeholder
-    image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
-    price: "20,000.00",
-    hint: "pharmacist smiling"
-  },
-];
+interface Course {
+  id: string;
+  course_name: string;
+  course_code: string;
+  course_fee: string;
+  course_img: string;
+  slug: string;
+}
+
+const CourseCardSkeleton = () => (
+    <div className="p-1 h-full">
+        <Card className="overflow-hidden h-full flex flex-col">
+            <CardContent className="p-0 flex flex-col flex-grow">
+                <Skeleton className="aspect-square w-full" />
+                <div className="p-4 bg-card border-t flex flex-col flex-grow">
+                    <Skeleton className="h-6 w-3/4" />
+                    <div className="flex-grow" />
+                    <div className="flex justify-between items-center mt-4">
+                        <Skeleton className="h-8 w-1/2" />
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
+    </div>
+);
 
 export default function CourseSlider() {
   const { t } = useTranslation();
+  const [courses, setCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        const response = await fetch('https://qa-api.pharmacollege.lk/parent-main-course');
+        const data = await response.json();
+        setCourses(data);
+      } catch (error) {
+        console.error("Failed to fetch courses:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchCourses();
+  }, []);
+
   return (
     <section id="courses" className="w-full py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6">
@@ -67,40 +68,48 @@ export default function CourseSlider() {
         <Carousel
           opts={{
             align: "start",
-            loop: true,
+            loop: courses.length > 4,
           }}
           className="w-full"
         >
           <CarouselContent className="-ml-2">
-            {courses.map((course, index) => (
-              <CarouselItem key={index} className="pl-2 basis-3/4 md:basis-[43.5%] lg:basis-[30.3%] xl:basis-[23.25%]">
-                <Link href={`/courses/${course.slug}`} className="block h-full group">
-                  <div className="p-1 h-full">
-                    <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
-                      <CardContent className="p-0 flex flex-col flex-grow">
-                        <div className="relative aspect-square">
-                          <Image
-                            src={course.image}
-                            alt={course.title}
-                            fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={course.hint}
-                          />
-                        </div>
-                        <div className="p-4 bg-card border-t flex flex-col flex-grow">
-                          <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.title}</h3>
-                          <div className="flex-grow" />
-                          <div className="flex justify-between items-center mt-4">
-                            <p className="font-bold text-lg font-body text-primary">LKR {course.price}</p>
-                            <ArrowRight className="h-5 w-5 text-primary opacity-0 transform -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+            {loading ? (
+              Array.from({ length: 5 }).map((_, index) => (
+                <CarouselItem key={index} className="pl-2 basis-3/4 md:basis-[43.5%] lg:basis-[30.3%] xl:basis-[23.25%]">
+                  <CourseCardSkeleton />
+                </CarouselItem>
+              ))
+            ) : (
+              courses.map((course) => (
+                <CarouselItem key={course.id} className="pl-2 basis-3/4 md:basis-[43.5%] lg:basis-[30.3%] xl:basis-[23.25%]">
+                  <Link href={`/courses/${course.slug}`} className="block h-full group">
+                    <div className="p-1 h-full">
+                      <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+                        <CardContent className="p-0 flex flex-col flex-grow">
+                          <div className="relative aspect-square">
+                            <Image
+                              src={`https://content-provider.pharmacollege.lk/courses/${course.course_code}/${course.course_img}`}
+                              alt={course.course_name}
+                              fill
+                              className="object-cover transition-transform duration-300 group-hover:scale-105"
+                              data-ai-hint="pharmacist student"
+                            />
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </Link>
-              </CarouselItem>
-            ))}
+                          <div className="p-4 bg-card border-t flex flex-col flex-grow">
+                            <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.course_name}</h3>
+                            <div className="flex-grow" />
+                            <div className="flex justify-between items-center mt-4">
+                              <p className="font-bold text-lg font-body text-primary">LKR {parseFloat(course.course_fee).toLocaleString()}</p>
+                              <ArrowRight className="h-5 w-5 text-primary opacity-0 transform -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))
+            )}
           </CarouselContent>
           <CarouselPrevious className="hidden sm:flex" />
           <CarouselNext className="hidden sm:flex" />
