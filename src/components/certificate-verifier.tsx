@@ -299,6 +299,7 @@ export default function CertificateVerifier() {
   const handleBack = () => {
       if (view === 'details') {
           setView('enrollments');
+          setSelectedEnrollment(null);
       } else if (view === 'enrollments') {
           setView('search');
           setQuery('');
@@ -311,31 +312,27 @@ export default function CertificateVerifier() {
   return (
     <section id="verify" className="bg-primary py-16 md:py-24 text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6 text-center">
-            {view === 'search' && (
-              <>
-                <div className="mb-6">
-                  <Image
-                    src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
-                    alt="Ceylon Pharma College Logo"
-                    width={200}
-                    height={62}
-                    className="brightness-0 invert mx-auto"
-                    priority
-                  />
-                </div>
-                <h2 className="text-4xl md:text-5xl font-headline font-bold">
-                    {t('certVerifierTitle')}
-                </h2>
-                <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
-                    {t('certVerifierSubtitle')}
-                </p>
-              </>
-            )}
+            <div className="mb-6">
+              <Image
+                src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+                alt="Ceylon Pharma College Logo"
+                width={200}
+                height={62}
+                className="brightness-0 invert mx-auto"
+                priority
+              />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold">
+                {t('certVerifierTitle')}
+            </h2>
+            <p className="mt-4 text-lg text-primary-foreground/90 max-w-2xl mx-auto">
+                {t('certVerifierSubtitle')}
+            </p>
 
-            <div className="mt-8 max-w-xl mx-auto">
+            <div className="mt-8 max-w-xl mx-auto relative">
               {(view === 'enrollments' || view === 'details') && (
-                <Button variant="ghost" onClick={handleBack} className="absolute top-4 left-4 text-primary-foreground hover:bg-primary-foreground/10">
-                  <ArrowLeft className="mr-2 h-4 w-4"/> Back to search
+                <Button variant="ghost" onClick={handleBack} className="absolute -top-8 left-0 text-primary-foreground hover:bg-primary-foreground/10">
+                  <ArrowLeft className="mr-2 h-4 w-4"/> Back
                 </Button>
               )}
                 
@@ -382,3 +379,4 @@ export default function CertificateVerifier() {
     </section>
   );
 }
+
