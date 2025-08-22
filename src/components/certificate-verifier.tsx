@@ -41,19 +41,19 @@ const SearchResults = ({ students, loading }: { students: Student[]; loading: bo
             {students.map((student) => {
                  const resultUrl = `/result-view?CourseCode=${student.batch_id}&LoggedUser=${student.username}`;
                  return (
-                    <Link href={resultUrl} key={student.id} className="flex items-center gap-4 p-3 rounded-lg bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 transition-colors">
-                        <Avatar className="h-10 w-10 border-2 border-primary-foreground/20">
+                    <Link href={resultUrl} key={student.id} className="flex items-center gap-4 p-3 rounded-lg bg-background text-foreground hover:bg-muted transition-colors">
+                        <Avatar className="h-10 w-10 border-2 border-border">
                             <AvatarImage src={`https://placehold.co/100x100.png`} alt={`${student.fname} ${student.lname}`} />
                             <AvatarFallback>
-                                <User className="text-primary-foreground/50" />
+                                <User className="text-muted-foreground" />
                             </AvatarFallback>
                         </Avatar>
                         <div className="flex-grow flex items-center gap-4">
                             <p className="font-bold w-24">{student.username}</p>
-                            <div className="w-px h-6 bg-primary-foreground/30"></div>
+                            <div className="w-px h-6 bg-border"></div>
                             <p className="font-bold">{`${student.fname} ${student.lname}`}</p>
                         </div>
-                        <ChevronRight className="h-5 w-5 text-primary-foreground/70" />
+                        <ChevronRight className="h-5 w-5 text-muted-foreground" />
                     </Link>
                  )
             })}
