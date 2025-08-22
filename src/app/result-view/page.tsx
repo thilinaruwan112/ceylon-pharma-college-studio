@@ -53,15 +53,13 @@ interface ApiResponse {
 function ResultsViewComponent() {
     const searchParams = useSearchParams();
     const router = useRouter();
-    const courseCodeParam = searchParams.get('CourseCode');
+    const courseCode = searchParams.get('CourseCode');
     const loggedUser = searchParams.get('LoggedUser');
     const { t } = useTranslation();
 
     const [studentData, setStudentData] = useState<ApiResponse | null>(null);
     const [loading, setLoading] = useState(true);
 
-    // Construct the course code key to look for in the enrollments object
-    const courseCode = courseCodeParam ? `CPCC${courseCodeParam}` : null;
 
     useEffect(() => {
         if (!loggedUser) {
@@ -117,7 +115,7 @@ function ResultsViewComponent() {
                         </CardHeader>
                         <CardContent className="space-y-4">
                            <p className="text-muted-foreground">
-                                Student <span className="font-bold text-foreground">{studentData.studentInfo.name_on_certificate}</span> (ID: {loggedUser}) exists, but is not enrolled in course code <span className="font-bold text-foreground">{courseCodeParam}</span>.
+                                Student <span className="font-bold text-foreground">{studentData.studentInfo.name_on_certificate}</span> (ID: {loggedUser}) exists, but is not enrolled in course code <span className="font-bold text-foreground">{courseCode}</span>.
                            </p>
                             <Button onClick={() => router.push(`/transcript?LoggedUser=${loggedUser}`)}>View Student Transcript</Button>
                         </CardContent>
