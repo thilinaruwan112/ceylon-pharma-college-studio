@@ -13,7 +13,7 @@ export const home = {
   // Certificate Verifier
   certVerifierTitle: 'Certificate Verification',
   certVerifierSubtitle: 'Secure, Fast, and Reliable: Verify your certificates with ease through our online platform.',
-  certVerifierInputPlaceholder: 'Enter your Certificate Number. Eg: CPC2023001',
+  certVerifierInputPlaceholder: 'Enter your student number or name',
   certVerifierButton: 'Verify Certificate',
   certVerifierDescription: "The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number, users can instantly access verified information such as the student's name, course title, and status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.",
   
