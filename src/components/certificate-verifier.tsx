@@ -48,9 +48,10 @@ const SearchResults = ({ students, loading }: { students: Student[]; loading: bo
                                 <User className="text-primary-foreground/50" />
                             </AvatarFallback>
                         </Avatar>
-                        <div className="flex-grow">
+                        <div className="flex-grow flex items-center gap-4">
+                            <p className="font-bold w-24">{student.username}</p>
+                            <div className="w-px h-6 bg-primary-foreground/30"></div>
                             <p className="font-bold">{`${student.fname} ${student.lname}`}</p>
-                            <p className="text-sm text-primary-foreground/80">{student.username}</p>
                         </div>
                         <ChevronRight className="h-5 w-5 text-primary-foreground/70" />
                     </Link>
@@ -136,7 +137,7 @@ export default function CertificateVerifier() {
                 {t('certVerifierSubtitle')}
             </p>
 
-            <div className="mt-8 max-w-xl mx-auto">
+            <div className="mt-8 max-w-xl text-left">
                 <div className="relative">
                   <Input 
                     name="certificateNumber" 
