@@ -63,43 +63,57 @@ const SearchResults = ({ students, loading }: { students: Student[]; loading: bo
 
 export default function CertificateVerifier() {
   const [query, setQuery] = useState('');
-  const [students, setStudents] = useState<Student[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [allStudents, setAllStudents] = useState<Student[]>([]);
+  const [filteredStudents, setFilteredStudents] = useState<Student[]>([]);
+  const [loading, setLoading] = useState(true);
   const { t } = useTranslation();
 
-  const fetchStudents = useCallback(async (searchQuery: string) => {
+  useEffect(() => {
+    async function fetchAllStudents() {
+        try {
+            const response = await fetch('https://qa-api.pharmacollege.lk/users');
+            const data: Student[] = await response.json();
+            setAllStudents(data);
+        } catch (error) {
+            console.error("Failed to fetch students:", error);
+        } finally {
+            setLoading(false);
+        }
+    }
+    fetchAllStudents();
+  }, []);
+
+  const filterStudents = useCallback((searchQuery: string) => {
     if (searchQuery.trim().length < 2) {
-      setStudents([]);
+      setFilteredStudents([]);
       return;
     }
-    setLoading(true);
-    try {
-      const response = await fetch('https://qa-api.pharmacollege.lk/users');
-      const data: Student[] = await response.json();
-      const lowerCaseQuery = searchQuery.toLowerCase();
-      const filtered = data.filter(student =>
-        (student.fname && student.fname.toLowerCase().includes(lowerCaseQuery)) ||
-        (student.lname && student.lname.toLowerCase().includes(lowerCaseQuery)) ||
-        (student.username && student.username.toLowerCase().includes(lowerCaseQuery))
-      );
-      setStudents(filtered);
-    } catch (error) {
-      console.error("Failed to fetch students:", error);
-      setStudents([]);
-    } finally {
-      setLoading(false);
+    
+    const lowerCaseQuery = searchQuery.toLowerCase();
+    const results: Student[] = [];
+
+    for (const student of allStudents) {
+        if (results.length >= 5) {
+            break;
+        }
+        const fullName = `${student.fname || ''} ${student.lname || ''}`.toLowerCase();
+        const username = (student.username || '').toLowerCase();
+
+        if (fullName.includes(lowerCaseQuery) || username.includes(lowerCaseQuery)) {
+            results.push(student);
+        }
     }
-  }, []);
+    setFilteredStudents(results);
+  }, [allStudents]);
   
-  const debouncedFetchStudents = useCallback(debounce(fetchStudents, 300), [fetchStudents]);
+  const debouncedFilterStudents = useCallback(debounce(filterStudents, 300), [filterStudents]);
 
   useEffect(() => {
-    debouncedFetchStudents(query);
-    // Cleanup debounce on component unmount
+    debouncedFilterStudents(query);
     return () => {
-      debouncedFetchStudents.cancel();
+      debouncedFilterStudents.cancel();
     };
-  }, [query, debouncedFetchStudents]);
+  }, [query, debouncedFilterStudents]);
 
 
   return (
@@ -131,11 +145,12 @@ export default function CertificateVerifier() {
                     className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-14 pr-14 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50"
                     onChange={(e) => setQuery(e.target.value)}
                     value={query}
+                    disabled={loading}
                   />
                   <Search className="h-6 w-6 absolute left-5 top-1/2 -translate-y-1/2 text-primary/70" />
                    {loading && <Loader2 className="h-6 w-6 absolute right-5 top-1/2 -translate-y-1/2 text-primary/70 animate-spin" />}
                 </div>
-                {query && <SearchResults students={students} loading={loading} />}
+                {query && <SearchResults students={filteredStudents} loading={false} />}
             </div>
 
             <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
