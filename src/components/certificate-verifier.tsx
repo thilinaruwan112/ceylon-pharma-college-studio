@@ -1,30 +1,64 @@
 
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useState, useMemo, ChangeEvent } from "react";
 import Image from 'next/image';
-import { verifyCertificate } from "@/app/actions";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 import { Input } from "@/components/ui/input";
-import { XCircle, Search, Loader2 } from "lucide-react";
+import { Search, User, ChevronRight } from "lucide-react";
 import { useTranslation } from "@/context/language-context";
-import CertificateResultCard from "./certificate-result-card";
+import { studentResultsData } from "@/lib/student-data";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  const { t } = useTranslation();
-  return (
-    <Button type="submit" disabled={pending} size="icon" className="absolute right-1 top-1/2 h-10 w-10 -translate-y-1/2 rounded-lg bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-      {pending ? <Loader2 className="h-5 w-5 animate-spin" /> : <Search className="h-5 w-5" />}
-      <span className="sr-only">{t('certVerifierButton')}</span>
-    </Button>
-  );
+interface Student {
+    studentId: string;
+    studentName: string;
+    userName: string;
+    avatar: string;
+    courseName: string;
+    batchCode: string;
 }
 
+const SearchResults = ({ students }: { students: Student[] }) => (
+    <div className="mt-4 space-y-2 max-h-80 overflow-y-auto animate-in fade-in-50">
+        {students.map((student) => {
+             const resultUrl = `/result-view?CourseCode=${student.batchCode}&LoggedUser=${student.userName}`;
+             return (
+                <Link href={resultUrl} key={student.studentId} className="flex items-center gap-4 p-3 rounded-lg bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 transition-colors">
+                    <Avatar className="h-10 w-10 border-2 border-primary-foreground/20">
+                        <AvatarImage src={student.avatar} alt={student.studentName} />
+                        <AvatarFallback>
+                            <User className="text-primary-foreground/50" />
+                        </AvatarFallback>
+                    </Avatar>
+                    <div className="flex-grow">
+                        <p className="font-bold">{student.studentId}</p>
+                        <p className="text-sm text-primary-foreground/80">{student.studentName}</p>
+                    </div>
+                    <ChevronRight className="h-5 w-5 text-primary-foreground/70" />
+                </Link>
+             )
+        })}
+    </div>
+);
+
+
 export default function CertificateVerifier() {
-  const [state, formAction] = useActionState(verifyCertificate, { message: "", status: "", errors: null, data: null });
+  const [query, setQuery] = useState('');
   const { t } = useTranslation();
+
+  const filteredStudents = useMemo(() => {
+    if (!query) return [];
+    const lowerCaseQuery = query.toLowerCase();
+    return studentResultsData.filter(student => 
+        student.studentName.toLowerCase().includes(lowerCaseQuery) || 
+        student.studentId.toLowerCase().includes(lowerCaseQuery)
+    );
+  }, [query]);
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+      setQuery(e.target.value);
+  }
 
   return (
     <section id="verify" className="bg-primary py-16 md:py-24 text-primary-foreground">
@@ -46,33 +80,20 @@ export default function CertificateVerifier() {
                 {t('certVerifierSubtitle')}
             </p>
 
-            <form action={formAction} className="mt-8 max-w-xl mx-auto">
+            <div className="mt-8 max-w-xl mx-auto">
                 <div className="relative">
                   <Input 
                     name="certificateNumber" 
                     placeholder={t('certVerifierInputPlaceholder')} 
-                    required 
                     aria-label={t('certVerifierButton')}
-                    className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-6 pr-16 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50"
+                    className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-14 pr-6 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50"
+                    onChange={handleInputChange}
+                    value={query}
                   />
-                  <SubmitButton />
+                  <Search className="h-6 w-6 absolute left-5 top-1/2 -translate-y-1/2 text-primary/70" />
                 </div>
-                {state.errors?.certificateNumber && <p className="text-sm font-medium text-yellow-300 pt-2">{state.errors.certificateNumber[0]}</p>}
-            </form>
-            
-            <div className="mt-6 max-w-xl mx-auto">
-              {state.status === 'success' && state.data && <CertificateResultCard data={state.data} />}
-
-              {state.status === 'error' && state.message && (
-                  <div className="inline-flex items-center gap-2 rounded-md px-4 py-2 bg-red-500/20">
-                      <XCircle className="h-5 w-5" />
-                      <p className="font-body text-base font-medium text-primary-foreground">
-                          {state.message}
-                      </p>
-                  </div>
-              )}
+                {query && <SearchResults students={filteredStudents} />}
             </div>
-
 
             <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
                 {t('certVerifierDescription')}

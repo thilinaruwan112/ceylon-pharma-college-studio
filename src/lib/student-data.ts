@@ -1,8 +1,8 @@
 
 export const studentResultsData = [
     {
-        studentId: "STU001",
-        studentName: "A. K. D. Jayesinghe",
+        studentId: "PAIS002",
+        studentName: "Thilina Ruwan",
         userName: "akd.jayesinghe",
         avatar: "https://placehold.co/100x100.png",
         courseName: "Diploma in Pharmacy Practice",
@@ -20,8 +20,8 @@ export const studentResultsData = [
         ],
     },
     {
-        studentId: "STU002",
-        studentName: "Nimali Fernando",
+        studentId: "PA0107",
+        studentName: "Chanaka Pathirage",
         userName: "n.fernando",
         avatar: "https://placehold.co/100x100.png",
         courseName: "Advanced Community Pharmacy",
@@ -38,8 +38,8 @@ export const studentResultsData = [
         ],
     },
     {
-        studentId: "STU003",
-        studentName: "Sanjay Kumar",
+        studentId: "PA0106",
+        studentName: "Janaka Sanjeewa",
         userName: "s.kumar",
         avatar: "https://placehold.co/100x100.png",
         courseName: "Certificate in Pharmacy Practice",
@@ -55,7 +55,7 @@ export const studentResultsData = [
         ],
     },
     {
-        studentId: "STU004",
+        studentId: "CPCC18",
         studentName: "P. A. Weerasinghe",
         userName: "PA19702",
         avatar: "https://placehold.co/100x100.png",
@@ -71,4 +71,41 @@ export const studentResultsData = [
             { module: "Customer Service in Pharmacy", attempt: 1, grade: "B" },
         ],
     },
+    {
+        studentId: "PA0105",
+        studentName: "Aravinda Maththes",
+        userName: "a.maththes",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Diploma in Pharmacy Practice",
+        courseSlug: "diploma-in-pharmacy-practice",
+        courseDescription: "A foundational course designed to equip students with the essential knowledge and skills required for a successful career in pharmacy.",
+        batchCode: "DPP2022AUG",
+        issueDate: "2023-07-10",
+        overallGrade: "Pass",
+        results: [
+            { module: "Introduction to Pharmacy", attempt: 1, grade: "C" },
+            { module: "Basic Pharmacology", attempt: 1, grade: "B-" },
+            { module: "Pharmaceutical Calculations", attempt: 2, grade: "C+" },
+            { module: "Pharmacy Law and Ethics", attempt: 1, grade: "B" },
+            { module: "Patient Counseling", attempt: 1, grade: "B-" },
+        ],
+    },
+    {
+        studentId: "PAIS003",
+        studentName: "Kumara Fonseka",
+        userName: "k.fonseka",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Advanced Community Pharmacy",
+        courseSlug: "advanced-community-pharmacy",
+        courseDescription: "This program builds on foundational knowledge to develop expertise in pharmacy practice, advanced therapeutics, and pharmaceutical management.",
+        batchCode: "ACP2023JAN",
+        issueDate: "2024-02-15",
+        overallGrade: "Distinction",
+        results: [
+            { module: "Advanced Therapeutics", attempt: 1, grade: "A" },
+            { module: "Community Health Management", attempt: 1, grade: "A" },
+            { module: "Pharmacoeconomics", attempt: 1, grade: "A-" },
+            { module: "Clinical Research", attempt: 1, grade: "A" },
+        ],
+    }
 ];
