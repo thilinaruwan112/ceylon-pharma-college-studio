@@ -137,7 +137,7 @@ export default function CertificateVerifier() {
                 {t('certVerifierSubtitle')}
             </p>
 
-            <div className="mt-8 max-w-xl text-left">
+            <div className="mt-8 max-w-xl mx-auto text-left">
                 <div className="relative">
                   <Input 
                     name="certificateNumber" 
