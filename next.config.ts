@@ -42,7 +42,7 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https'
+        protocol: 'https',
         hostname: 'pharmacollege.lk',
         port: '',
         pathname: '/**',
