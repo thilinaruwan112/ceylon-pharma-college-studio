@@ -8,9 +8,22 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { CheckCircle, XCircle, FileText, GraduationCap } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
-import { studentResultsData } from '@/lib/student-data';
 import { Button } from '@/components/ui/button';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+
+// This is a placeholder type. In a real app, this should be defined
+// based on the actual API response for a single student's full details.
+interface StudentDetails {
+    studentName: string;
+    studentId: string;
+    avatar: string;
+    courseName: string;
+    courseDescription: string;
+    courseSlug: string;
+    overallGrade: string;
+    issueDate: string;
+}
+
 
 function ResultsViewComponent() {
     const searchParams = useSearchParams();
@@ -19,11 +32,36 @@ function ResultsViewComponent() {
     const loggedUser = searchParams.get('LoggedUser');
     const { t } = useTranslation();
 
-    const studentData = studentResultsData.find(
-        (student) => student.userName === loggedUser && student.batchCode === courseCode
-    );
+    // The student data would be fetched from an API based on the params
+    // For now, we'll use a placeholder structure.
+    const [studentData, setStudentData] = useState<StudentDetails | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      // In a real app, you would fetch student details here.
+      // Simulating a fetch with a placeholder.
+      if (loggedUser && courseCode) {
+         setStudentData({
+            studentName: "Student Name", // Placeholder
+            studentId: loggedUser, // from URL
+            avatar: "https://placehold.co/100x100.png",
+            courseName: "Course Name", // Placeholder
+            courseDescription: "Course Description", // Placeholder
+            courseSlug: "diploma-in-pharmacy-practice", // Placeholder
+            overallGrade: "Distinction", // Placeholder
+            issueDate: new Date().toLocaleDateString(), // Placeholder
+        });
+      }
+      setLoading(false);
+    }, [loggedUser, courseCode]);
+
+
+    if (loading) {
+        return <div className="container mx-auto text-center py-24">Loading student results...</div>;
+    }
 
     if (!studentData) {
+        // This can be triggered if the API call fails or returns no data.
         return notFound();
     }
     
@@ -162,7 +200,7 @@ function ResultsViewComponent() {
 
 export default function ResultsViewPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
             <ResultsViewComponent />
         </Suspense>
     )

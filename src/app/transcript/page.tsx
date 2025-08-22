@@ -10,8 +10,24 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { FileDown, Printer } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
-import { studentResultsData } from '@/lib/student-data';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
+
+// Placeholder types, should be defined based on actual API response
+interface Result {
+  module: string;
+  attempt: number;
+  grade: string;
+}
+interface StudentDetails {
+    studentName: string;
+    studentId: string;
+    avatar: string;
+    courseName: string;
+    batchCode: string;
+    overallGrade: string;
+    issueDate: string;
+    results: Result[];
+}
 
 function TranscriptComponent() {
     const searchParams = useSearchParams();
@@ -19,10 +35,35 @@ function TranscriptComponent() {
     const loggedUser = searchParams.get('LoggedUser');
     const { t } = useTranslation();
 
-    const studentData = studentResultsData.find(
-        (student) => student.userName === loggedUser && student.batchCode === courseCode
-    );
+    const [studentData, setStudentData] = useState<StudentDetails | null>(null);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        // In a real app, you would fetch student details here from your API
+        // Simulating a fetch with a placeholder.
+        if (loggedUser && courseCode) {
+            setStudentData({
+                studentName: "P. A. Weerasinghe", // Placeholder
+                studentId: "CPCC18", // Placeholder
+                avatar: "https://placehold.co/100x100.png",
+                courseName: "Certificate in Pharmacy Practice", // Placeholder
+                batchCode: courseCode,
+                overallGrade: "Referred", // Placeholder
+                issueDate: new Date().toLocaleDateString(), // Placeholder
+                results: [ // Placeholder
+                    { module: "Fundamentals of Pharmacy", attempt: 1, grade: "C" },
+                    { module: "Dispensing Practice", attempt: 1, grade: "F" },
+                    { module: "Customer Service in Pharmacy", attempt: 1, grade: "B" },
+                ],
+            });
+        }
+        setLoading(false);
+    }, [loggedUser, courseCode]);
+
+    if (loading) {
+        return <div className="container mx-auto text-center py-24">Loading transcript...</div>;
+    }
+    
     if (!studentData) {
         return notFound();
     }
@@ -133,7 +174,7 @@ function TranscriptComponent() {
 
 export default function TranscriptPage() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div className="flex justify-center items-center h-screen">Loading...</div>}>
             <TranscriptComponent />
         </Suspense>
     )
