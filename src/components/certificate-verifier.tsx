@@ -144,8 +144,8 @@ export default function CertificateVerifier() {
                     name="certificateNumber" 
                     placeholder={t('certVerifierInputPlaceholder')} 
                     aria-label={t('certVerifierButton')}
-                    className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-14 pr-14 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50"
-                    onChange={(e) => setQuery(e.target.value)}
+                    className="h-14 w-full rounded-lg border-2 border-primary-foreground/50 bg-primary-foreground/90 pl-14 pr-14 text-base text-primary placeholder:text-primary/70 focus:border-primary-foreground focus:bg-primary-foreground focus:ring-2 focus:ring-primary-foreground/50 uppercase"
+                    onChange={(e) => setQuery(e.target.value.toUpperCase())}
                     value={query}
                     disabled={loading}
                   />
