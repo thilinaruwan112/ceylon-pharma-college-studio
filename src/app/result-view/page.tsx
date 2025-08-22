@@ -1,13 +1,14 @@
 
 "use client";
 
-import { useSearchParams, notFound } from 'next/navigation';
+import { useSearchParams, notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Book, Award } from 'lucide-react';
+import { User, Book, Award, AlertTriangle } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
+import { Button } from '@/components/ui/button';
 
 // --- New Interfaces for the API response ---
 
@@ -51,12 +52,16 @@ interface ApiResponse {
 
 function ResultsViewComponent() {
     const searchParams = useSearchParams();
-    const courseCode = searchParams.get('CourseCode');
+    const router = useRouter();
+    const courseCodeParam = searchParams.get('CourseCode');
     const loggedUser = searchParams.get('LoggedUser');
     const { t } = useTranslation();
 
     const [studentData, setStudentData] = useState<ApiResponse | null>(null);
     const [loading, setLoading] = useState(true);
+
+    // Construct the course code key to look for in the enrollments object
+    const courseCode = courseCodeParam ? `CPCC${courseCodeParam}` : null;
 
     useEffect(() => {
         if (!loggedUser) {
@@ -69,7 +74,8 @@ function ResultsViewComponent() {
                 setLoading(true);
                 const response = await fetch(`https://qa-api.pharmacollege.lk/get-student-full-info?loggedUser=${loggedUser}`);
                 if (!response.ok) {
-                    throw new Error('Failed to fetch student data');
+                    // This will trigger notFound() if the user itself doesn't exist
+                    throw new Error('Student not found');
                 }
                 const data: ApiResponse = await response.json();
                 setStudentData(data);
@@ -88,12 +94,39 @@ function ResultsViewComponent() {
         return <div className="container mx-auto text-center py-24">Loading student results...</div>;
     }
 
-    if (!studentData || !courseCode || !studentData.studentEnrollments[courseCode]) {
-        // This will show a 404 if the student or the specific course enrollment doesn't exist
+    if (!studentData) {
+        // This will show a 404 if the student doesn't exist at all
         return notFound();
     }
+    
+    const enrollment = courseCode ? studentData.studentEnrollments[courseCode] : null;
 
-    const enrollment = studentData.studentEnrollments[courseCode];
+    if (!enrollment) {
+        // If the student exists but is not enrolled in the specified course code
+        return (
+             <main className="bg-muted/40 py-12 md:py-16">
+                <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+                    <Card className="text-center">
+                        <CardHeader>
+                             <div className="mx-auto bg-destructive/10 p-3 rounded-full w-fit">
+                                <AlertTriangle className="h-10 w-10 text-destructive" />
+                            </div>
+                            <CardTitle className="font-headline text-2xl md:text-3xl font-bold text-destructive mt-4">
+                                Enrollment Not Found
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="space-y-4">
+                           <p className="text-muted-foreground">
+                                Student <span className="font-bold text-foreground">{studentData.studentInfo.name_on_certificate}</span> (ID: {loggedUser}) exists, but is not enrolled in course code <span className="font-bold text-foreground">{courseCodeParam}</span>.
+                           </p>
+                            <Button onClick={() => router.push(`/transcript?LoggedUser=${loggedUser}`)}>View Student Transcript</Button>
+                        </CardContent>
+                    </Card>
+                </div>
+            </main>
+        )
+    }
+
     const averageGrade = parseFloat(enrollment.assignment_grades.average_grade);
     
     const getFinalGrade = () => {
@@ -207,3 +240,5 @@ export default function ResultsViewPage() {
         </Suspense>
     )
 }
+
+    
