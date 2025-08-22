@@ -54,4 +54,21 @@ export const studentResultsData = [
             { module: "Customer Service in Pharmacy", attempt: 1, grade: "B-" },
         ],
     },
+    {
+        studentId: "STU004",
+        studentName: "P. A. Weerasinghe",
+        userName: "PA19702",
+        avatar: "https://placehold.co/100x100.png",
+        courseName: "Certificate in Pharmacy Practice",
+        courseSlug: "diploma-in-pharmacy-practice", // Placeholder slug
+        courseDescription: "A short-term course focused on practical skills for community pharmacy settings, covering fundamentals and dispensing.",
+        batchCode: "CPCC18",
+        issueDate: "2024-08-22",
+        overallGrade: "Referred",
+        results: [
+            { module: "Fundamentals of Pharmacy", attempt: 1, grade: "C" },
+            { module: "Dispensing Practice", attempt: 1, grade: "F" },
+            { module: "Customer Service in Pharmacy", attempt: 1, grade: "B" },
+        ],
+    },
 ];
