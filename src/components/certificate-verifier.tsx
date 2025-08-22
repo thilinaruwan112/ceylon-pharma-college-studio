@@ -3,6 +3,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from 'next/image';
+import Link from 'next/link';
 import { Input } from "@/components/ui/input";
 import { Search, User, ChevronRight, Loader2, ArrowLeft, GraduationCap, UserCheck, Book, Award } from "lucide-react";
 import { useTranslation } from "@/context/language-context";
@@ -103,14 +104,15 @@ const SearchResults = ({ students, loading, onStudentSelect }: { students: Stude
 
 
 // --- Enrollment List Component ---
-const EnrollmentList = ({ studentData, onEnrollmentSelect }: { studentData: StudentFullData; onEnrollmentSelect: (enrollment: Enrollment) => void; }) => {
+const EnrollmentList = ({ studentData }: { studentData: StudentFullData; }) => {
     const enrollments = Object.values(studentData.studentEnrollments);
+    const studentUsername = studentData.studentInfo.username;
 
     return (
         <div className="mt-4 space-y-3 animate-in fade-in-50">
             <h3 className="text-center text-lg font-semibold text-primary-foreground">Select an Enrollment for {studentData.studentInfo.name_on_certificate}</h3>
             {enrollments.map((enrollment) => (
-                <button key={enrollment.id} onClick={() => onEnrollmentSelect(enrollment)} className="w-full flex items-center gap-4 p-3 rounded-lg bg-background text-foreground hover:bg-muted transition-colors text-left">
+                <Link key={enrollment.id} href={`/result-view?CourseCode=${enrollment.course_code}&LoggedUser=${studentUsername}`} className="w-full flex items-center gap-4 p-3 rounded-lg bg-background text-foreground hover:bg-muted transition-colors text-left">
                     <div className="p-2 bg-primary/10 rounded-full">
                         <GraduationCap className="h-6 w-6 text-primary" />
                     </div>
@@ -119,7 +121,7 @@ const EnrollmentList = ({ studentData, onEnrollmentSelect }: { studentData: Stud
                         <p className="text-sm text-muted-foreground">{enrollment.batch_name} ({enrollment.course_code})</p>
                     </div>
                     <ChevronRight className="h-5 w-5 text-muted-foreground" />
-                </button>
+                </Link>
             ))}
         </div>
     );
@@ -297,14 +299,12 @@ export default function CertificateVerifier() {
   };
   
   const handleBack = () => {
-      if (view === 'details') {
-          setView('enrollments');
-          setSelectedEnrollment(null);
-      } else if (view === 'enrollments') {
+      if (view === 'details' || view === 'enrollments') {
           setView('search');
           setQuery('');
           setFilteredStudents([]);
           setSelectedStudentData(null);
+          setSelectedEnrollment(null);
       }
   }
 
@@ -362,7 +362,7 @@ export default function CertificateVerifier() {
                 {view === 'search' && query && !detailsLoading && <SearchResults students={filteredStudents} loading={false} onStudentSelect={handleStudentSelect} />}
                 
                 {view === 'enrollments' && selectedStudentData && !detailsLoading && (
-                    <EnrollmentList studentData={selectedStudentData} onEnrollmentSelect={handleEnrollmentSelect} />
+                    <EnrollmentList studentData={selectedStudentData} />
                 )}
 
                 {view === 'details' && selectedStudentData && selectedEnrollment && !detailsLoading && (
@@ -370,11 +370,9 @@ export default function CertificateVerifier() {
                 )}
             </div>
 
-            {view === 'search' && (
-                <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
-                    {t('certVerifierDescription')}
-                </p>
-            )}
+            <p className="mt-8 max-w-3xl mx-auto text-primary-foreground/80 text-sm font-body leading-relaxed">
+                {t('certVerifierDescription')}
+            </p>
         </div>
     </section>
   );
