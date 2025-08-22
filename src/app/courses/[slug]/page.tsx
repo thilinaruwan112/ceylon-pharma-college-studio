@@ -119,6 +119,8 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
     </div>
   );
 
+  const cleanDescription = course.course_description.replace(/style="[^"]*"/g, '');
+
   return (
     <div>
       <section className="bg-primary text-primary-foreground py-16">
@@ -149,7 +151,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                     <div>
                         <h2 className="text-3xl font-headline font-bold text-foreground">{course.course_name}</h2>
                         <div className="w-20 h-1 bg-primary mt-2 mb-4" />
-                        <div className="prose prose-sm md:prose-base max-w-none text-muted-foreground font-body" dangerouslySetInnerHTML={{ __html: course.course_description }} />
+                        <div className="prose prose-sm md:prose-base max-w-none text-muted-foreground font-body" dangerouslySetInnerHTML={{ __html: cleanDescription }} />
                         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
                             {keyFeatures.map((feature, index) => (
                                 <Card key={index} className="bg-card/50">
