@@ -4,24 +4,50 @@
 import { useSearchParams, notFound } from 'next/navigation';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { User, Book, Star, Award } from 'lucide-react';
+import { User, Book, Award } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
 
-// This is a placeholder type. In a real app, this should be defined
-// based on the actual API response for a single student's full details.
-interface StudentDetails {
-    studentName: string;
-    studentId: string;
-    avatar: string;
-    courseName: string;
-    courseCode: string;
-    overallGrade: string;
-    rating: number;
+// --- New Interfaces for the API response ---
+
+interface StudentInfo {
+    id: string;
+    student_id: string;
+    username: string;
+    full_name: string;
+    name_on_certificate: string;
 }
 
+interface Assignment {
+    assignment_id: string;
+    assignment_name: string;
+    grade: string;
+}
+
+interface AssignmentGrades {
+    assignments: Assignment[];
+    average_grade: string;
+}
+
+interface Enrollment {
+    id: string;
+    course_code: string;
+    batch_name: string;
+    parent_course_name: string;
+    assignment_grades: AssignmentGrades;
+    certificate_eligibility: boolean;
+}
+
+interface ApiResponse {
+    title: string;
+    studentInfo: StudentInfo;
+    studentEnrollments: {
+        [key: string]: Enrollment;
+    };
+}
+
+// --- Component to display the results ---
 
 function ResultsViewComponent() {
     const searchParams = useSearchParams();
@@ -29,36 +55,67 @@ function ResultsViewComponent() {
     const loggedUser = searchParams.get('LoggedUser');
     const { t } = useTranslation();
 
-    // The student data would be fetched from an API based on the params
-    // For now, we'll use a placeholder structure.
-    const [studentData, setStudentData] = useState<StudentDetails | null>(null);
+    const [studentData, setStudentData] = useState<ApiResponse | null>(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-      // In a real app, you would fetch student details here.
-      // Simulating a fetch with a placeholder.
-      if (loggedUser && courseCode) {
-         setStudentData({
-            studentName: "K. Hansika Madumali",
-            studentId: "PA19001", 
-            avatar: "https://placehold.co/100x100.png",
-            courseName: "Not Available",
-            courseCode: courseCode,
-            overallGrade: "Not Submitted",
-            rating: 0,
-        });
-      }
-      setLoading(false);
-    }, [loggedUser, courseCode]);
+        if (!loggedUser) {
+            setLoading(false);
+            return;
+        }
 
+        async function fetchStudentDetails() {
+            try {
+                setLoading(true);
+                const response = await fetch(`https://qa-api.pharmacollege.lk/get-student-full-info?loggedUser=${loggedUser}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch student data');
+                }
+                const data: ApiResponse = await response.json();
+                setStudentData(data);
+            } catch (error) {
+                console.error("Error fetching student details:", error);
+                setStudentData(null);
+            } finally {
+                setLoading(false);
+            }
+        }
 
+        fetchStudentDetails();
+    }, [loggedUser]);
+    
     if (loading) {
         return <div className="container mx-auto text-center py-24">Loading student results...</div>;
     }
 
-    if (!studentData) {
+    if (!studentData || !courseCode || !studentData.studentEnrollments[courseCode]) {
+        // This will show a 404 if the student or the specific course enrollment doesn't exist
         return notFound();
     }
+
+    const enrollment = studentData.studentEnrollments[courseCode];
+    const averageGrade = parseFloat(enrollment.assignment_grades.average_grade);
+    
+    const getFinalGrade = () => {
+        if (!enrollment.certificate_eligibility) {
+            return "Referred";
+        }
+        if (averageGrade >= 85) return "Distinction";
+        if (averageGrade >= 75) return "Merit";
+        if (averageGrade >= 60) return "Pass";
+        return "Referred";
+    };
+
+    const getRating = () => {
+        if (!enrollment.certificate_eligibility) return 0;
+        if (averageGrade >= 85) return 5; // Distinction
+        if (averageGrade >= 75) return 4; // Merit
+        if (averageGrade >= 60) return 3; // Pass
+        return 0; // Referred
+    };
+    
+    const finalGrade = getFinalGrade();
+    const rating = getRating();
 
     return (
         <main className="bg-muted/40 py-12 md:py-16">
@@ -91,11 +148,11 @@ function ResultsViewComponent() {
                         <CardContent className="space-y-4">
                              <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certStudentName')}</span>
-                                <span className="font-semibold">{studentData.studentName}</span>
+                                <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certIndexNo')}</span>
-                                <span className="font-semibold">{studentData.studentId}</span>
+                                <span className="font-semibold">{studentData.studentInfo.username}</span>
                             </div>
                         </CardContent>
                     </Card>
@@ -108,11 +165,11 @@ function ResultsViewComponent() {
                         <CardContent className="space-y-4">
                              <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certCourseName')}</span>
-                                <span className="font-semibold">{studentData.courseName}</span>
+                                <span className="font-semibold">{enrollment.parent_course_name}</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certCourseCode')}</span>
-                                <span className="font-semibold">{studentData.courseCode}</span>
+                                <span className="font-semibold">{enrollment.course_code}</span>
                             </div>
                         </CardContent>
                     </Card>
@@ -125,12 +182,12 @@ function ResultsViewComponent() {
                         <CardContent className="space-y-4">
                              <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certFinalGrade')}</span>
-                                <span className="font-semibold">{studentData.overallGrade}</span>
+                                <span className="font-semibold">{finalGrade}</span>
                             </div>
                             <div className="flex justify-between items-center">
                                 <span className="text-muted-foreground">{t('certRating')}</span>
-                                {studentData.rating > 0 ? (
-                                    <StarRating rating={studentData.rating} />
+                                {rating > 0 ? (
+                                    <StarRating rating={rating} />
                                 ) : (
                                     <span className="font-semibold">{t('certNoGrade')}</span>
                                 )}
