@@ -1,3 +1,4 @@
+
 export const results = {
   certResultTitle: 'සහතිකය තහවුරු කරන ලදී',
   certResultSubtitle: 'මූලික තොරතුරු පහත දැක්වේ.',

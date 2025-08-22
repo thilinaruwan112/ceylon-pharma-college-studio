@@ -1,3 +1,4 @@
+
 export const results = {
   // Certificate Result Card
   certResultTitle: 'Certificate Verified',

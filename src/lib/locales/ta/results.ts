@@ -1,3 +1,4 @@
+
 export const results = {
   certResultTitle: 'சான்றிதழ் சரிபார்க்கப்பட்டது',
   certResultSubtitle: 'அடிப்படை விவரங்கள் கீழே காட்டப்பட்டுள்ளன.',
