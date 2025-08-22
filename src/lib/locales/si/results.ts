@@ -1,7 +1,19 @@
 
 export const results = {
   certResultTitle: 'සහතිකය තහවුරු කරන ලදී',
-  certResultSubtitle: 'මූලික තොරතුරු පහත දැක්වේ.',
+  certResultSubtitle: 'ශිෂ්‍යයාගේ තොරතුරු සාර්ථකව සත්‍යාපනය කර ඇත.',
+  
+  studentInfo: 'ශිෂ්‍ය තොරතුරු',
+  courseDetails: 'පාඨමාලා විස්තර',
+
+  certStudentName: 'සහතිකයේ නම',
+  certIndexNo: 'විභාග අංකය',
+  certCourseName: 'පාඨමාලාවේ නම',
+  certCourseCode: 'පාඨමාලා කේතය',
+  certFinalGrade: 'අවසාන ශ්‍රේණිය',
+  certRating: 'ශ්‍රේණිගත කිරීම',
+  certNoGrade: 'ශ්‍රේණියක් නැත',
+
   certResultRating: 'සමස්ත ශ්‍රේණිගත කිරීම',
   certResultStudentName: 'ශිෂ්‍යයාගේ නම',
   certResultCourse: 'පාඨමාලාව',

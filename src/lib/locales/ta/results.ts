@@ -1,7 +1,19 @@
 
 export const results = {
   certResultTitle: 'சான்றிதழ் சரிபார்க்கப்பட்டது',
-  certResultSubtitle: 'அடிப்படை விவரங்கள் கீழே காட்டப்பட்டுள்ளன.',
+  certResultSubtitle: 'மாணவரின் தகவல் வெற்றிகரமாக சரிபார்க்கப்பட்டது.',
+  
+  studentInfo: 'மாணவர் தகவல்',
+  courseDetails: 'பாடநெறி விவரங்கள்',
+  
+  certStudentName: 'சான்றிதழ் பெயர்',
+  certIndexNo: 'குறியீட்டு எண்',
+  certCourseName: 'பாடநெறி பெயர்',
+  certCourseCode: 'பாடநெறி குறியீடு',
+  certFinalGrade: 'இறுதி தரம்',
+  certRating: 'மதிப்பீடு',
+  certNoGrade: 'தரம் இல்லை',
+
   certResultRating: 'ஒட்டுமொத்த மதிப்பீடு',
   certResultStudentName: 'மாணவர் பெயர்',
   certResultCourse: 'பாடநெறி',
