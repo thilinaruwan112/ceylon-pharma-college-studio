@@ -16,14 +16,14 @@ export default function Footer() {
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center">
             <Image
-              src="https://pharmacollege.lk/assets/images/logo.png"
+              src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
               alt="Ceylon Pharma College Logo"
               width={180}
               height={56}
               className="h-auto w-40 dark:hidden"
             />
             <Image
-              src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+              src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
               alt="Ceylon Pharma College Logo"
               width={180}
               height={56}
@@ -69,3 +69,5 @@ export default function Footer() {
     </footer>
   );
 }
+
+    

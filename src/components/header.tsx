@@ -234,7 +234,7 @@ export default function Header() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center">
           <Image
-            src="https://pharmacollege.lk/assets/images/logo.png"
+            src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
             alt="Ceylon Pharma College Logo"
             width={200}
             height={62}
@@ -242,7 +242,7 @@ export default function Header() {
             priority
           />
           <Image
-            src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+            src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
             alt="Ceylon Pharma College Logo"
             width={200}
             height={62}
@@ -277,7 +277,7 @@ export default function Header() {
                       <div className="p-4 border-b flex justify-between items-center">
                           <Link href="/" onClick={closeSheet}>
                             <Image
-                              src="https://pharmacollege.lk/assets/images/logo.png"
+                              src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
                               alt="Ceylon Pharma College Logo"
                               width={160}
                               height={50}
@@ -285,7 +285,7 @@ export default function Header() {
                               priority
                             />
                             <Image
-                              src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+                              src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
                               alt="Ceylon Pharma College Logo"
                               width={160}
                               height={50}
@@ -310,3 +310,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

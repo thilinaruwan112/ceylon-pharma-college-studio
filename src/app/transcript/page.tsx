@@ -78,14 +78,14 @@ function TranscriptComponent() {
                          <div className="flex justify-between items-start">
                             <div>
                                 <Image
-                                    src="https://pharmacollege.lk/assets/images/logo.png"
+                                    src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
                                     alt="Ceylon Pharma College Logo"
                                     width={180}
                                     height={56}
                                     className="h-auto w-40 dark:hidden"
                                 />
                                 <Image
-                                    src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+                                    src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
                                     alt="Ceylon Pharma College Logo"
                                     width={180}
                                     height={56}
@@ -179,3 +179,5 @@ export default function TranscriptPage() {
         </Suspense>
     )
 }
+
+    
