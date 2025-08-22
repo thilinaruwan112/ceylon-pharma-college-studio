@@ -26,7 +26,7 @@ export const courses = {
   enrollStep2Title: 'Secure Your Spot',
   enrollStep2Desc: 'Enrollment is first-come, first-served with limited spots available.',
   enrollStep3Title: 'Contact for Information',
-  enrollStep3Desc: 'For more information, contact our admissions team at 071 5 184 184 or 077 7 184 184.',
+  enrollStep3Desc: 'For more information, contact our admissions team at 0715 884 884 or 077 7 184 184.',
   startYourCareer: 'Start your pharmacy career today!',
   
   // Sidebar
@@ -35,7 +35,7 @@ export const courses = {
   schedule: 'Schedule',
   level: 'Level',
   entryRequirements: 'Entry Requirements',
-  enrollNowSubtext: 'For inquiries, call: 071 5 184 184',
+  enrollNowSubtext: 'For inquiries, call: 0715 884 884',
   materialsProvided: 'Materials Provided',
 
   // Key Features
