@@ -95,15 +95,23 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   }, [params.slug]);
   
   const cleanDescription = useMemo(() => {
-      if (!course) return '';
-      return course.course_description.replace(/style="[^"]*"/g, '');
+    if (!course) return '';
+    // This will be used for English version and for sending to translation
+    return course.course_description.replace(/<[^>]*>/g, '').replace(/&nbsp;/g, ' ');
   }, [course]);
+
+  const originalHtmlDescription = useMemo(() => {
+    if (!course) return '';
+    return course.course_description.replace(/style="[^"]*"/g, '');
+  }, [course]);
+  
 
   useEffect(() => {
     if (!course || !cleanDescription) return;
 
     if (language === 'en') {
-        setTranslatedDescription(cleanDescription);
+        // For English, we want to show the original HTML formatting
+        setTranslatedDescription(originalHtmlDescription);
         return;
     }
 
@@ -112,16 +120,18 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
         try {
             const targetLanguage = language === 'si' ? 'Sinhala' : 'Tamil';
             const translation = await translate({ text: cleanDescription, targetLanguage });
-            setTranslatedDescription(translation);
+            // Wrap paragraphs for consistent display
+            const formattedTranslation = translation.split('\n').filter(p => p.trim() !== '').map(p => `<p>${p}</p>`).join('');
+            setTranslatedDescription(formattedTranslation);
         } catch (error) {
             console.error("Translation failed:", error);
-            setTranslatedDescription(cleanDescription); // Fallback to English on error
+            setTranslatedDescription(originalHtmlDescription); // Fallback to English on error
         } finally {
             setIsTranslating(false);
         }
     };
     translateDescription();
-  }, [language, course, cleanDescription]);
+  }, [language, course, cleanDescription, originalHtmlDescription]);
 
 
   if (loading) {
@@ -343,4 +353,3 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
   );
 }
 
-    
