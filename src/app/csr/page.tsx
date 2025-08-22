@@ -8,28 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Heart, Users, Droplets, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const projects = [
-  {
-    image: "https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&w=2071&auto=format&fit=crop",
-    titleKey: 'csrProjectTitle1',
-    descKey: 'csrProjectDesc1',
-    hint: 'community health fair',
-    slug: 'health-checkup-camp'
-  },
-  {
-    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop",
-    titleKey: 'csrProjectTitle2',
-    descKey: 'csrProjectDesc2',
-    hint: 'blood donation drive',
-    slug: 'blood-donation-drive'
-  },
-  {
-    image: "https://images.unsplash.com/photo-1627843563931-a28a255f0564?q=80&w=2070&auto=format&fit=crop",
-    titleKey: 'csrProjectTitle3',
-    descKey: 'csrProjectDesc3',
-    hint: 'environmental cleanup',
-    slug: 'tree-planting-campaign'
-  },
+const projects: any[] = [
 ];
 
 const values = [
@@ -93,7 +72,7 @@ export default function CsrPage() {
              <div className="w-24 h-1 bg-primary mx-auto mt-4" />
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project) => (
+            {projects.length > 0 ? projects.map((project) => (
               <Card key={project.titleKey} className="overflow-hidden group flex flex-col">
                  <Link href={`/csr/${project.slug}`} className="block">
                     <div className="relative aspect-video">
@@ -112,7 +91,11 @@ export default function CsrPage() {
                     </Button>
                 </div>
               </Card>
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-10">
+                <p className="text-muted-foreground">No projects available at the moment. Please check back later.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -133,3 +116,5 @@ export default function CsrPage() {
     </main>
   );
 }
+
+    

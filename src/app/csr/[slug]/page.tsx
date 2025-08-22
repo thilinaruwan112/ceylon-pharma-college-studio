@@ -9,56 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight, Users, Heart, Award } from "lucide-react";
 
-const projectsData: any = {
-  'health-checkup-camp': {
-    titleKey: 'csrProjectTitle1',
-    descriptionKey: 'csrProjectDetailDesc1',
-    date: '2023-10-15',
-    image: "https://images.unsplash.com/photo-1599045118108-bf9954418b76?q=80&w=2071&auto=format&fit=crop",
-    stats: [
-      { value: '250+', labelKey: 'csrStatLabel1', icon: Users },
-      { value: '50+', labelKey: 'csrStatLabel2', icon: Heart },
-      { value: '15+', labelKey: 'csrStatLabel3', icon: Award },
-    ],
-    gallery: [
-      { src: "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?q=80&w=2070&auto=format&fit=crop", alt: "Doctor checking a patient's blood pressure", hint: "doctor patient" },
-      { src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop", alt: "A group of volunteers smiling", hint: "medical volunteers" },
-      { src: "https://images.unsplash.com/photo-1582719478212-c857e57693a2?q=80&w=2070&auto=format&fit=crop", alt: "Free medicines being distributed", hint: "medicine distribution" },
-    ],
-  },
-   'blood-donation-drive': {
-    titleKey: 'csrProjectTitle2',
-    descriptionKey: 'csrProjectDetailDesc2',
-    date: '2023-11-20',
-    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2070&auto=format&fit=crop",
-    stats: [
-        { value: '120+', labelKey: 'csrStatLabel4', icon: Users },
-        { value: '80+', labelKey: 'csrStatLabel5', icon: Heart },
-        { value: '100%', labelKey: 'csrStatLabel6', icon: Award },
-    ],
-    gallery: [
-      { src: "https://images.unsplash.com/photo-1615461065624-21b562ee8357?q=80&w=1974&auto=format&fit=crop", alt: "A person donating blood", hint: "blood donation" },
-      { src: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop", alt: "Students waiting in line to donate", hint: "students waiting" },
-      { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop", alt: "Volunteers helping with the event", hint: "event volunteers" },
-    ],
-  },
-  'tree-planting-campaign': {
-    titleKey: 'csrProjectTitle3',
-    descriptionKey: 'csrProjectDetailDesc3',
-    date: '2024-01-05',
-    image: "https://images.unsplash.com/photo-1627843563931-a28a255f0564?q=80&w=2070&auto=format&fit=crop",
-    stats: [
-      { value: '500+', labelKey: 'csrStatLabel7', icon: Users },
-      { value: '100+', labelKey: 'csrStatLabel8', icon: Heart },
-      { value: '5 acres', labelKey: 'csrStatLabel9', icon: Award },
-    ],
-    gallery: [
-      { src: "https://images.unsplash.com/photo-1512428209355-e83fa414f255?q=80&w=1974&auto=format&fit=crop", alt: "Students planting saplings", hint: "students planting" },
-      { src: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2070&auto=format&fit=crop", alt: "A close-up of a new sapling", hint: "sapling" },
-      { src: "https://images.unsplash.com/photo-1423242029402-3bf481239268?q=80&w=2070&auto=format&fit=crop", alt: "Group photo of the participants", hint: "group photo" },
-    ],
-  }
-};
+// In a real app, this would come from an API
+const projectsData: any = {};
 
 export default function CsrProjectPage({ params }: { params: { slug: string } }) {
   const { t } = useTranslation();
@@ -169,3 +121,5 @@ export default function CsrProjectPage({ params }: { params: { slug: string } })
     </main>
   );
 }
+
+    

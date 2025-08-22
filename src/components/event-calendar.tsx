@@ -6,22 +6,7 @@ import { Calendar } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTranslation } from "@/context/language-context";
 
-const events = [
-  {
-    date: "2024-08-15",
-    title: "Annual Research Symposium",
-    description: "Present your research and learn from leading experts in the field.",
-  },
-  {
-    date: "2024-09-01",
-    title: "Workshop on Clinical Pharmacy",
-    description: "A hands-on workshop covering the latest trends in clinical pharmacy.",
-  },
-  {
-    date: "2024-09-25",
-    title: "World Pharmacist Day",
-    description: "Join us for a day of celebration, networking, and guest lectures.",
-  },
+const events: any[] = [
 ];
 
 export default function EventCalendar() {
@@ -36,7 +21,7 @@ export default function EventCalendar() {
           </p>
         </div>
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {events.map((event) => (
+          {events.length > 0 ? events.map((event) => (
             <Card key={event.title} className="flex flex-col bg-background hover:shadow-xl transition-shadow duration-300">
               <CardHeader className="flex-row items-center gap-4">
                 <div className="bg-primary/10 p-3 rounded-md">
@@ -54,9 +39,15 @@ export default function EventCalendar() {
                 <Button variant="outline" size="sm">{t('eventsLearnMore')}</Button>
               </div>
             </Card>
-          ))}
+          )) : (
+            <div className="col-span-full text-center py-10">
+              <p className="text-muted-foreground">No upcoming events. Please check back later.</p>
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 }
+
+    

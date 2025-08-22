@@ -1,56 +1,5 @@
+
 export const reviewsData = [
-  {
-    name: "Dr. Nimali Fernando",
-    role: "Senior Clinical Pharmacist",
-    avatar: "NF",
-    image: "https://placehold.co/100x100.png",
-    hint: "female doctor professional",
-    quote: "The practical experience I gained at Ceylon Pharma College was invaluable. The faculty are not just teachers, but mentors who guided me every step of the way.",
-    rating: 5,
-  },
-  {
-    name: "Sanjay Kumar",
-    role: "Founder, MedLife Pharma",
-    avatar: "SK",
-    image: "https://placehold.co/100x100.png",
-    hint: "male entrepreneur professional",
-    quote: "The learning environment is so supportive. The labs are modern and well-equipped, which makes learning engaging and fun. I'm confident about my future.",
-    rating: 5,
-  },
-  {
-    name: "Aisha Perera",
-    role: "Pharmaceutical Researcher",
-    avatar: "AP",
-    image: "https://placehold.co/100x100.png",
-    hint: "female researcher professional",
-    quote: "The curriculum is perfectly aligned with industry needs. I felt well-prepared for my career from day one. Highly recommend this institution.",
-    rating: 4,
-  },
-  {
-    name: "Mr. Roshan Fernando",
-    role: "Current Student, Diploma Program",
-    avatar: "RF",
-    image: "https://placehold.co/100x100.png",
-    hint: "male student smiling",
-    quote: "I appreciate the flexible class schedules which allow me to work part-time. The lecturers are very understanding and always willing to help.",
-    rating: 4,
-  },
-  {
-    name: "Dr. Anura Perera",
-    role: "Industry Partner, CEO of Medico Labs",
-    avatar: "AP",
-    image: "https://placehold.co/100x100.png",
-    hint: "male ceo professional",
-    quote: "Graduates from Ceylon Pharma College consistently demonstrate a high level of professionalism and knowledge. They are a great asset to our organization.",
-    rating: 5,
-  },
-    {
-    name: "Fathima Rizwan",
-    role: "Alumni, Class of 2021",
-    avatar: "FR",
-    image: "https://placehold.co/100x100.png",
-    hint: "female professional smiling",
-    quote: "The career guidance services were fantastic. They helped me secure an internship which later turned into a full-time position. Thank you, CPC!",
-    rating: 5,
-  },
 ];
+
+    

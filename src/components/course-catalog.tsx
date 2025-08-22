@@ -13,56 +13,81 @@ import { Slider } from '@/components/ui/slider';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
+import { Skeleton } from './ui/skeleton';
 
-const allCourses = [
-  {
-    titleKey: "courseTitleDPP",
-    slug: "diploma-in-pharmacy-practice",
-    image: "https://content-provider.pharmacollege.lk/courses/CS0005/WhatsApp%20Image%202025-05-08%20at%2020.53.25_ef00d792.jpg",
-    price: 2500,
-    hint: "student pharmacist smiling",
-    category: "Diploma"
-  },
-  {
-    titleKey: "courseTitleACP",
-    slug: "advanced-community-pharmacy",
-    image: "https://content-provider.pharmacollege.lk/courses/CS0004/WhatsApp%20Image%202025-05-08%20at%2020.53.31_a805e94a.jpg",
-    price: 15000,
-    hint: "woman pharmacist teaching",
-    category: "Advanced"
-  },
-  {
-    titleKey: "examCourseCPP",
-    slug: "diploma-in-pharmacy-practice",
-    image: "https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-05-08%20at%2020.53.28_7d7e4eea.jpg",
-    price: 1500,
-    hint: "pharmacist lab coat",
-    category: "Certificate"
-  },
-   {
-    titleKey: "bpharmTitle",
-    slug: "advanced-community-pharmacy",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop",
-    price: 20000,
-    hint: "doctor with stethoscope",
-    category: "Degree"
-  },
-];
+interface Course {
+  id: string;
+  course_name: string;
+  course_code: string;
+  course_fee: string;
+  course_img: string;
+  slug: string;
+  category: string;
+}
 
-const courseCategories = [
-    { id: 'Diploma', label: 'Diploma' },
-    { id: 'Advanced', label: 'Advanced' },
-    { id: 'Certificate', label: 'Certificate' },
-    { id: 'Degree', label: 'Degree' },
-];
+const CourseCardSkeleton = () => (
+    <div className="h-full">
+        <Card className="overflow-hidden h-full flex flex-col">
+            <CardContent className="p-0 flex flex-col flex-grow">
+                <Skeleton className="aspect-video w-full" />
+                <div className="p-4 bg-card border-t flex flex-col flex-grow">
+                    <Skeleton className="h-6 w-3/4 mb-2" />
+                    <Skeleton className="h-4 w-1/2" />
+                    <div className="flex-grow" />
+                    <div className="flex justify-between items-center mt-4">
+                        <Skeleton className="h-8 w-1/2" />
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
+    </div>
+);
 
-const maxPrice = Math.max(...allCourses.map(c => c.price));
+const getCourseCategory = (courseName: string): string => {
+    const name = courseName.toLowerCase();
+    if (name.includes('diploma')) return 'Diploma';
+    if (name.includes('advanced')) return 'Advanced';
+    if (name.includes('certificate')) return 'Certificate';
+    if (name.includes('b.pharm')) return 'Degree';
+    if (name.includes('workshop')) return 'Workshop';
+    if (name.includes('professional')) return 'Professional';
+    return 'Other';
+};
+
 
 export default function CourseCatalog() {
   const { t } = useTranslation();
-  const [filteredCourses, setFilteredCourses] = useState(allCourses);
+  const [allCourses, setAllCourses] = useState<Course[]>([]);
+  const [filteredCourses, setFilteredCourses] = useState<Course[]>([]);
+  const [loading, setLoading] = useState(true);
+
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState([0, maxPrice]);
+  const [priceRange, setPriceRange] = useState([0, 0]);
+  const [maxPrice, setMaxPrice] = useState(0);
+
+  useEffect(() => {
+    async function fetchCourses() {
+      try {
+        setLoading(true);
+        const response = await fetch('https://qa-api.pharmacollege.lk/parent-main-course');
+        let data = await response.json();
+        const coursesWithCategory: Course[] = data.map((course: any) => ({
+            ...course,
+            price: parseFloat(course.course_fee),
+            category: getCourseCategory(course.course_name)
+        }));
+        setAllCourses(coursesWithCategory);
+        const maxCoursePrice = Math.max(...coursesWithCategory.map(c => c.price));
+        setMaxPrice(maxCoursePrice);
+        setPriceRange([0, maxCoursePrice]);
+      } catch (error) {
+        console.error("Failed to fetch courses:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchCourses();
+  }, []);
 
   useEffect(() => {
     let courses = allCourses;
@@ -74,7 +99,13 @@ export default function CourseCatalog() {
     courses = courses.filter(course => course.price >= priceRange[0] && course.price <= priceRange[1]);
     
     setFilteredCourses(courses);
-  }, [selectedCategories, priceRange]);
+  }, [selectedCategories, priceRange, allCourses]);
+  
+  const courseCategories = useMemo(() => {
+    if (loading) return [];
+    const categories = [...new Set(allCourses.map(course => course.category))];
+    return categories.map(category => ({ id: category, label: category }));
+  }, [allCourses, loading]);
 
   const handleCategoryChange = (categoryId: string) => {
     setSelectedCategories(prev => 
@@ -165,22 +196,24 @@ export default function CourseCatalog() {
             
             <div className="flex-1">
                 <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                  {filteredCourses.length > 0 ? (
+                  {loading ? (
+                    Array.from({ length: 6 }).map((_, index) => <CourseCardSkeleton key={index} />)
+                  ) : filteredCourses.length > 0 ? (
                     filteredCourses.map((course) => (
-                      <Link href={`/courses/${course.slug}`} key={course.titleKey} className="block h-full group">
+                      <Link href={`/courses/${course.slug}`} key={course.id} className="block h-full group">
                         <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                           <CardContent className="p-0 flex flex-col flex-grow">
                             <div className="relative aspect-video">
                               <Image
-                                src={course.image}
-                                alt={t(course.titleKey as any)}
+                                src={`https://content-provider.pharmacollege.lk/courses/${course.course_code}/${course.course_img}`}
+                                alt={course.course_name}
                                 fill
                                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                                data-ai-hint={course.hint}
+                                data-ai-hint="pharmacist student"
                               />
                             </div>
                             <div className="p-4 bg-card border-t flex flex-col flex-grow">
-                              <h3 className="font-headline font-bold text-base h-12 leading-tight">{t(course.titleKey as any)}</h3>
+                              <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.course_name}</h3>
                               <div className="flex-grow" />
                               <div className="flex justify-between items-center mt-4">
                                 <p className="font-bold text-lg font-body text-primary">LKR {course.price.toLocaleString()}</p>
@@ -204,3 +237,5 @@ export default function CourseCatalog() {
     </section>
   );
 }
+
+    

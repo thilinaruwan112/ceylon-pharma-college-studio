@@ -16,90 +16,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChevronRight, Mail, Phone, BookOpen, Users, Building } from "lucide-react";
 import { useTranslation } from "@/context/language-context";
 
-const departmentsData: any = {
-  pharmaceutical: {
-    nameKey: "deptNamePharmaceutical",
-    descriptionKey: "deptDescPharmaceutical",
-    image: "https://images.unsplash.com/photo-1584982239339-59b7b85c57e2?q=80&w=2070&auto=format&fit=crop",
-    programs: [
-      { nameKey: "courseTitleDPP", slug: "diploma-in-pharmacy-practice", descriptionKey: "programDescPharma" },
-      { nameKey: "courseTitleACP", slug: "advanced-community-pharmacy", descriptionKey: "programDescPharma" },
-    ],
-    faculty: [
-      {
-        name: "Dr. Anura Perera",
-        titleKey: "facultyTitleHOD",
-        image: "https://placehold.co/100x100.png",
-        hint: "male professor"
-      },
-      {
-        name: "Prof. Sunitha Silva",
-        titleKey: "facultyTitleSeniorLecturer",
-        image: "https://placehold.co/100x100.png",
-        hint: "female professor"
-      },
-    ],
-    contact: {
-      email: "pharma@ceylonpharma.lk",
-      phone: "+94 11 222 3333",
-    },
-  },
-  english: {
-    nameKey: "deptNameEnglish",
-    descriptionKey: "deptDescEnglish",
-    image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2070&auto=format&fit=crop",
-    programs: [
-      { nameKey: "programNameEnglishFree", slug: "#", descriptionKey: "programDescEnglishFree" },
-      { nameKey: "programNameEnglishProf", slug: "#", descriptionKey: "programDescComingSoon" },
-      { nameKey: "programNameEnglishBusiness", slug: "#", descriptionKey: "programDescComingSoon" },
-    ],
-    faculty: [
-      {
-        name: "Ms. Fiona Richards",
-        titleKey: "facultyTitleHOD",
-        image: "https://placehold.co/100x100.png",
-        hint: "female teacher"
-      },
-      {
-        name: "Mr. David Chen",
-        titleKey: "facultyTitleLecturer",
-        image: "https://placehold.co/100x100.png",
-        hint: "male teacher"
-      },
-    ],
-    contact: {
-      email: "english@ceylonpharma.lk",
-      phone: "+94 11 444 5555",
-    },
-  },
-  ict: {
-    nameKey: "deptNameIct",
-    descriptionKey: "deptDescIct",
-    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop",
-    programs: [
-      { nameKey: "programNameIctDip", slug: "#", descriptionKey: "programDescComingSoon" },
-      { nameKey: "programNameIctWeb", slug: "#", descriptionKey: "programDescComingSoon" },
-    ],
-    faculty: [
-      {
-        name: "Mr. Roshan Fernando",
-        titleKey: "facultyTitleHOD",
-        image: "https://placehold.co/100x100.png",
-        hint: "male professional"
-      },
-      {
-        name: "Ms. Shalini Gupta",
-        titleKey: "facultyTitleInstructor",
-        image: "https://placehold.co/100x100.png",
-        hint: "female professional"
-      },
-    ],
-    contact: {
-      email: "ict@ceylonpharma.lk",
-      phone: "+94 11 666 7777",
-    },
-  },
-};
+// In a real app, this would come from an API
+const departmentsData: any = {};
 
 export default function DepartmentPage({ params }: { params: { slug: string } }) {
   const { t } = useTranslation();
@@ -228,3 +146,5 @@ export default function DepartmentPage({ params }: { params: { slug: string } })
     </div>
   );
 }
+
+    

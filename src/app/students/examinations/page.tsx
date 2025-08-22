@@ -8,17 +8,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { Button } from '@/components/ui/button';
 import { Download, FileText, Calendar, AlertCircle, Info, CheckCircle } from 'lucide-react';
 
-const examTimetables = [
-  { courseKey: 'examCourseDPP', date: '2024-12-05', time: '9:00 AM - 12:00 PM', file: '#' },
-  { courseKey: 'examCourseACP', date: '2024-12-07', time: '1:00 PM - 4:00 PM', file: '#' },
-  { courseKey: 'examCourseCPP', date: '2024-12-09', time: '9:00 AM - 11:00 AM', file: '#' },
+const examTimetables: any[] = [
 ];
 
-const pastPapers = [
-  { courseKey: 'examCourseDPP', year: 2023, file: '#' },
-  { courseKey: 'examCourseACP', year: 2023, file: '#' },
-  { courseKey: 'examCourseCPP', year: 2022, file: '#' },
-  { courseKey: 'examCourseDPP', year: 2022, file: '#' },
+const pastPapers: any[] = [
 ];
 
 const examRules = [
@@ -50,30 +43,36 @@ export default function ExaminationsPage() {
                 <CardDescription>{t('examTimetablesDesc')}</CardDescription>
               </CardHeader>
               <CardContent>
-                <Table>
-                  <TableHeader>
-                    <TableRow>
-                      <TableHead>{t('examCourse')}</TableHead>
-                      <TableHead>{t('examDate')}</TableHead>
-                      <TableHead>{t('examTime')}</TableHead>
-                      <TableHead className="text-right">{t('examDownload')}</TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {examTimetables.map((exam, index) => (
-                      <TableRow key={index}>
-                        <TableCell className="font-medium">{t(exam.courseKey as any)}</TableCell>
-                        <TableCell>{exam.date}</TableCell>
-                        <TableCell>{exam.time}</TableCell>
-                        <TableCell className="text-right">
-                          <Button variant="ghost" size="icon" asChild>
-                            <a href={exam.file}><Download className="h-4 w-4"/></a>
-                          </Button>
-                        </TableCell>
+                {examTimetables.length > 0 ? (
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>{t('examCourse')}</TableHead>
+                        <TableHead>{t('examDate')}</TableHead>
+                        <TableHead>{t('examTime')}</TableHead>
+                        <TableHead className="text-right">{t('examDownload')}</TableHead>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
+                    </TableHeader>
+                    <TableBody>
+                      {examTimetables.map((exam, index) => (
+                        <TableRow key={index}>
+                          <TableCell className="font-medium">{t(exam.courseKey as any)}</TableCell>
+                          <TableCell>{exam.date}</TableCell>
+                          <TableCell>{exam.time}</TableCell>
+                          <TableCell className="text-right">
+                            <Button variant="ghost" size="icon" asChild>
+                              <a href={exam.file}><Download className="h-4 w-4"/></a>
+                            </Button>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <div className="text-center py-10 text-muted-foreground">
+                    <p>No exam timetables are available at the moment. Please check back later.</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
 
@@ -85,16 +84,24 @@ export default function ExaminationsPage() {
                 </div>
                 <CardDescription>{t('pastPapersDesc')}</CardDescription>
               </CardHeader>
-              <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {pastPapers.map((paper, index) => (
-                  <a href={paper.file} key={index} className="flex items-center justify-between p-3 rounded-md border hover:bg-muted/50 transition-colors">
-                    <div>
-                      <p className="font-semibold">{t(paper.courseKey as any)}</p>
-                      <p className="text-sm text-muted-foreground">{t('examYear', { year: paper.year })}</p>
-                    </div>
-                    <Download className="h-5 w-5 text-muted-foreground"/>
-                  </a>
-                ))}
+              <CardContent>
+                {pastPapers.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {pastPapers.map((paper, index) => (
+                    <a href={paper.file} key={index} className="flex items-center justify-between p-3 rounded-md border hover:bg-muted/50 transition-colors">
+                      <div>
+                        <p className="font-semibold">{t(paper.courseKey as any)}</p>
+                        <p className="text-sm text-muted-foreground">{t('examYear', { year: paper.year })}</p>
+                      </div>
+                      <Download className="h-5 w-5 text-muted-foreground"/>
+                    </a>
+                  ))}
+                  </div>
+                ) : (
+                   <div className="text-center py-10 text-muted-foreground">
+                    <p>No past papers are available at the moment. Please check back later.</p>
+                  </div>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -147,3 +154,5 @@ export default function ExaminationsPage() {
     </main>
   );
 }
+
+    

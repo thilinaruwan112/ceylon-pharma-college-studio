@@ -8,49 +8,13 @@ import { Button } from '@/components/ui/button';
 import { Users, Microscope, BookOpen, Dumbbell, Briefcase, Heart, Lightbulb, GraduationCap, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-const clubs = [
-  {
-    icon: GraduationCap,
-    nameKey: 'clubName1',
-    descKey: 'clubDesc1',
-  },
-  {
-    icon: Dumbbell,
-    nameKey: 'clubName2',
-    descKey: 'clubDesc2',
-  },
-  {
-    icon: Lightbulb,
-    nameKey: 'clubName3',
-    descKey: 'clubDesc3',
-  },
+const clubs: any[] = [
 ];
 
-const facilities = [
-  {
-    image: 'https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=2070&auto=format&fit=crop',
-    titleKey: 'facilityTitle1',
-    descKey: 'facilityDesc1',
-    hint: "modern library books"
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?q=80&w=2070&auto=format&fit=crop',
-    titleKey: 'facilityTitle2',
-    descKey: 'facilityDesc2',
-    hint: "science laboratory equipment"
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2070&auto=format&fit=crop',
-    titleKey: 'facilityTitle3',
-    descKey: 'facilityDesc3',
-    hint: "students collaborating lounge"
-  },
+const facilities: any[] = [
 ];
 
-const supportServices = [
-    { icon: Briefcase, titleKey: 'supportTitle1', descKey: 'supportDesc1' },
-    { icon: Heart, titleKey: 'supportTitle2', descKey: 'supportDesc2' },
-    { icon: Users, titleKey: 'supportTitle3', descKey: 'supportDesc3' },
+const supportServices: any[] = [
 ];
 
 const galleryImages = [
@@ -94,7 +58,7 @@ export default function StudentLifePage() {
             <div className="w-24 h-1 bg-primary mx-auto mt-4" />
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {clubs.map((club) => (
+            {clubs.length > 0 ? clubs.map((club) => (
               <Card key={club.nameKey} className="text-center bg-card/50">
                 <CardContent className="p-8">
                   <div className="inline-block p-4 bg-primary/10 rounded-full mb-4">
@@ -104,7 +68,11 @@ export default function StudentLifePage() {
                   <p className="text-muted-foreground mt-2 text-sm">{t(club.descKey as any)}</p>
                 </CardContent>
               </Card>
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-10">
+                <p className="text-muted-foreground">Information about student clubs will be available soon.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -117,7 +85,7 @@ export default function StudentLifePage() {
              <div className="w-24 h-1 bg-primary mx-auto mt-4" />
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {facilities.map((facility) => (
+            {facilities.length > 0 ? facilities.map((facility) => (
               <Card key={facility.titleKey} className="overflow-hidden group">
                  <div className="relative aspect-video">
                   <Image src={facility.image} alt={t(facility.titleKey as any)} fill className="object-cover transition-transform duration-300 group-hover:scale-105" data-ai-hint={facility.hint} />
@@ -129,7 +97,11 @@ export default function StudentLifePage() {
                   <p className="text-muted-foreground text-sm">{t(facility.descKey as any)}</p>
                 </CardContent>
               </Card>
-            ))}
+            )) : (
+              <div className="col-span-full text-center py-10">
+                 <p className="text-muted-foreground">Information about campus facilities will be available soon.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -142,7 +114,7 @@ export default function StudentLifePage() {
              <div className="w-24 h-1 bg-primary mx-auto mt-4" />
           </div>
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {supportServices.map((service) => (
+            {supportServices.length > 0 ? supportServices.map((service) => (
               <div key={service.titleKey} className="flex gap-6">
                 <div className="p-3 bg-primary/10 rounded-full h-fit">
                     <service.icon className="w-8 h-8 text-primary" />
@@ -152,7 +124,11 @@ export default function StudentLifePage() {
                   <p className="text-muted-foreground mt-1">{t(service.descKey as any)}</p>
                 </div>
               </div>
-            ))}
+            )) : (
+               <div className="col-span-full text-center py-10">
+                 <p className="text-muted-foreground">Information about student support services will be available soon.</p>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -195,3 +171,5 @@ export default function StudentLifePage() {
     </main>
   );
 }
+
+    
