@@ -37,7 +37,7 @@ const SearchResults = ({ students, loading }: { students: Student[]; loading: bo
     }
     
     return (
-        <div className="mt-4 space-y-2 max-h-80 overflow-y-auto animate-in fade-in-50">
+        <div className="mt-4 space-y-2 max-h-80 overflow-y-auto animate-in fade-in-50 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {students.map((student) => {
                  const resultUrl = `/result-view?CourseCode=${student.batch_id}&LoggedUser=${student.username}`;
                  return (
