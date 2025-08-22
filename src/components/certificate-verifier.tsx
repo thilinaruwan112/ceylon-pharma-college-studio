@@ -92,9 +92,10 @@ export default function CertificateVerifier() {
     
     const lowerCaseQuery = searchQuery.toLowerCase();
     const results: Student[] = [];
+    const reversedStudents = [...allStudents].reverse();
 
-    for (const student of allStudents) {
-        if (results.length >= 5) {
+    for (const student of reversedStudents) {
+        if (results.length >= 10) {
             break;
         }
         const fullName = `${student.fname || ''} ${student.lname || ''}`.toLowerCase();
@@ -137,7 +138,7 @@ export default function CertificateVerifier() {
                 {t('certVerifierSubtitle')}
             </p>
 
-            <div className="mt-8 max-w-xl mx-auto text-left">
+            <div className="mt-8 max-w-xl mx-auto">
                 <div className="relative">
                   <Input 
                     name="certificateNumber" 
