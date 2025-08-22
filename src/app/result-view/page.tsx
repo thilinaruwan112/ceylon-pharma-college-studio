@@ -128,21 +128,29 @@ function ResultsViewComponent() {
     const averageGrade = parseFloat(enrollment.assignment_grades.average_grade);
     
     const getFinalGrade = () => {
-        if (!enrollment.certificate_eligibility) {
-            return "Referred";
-        }
-        if (averageGrade >= 85) return "Distinction";
-        if (averageGrade >= 75) return "Merit";
-        if (averageGrade >= 60) return "Pass";
-        return "Referred";
+        if (isNaN(averageGrade)) return "Result Not Submitted";
+        if (averageGrade >= 90) return "A+";
+        if (averageGrade >= 80) return "A";
+        if (averageGrade >= 75) return "A-";
+        if (averageGrade >= 70) return "B+";
+        if (averageGrade >= 65) return "B";
+        if (averageGrade >= 60) return "B-";
+        if (averageGrade >= 55) return "C+";
+        if (averageGrade >= 45) return "C";
+        if (averageGrade >= 40) return "C-";
+        if (averageGrade >= 35) return "D+";
+        if (averageGrade >= 30) return "D";
+        return "E";
     };
 
     const getRating = () => {
-        if (!enrollment.certificate_eligibility) return 0;
-        if (averageGrade >= 85) return 5; // Distinction
-        if (averageGrade >= 75) return 4; // Merit
-        if (averageGrade >= 60) return 3; // Pass
-        return 0; // Referred
+        if (!enrollment.certificate_eligibility || isNaN(averageGrade)) return 0;
+        if (averageGrade >= 75) return 5;
+        if (averageGrade >= 65) return 4;
+        if (averageGrade >= 55) return 3;
+        if (averageGrade >= 45) return 2;
+        if (averageGrade >= 35) return 1;
+        return 0;
     };
     
     const finalGrade = getFinalGrade();
@@ -238,5 +246,3 @@ export default function ResultsViewPage() {
         </Suspense>
     )
 }
-
-    
