@@ -32,8 +32,10 @@ import {
 } from "lucide-react";
 
 import { useTranslation } from "@/context/language-context";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { translate } from "@/ai/flows/translate-flow";
+
 
 interface Course {
   id: string;
@@ -64,9 +66,11 @@ const certificationRequirements = [
 
 
 export default function CoursePage({ params }: { params: { slug: string } }) {
-  const { t } = useTranslation();
+  const { t, language } = useTranslation();
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);
+  const [translatedDescription, setTranslatedDescription] = useState('');
+  const [isTranslating, setIsTranslating] = useState(false);
 
   useEffect(() => {
     async function fetchCourseData() {
@@ -89,6 +93,35 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
     }
     fetchCourseData();
   }, [params.slug]);
+  
+  const cleanDescription = useMemo(() => {
+      if (!course) return '';
+      return course.course_description.replace(/style="[^"]*"/g, '');
+  }, [course]);
+
+  useEffect(() => {
+    if (!course || !cleanDescription) return;
+
+    if (language === 'en') {
+        setTranslatedDescription(cleanDescription);
+        return;
+    }
+
+    const translateDescription = async () => {
+        setIsTranslating(true);
+        try {
+            const targetLanguage = language === 'si' ? 'Sinhala' : 'Tamil';
+            const translation = await translate({ text: cleanDescription, targetLanguage });
+            setTranslatedDescription(translation);
+        } catch (error) {
+            console.error("Translation failed:", error);
+            setTranslatedDescription(cleanDescription); // Fallback to English on error
+        } finally {
+            setIsTranslating(false);
+        }
+    };
+    translateDescription();
+  }, [language, course, cleanDescription]);
 
 
   if (loading) {
@@ -119,7 +152,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
     </div>
   );
 
-  const cleanDescription = course.course_description.replace(/style="[^"]*"/g, '');
 
   return (
     <div>
@@ -151,7 +183,15 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                     <div>
                         <h2 className="text-3xl font-headline font-bold text-foreground">{course.course_name}</h2>
                         <div className="w-20 h-1 bg-primary mt-2 mb-4" />
-                        <div className="prose prose-sm md:prose-base max-w-none text-muted-foreground font-body" dangerouslySetInnerHTML={{ __html: cleanDescription }} />
+                        {isTranslating ? (
+                            <div className="space-y-4">
+                                <Skeleton className="h-4 w-full" />
+                                <Skeleton className="h-4 w-full" />
+                                <Skeleton className="h-4 w-5/6" />
+                            </div>
+                        ) : (
+                            <div className="prose prose-sm md:prose-base max-w-none text-muted-foreground font-body" dangerouslySetInnerHTML={{ __html: translatedDescription }} />
+                        )}
                         <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
                             {keyFeatures.map((feature, index) => (
                                 <Card key={index} className="bg-card/50">
