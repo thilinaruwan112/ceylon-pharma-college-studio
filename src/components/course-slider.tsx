@@ -90,7 +90,7 @@ export default function CourseSlider() {
                         <CardContent className="p-0 flex flex-col flex-grow">
                           <div className="relative aspect-square">
                              {(course.id === "1" || course.id === "2") && (
-                                <Badge className="absolute top-2 right-2 z-10 bg-accent text-accent-foreground">Trending</Badge>
+                                <Badge className="absolute top-3 right-3 z-10 bg-blue-600 text-white border-blue-600 text-sm py-1 px-3">Trending</Badge>
                              )}
                             <Image
                               src={`https://content-provider.pharmacollege.lk/courses/${course.course_code}/${course.course_img}`}
