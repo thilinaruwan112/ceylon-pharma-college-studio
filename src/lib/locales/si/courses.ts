@@ -1,3 +1,4 @@
+
 export const courses = {
   courseCatalogTitle: 'අපගේ පාඨමාලා',
   courseCatalogSubtitle: 'ඔබේ ඖෂධවේදී වෘත්තිය දියත් කිරීමට සහ ඉදිරියට ගෙන යාමට නිර්මාණය කර ඇති වැඩසටහන් පරාසයකින් තෝරන්න.',
@@ -10,7 +11,6 @@ export const courses = {
   noCoursesFoundSubtitle: 'ඔබ සොයන දේ සොයා ගැනීමට ඔබේ පෙරහන් සීරුමාරු කිරීමට උත්සාහ කරන්න.',
 
   coursePageSubtitle: 'අපගේ පුළුල් උසස් සහතික පත්‍ර වැඩසටහන සමඟ ඔබේ ඖෂධවේදී වෘත්තිය ආරම්භ කරන්න.',
-  downloadSyllabus: 'විෂය නිර්දේශය බාගන්න',
   whatYouWillLearn: "ඔබ ඉගෙන ගන්නා දේ",
   whatYouWillLearnDesc: 'මෙම පාඨමාලාව අවසානයේ ඔබට හැකි වනු ඇත:',
   courseTopics: 'පාඨමාලා මාතෘකා',

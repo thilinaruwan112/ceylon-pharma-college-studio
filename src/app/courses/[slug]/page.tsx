@@ -174,7 +174,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                 <Button asChild size="lg" variant="secondary" className="font-bold">
                     <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
                 </Button>
-                <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary font-bold">{t('downloadSyllabus')}</Button>
             </div>
         </div>
       </section>
@@ -278,4 +277,3 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
     </div>
   );
 }
-

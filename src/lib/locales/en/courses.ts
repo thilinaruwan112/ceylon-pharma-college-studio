@@ -1,3 +1,4 @@
+
 export const courses = {
   // Course Catalog
   courseCatalogTitle: 'Our Courses',
@@ -12,12 +13,9 @@ export const courses = {
 
   // Course Detail Page
   coursePageSubtitle: 'Start your career in pharmacy with our comprehensive advanced certificate program.',
-  downloadSyllabus: 'Download Syllabus',
   whatYouWillLearn: "What You'll Learn",
   whatYouWillLearnDesc: 'By the end of this course, you will be able to:',
   courseTopics: 'Course Topics',
-  certification: 'Certification for Course',
-  certificationDesc: 'After successfully completing the Certificate Course in Pharmacy Practice and passing all required modules, you will receive an official certificate. To qualify, you must:',
   howToEnroll: 'How to Enroll',
   enrollStep1Title: 'Complete Application',
   enrollStep1Desc: 'Fill out the application form on the Ceylon Pharma College website.',
