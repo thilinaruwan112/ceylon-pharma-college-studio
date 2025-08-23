@@ -7,9 +7,6 @@ export const about = {
   visionText: 'To be a leading center of excellence in pharmaceutical education and research, recognized globally for producing competent and compassionate healthcare professionals.',
   missionTitle: 'Our Mission',
   missionText: 'To provide a dynamic learning environment that fosters academic excellence, innovation, and ethical leadership in pharmacy, empowering students to meet the healthcare needs of society.',
-  leadershipTitle: 'Meet Our Leadership',
-  leadershipSubtitle: 'Guided by a team of experienced and dedicated professionals committed to our mission.',
-  leadershipTitle1: 'Director',
-  leadershipTitle2: 'Head of Academics',
-  leadershipTitle3: 'Manager of Operations',
+  lecturePanelTitle: 'Our Lecture Panel',
+  lecturePanelSubtitle: 'Our programs are led by a team of experienced and dedicated professionals committed to student success.',
 };

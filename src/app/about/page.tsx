@@ -6,31 +6,16 @@ import { useTranslation } from '@/context/language-context';
 import WhyChooseUs from '@/components/why-choose-us';
 import Accreditations from '@/components/accreditations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { BookOpen, Target } from 'lucide-react';
+import { BookOpen, Target, Users } from 'lucide-react';
 
-const leadership = [
-  {
-    name: "Dr. Anura Perera",
-    titleKey: "leadershipTitle1",
-    image: "https://placehold.co/150x150.png",
-    fallback: "AP",
-    hint: "male director"
-  },
-  {
-    name: "Prof. Sunitha Silva",
-    titleKey: "leadershipTitle2",
-    image: "https://placehold.co/150x150.png",
-    fallback: "SS",
-    hint: "female academic head"
-  },
-  {
-    name: "Mr. Roshan Fernando",
-    titleKey: "leadershipTitle3",
-    image: "https://placehold.co/150x150.png",
-    fallback: "RF",
-    hint: "male operations manager"
-  },
+const lecturePanel = [
+  "Mr Dilip Fonseka",
+  "Ms Dilshani Gunasekara",
+  "Dr. Vajira Senevirathna",
+  "Prof. Vishan Rudrigoo",
+  "Ms.Nilanka Senevirathna",
+  "Ms. Hansi Senevirathna",
+  "Mr. Thilina Doloswala"
 ];
 
 export default function AboutPage() {
@@ -96,23 +81,23 @@ export default function AboutPage() {
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">{t('leadershipTitle')}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">{t('leadershipSubtitle')}</p>
+            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">{t('lecturePanelTitle')}</h2>
+            <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">{t('lecturePanelSubtitle')}</p>
              <div className="w-24 h-1 bg-primary mx-auto mt-4" />
           </div>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {leadership.map((leader) => (
-              <Card key={leader.name} className="text-center border-0 shadow-none">
-                <CardContent className="p-6">
-                  <Avatar className="h-32 w-32 mx-auto mb-4 border-4 border-primary/20">
-                    <AvatarImage src={leader.image} alt={leader.name} data-ai-hint={leader.hint}/>
-                    <AvatarFallback>{leader.fallback}</AvatarFallback>
-                  </Avatar>
-                  <h3 className="font-headline font-bold text-xl text-foreground">{leader.name}</h3>
-                  <p className="text-primary font-medium">{t(leader.titleKey as any)}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="mt-12 max-w-4xl mx-auto">
+            <Card>
+              <CardContent className="p-8">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4">
+                  {lecturePanel.map((name) => (
+                    <li key={name} className="flex items-center gap-3">
+                      <Users className="h-5 w-5 text-primary" />
+                      <span className="font-medium text-foreground">{name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
