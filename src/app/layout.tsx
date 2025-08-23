@@ -8,10 +8,65 @@ import { LanguageProvider } from '@/context/language-context';
 import { ThemeProvider } from '@/components/theme-provider';
 import Preloader from '@/components/preloader';
 
-export const metadata: Metadata = {
-  title: 'Ceylon Pharma College',
-  description: 'Leading pharmaceutical education in Ceylon.',
+const siteConfig = {
+  name: 'Ceylon Pharma College',
+  description: 'Leading pharmaceutical education in Sri Lanka, offering a range of accredited courses and programs. Nurturing skilled, ethical pharmacy professionals for the global health landscape.',
+  url: 'https://www.pharmacollege.lk',
+  ogImage: 'https://content-provider.pharmacollege.lk/logo/logo-cpc.png',
+  tagline: 'Learn, Play & Level up your Skill',
 };
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: `${siteConfig.name} - ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "Pharmacy college Sri Lanka",
+    "Pharmaceutical education",
+    "Pharmacy courses",
+    "Diploma in Pharmacy",
+    "Advanced Community Pharmacy",
+    "Healthcare education",
+    "Medical training Sri Lanka",
+  ],
+  authors: [{ name: "Ceylon Pharma College", url: siteConfig.url }],
+  creator: "Payshia Software Solutions",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@yourtwitterhandle", // Replace with your actual Twitter handle
+  },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en',
+      'si-LK': '/si',
+      'ta-LK': '/ta',
+    },
+  },
+};
+
 
 export default function RootLayout({
   children,
