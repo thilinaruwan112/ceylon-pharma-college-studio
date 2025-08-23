@@ -17,8 +17,8 @@ const departmentData = {
   ],
   programs: [
     { nameKey: 'programNameEnglishFree', descriptionKey: 'programDescEnglishFree', slug: '#' },
-    { nameKey: 'programNameEnglishProf', descriptionKey: 'programDescComingSoon', slug: '#' },
-    { nameKey: 'programNameEnglishBusiness', descriptionKey: 'programDescComingSoon', slug: '#' },
+    { nameKey: 'programNameEnglishCert', descriptionKey: 'programDescComingSoon', slug: '#' },
+    { nameKey: 'programNameEnglishAdvCert', descriptionKey: 'programDescComingSoon', slug: '#' },
   ]
 };
 

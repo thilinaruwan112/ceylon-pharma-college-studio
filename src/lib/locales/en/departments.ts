@@ -27,8 +27,8 @@ export const departments = {
   // Program Names (Non-Pharma)
   programNameEnglishFree: 'Free Basic English Course',
   programDescEnglishFree: 'Conducted with every Pharma College intake. A participation e-Certificate is provided.',
-  programNameEnglishProf: 'English for Professionals',
-  programNameEnglishBusiness: 'Business English Communication',
+  programNameEnglishCert: 'Basic to Brilliance English Certificate Course',
+  programNameEnglishAdvCert: 'Basic to Brilliance English Advanced Certificate Course',
   programNameIctDip: 'Diploma in ICT',
   programNameIctWeb: 'Advanced Web Development',
   programDescComingSoon: 'Coming soon. Inquire for more details.',
