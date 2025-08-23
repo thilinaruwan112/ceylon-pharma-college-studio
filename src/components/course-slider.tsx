@@ -89,7 +89,7 @@ export default function CourseSlider() {
                       <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                         <CardContent className="p-0 flex flex-col flex-grow">
                           <div className="relative aspect-square">
-                             {course.display === "1" && (
+                             {(course.id === "1" || course.id === "2") && (
                                 <Badge className="absolute top-2 right-2 z-10 bg-accent text-accent-foreground">Trending</Badge>
                              )}
                             <Image
