@@ -52,10 +52,10 @@ export default function Achievements() {
                   <iframe
                     key={selectedVideo.id}
                     className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1&rel=0`}
+                    src={`https://www.youtube.com/embed/${selectedVideo.id}?rel=0`}
                     title={selectedVideo.title}
                     frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
                   ></iframe>
                 </div>
