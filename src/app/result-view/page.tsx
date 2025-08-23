@@ -32,7 +32,7 @@ interface AssignmentGrades {
 }
 
 interface Enrollment {
-    id: string;
+    id:string;
     course_code: string;
     batch_name: string;
     parent_course_name: string;
@@ -125,6 +125,30 @@ function ResultsViewComponent() {
         )
     }
 
+    if (!enrollment.certificate_eligibility) {
+        return (
+            <main className="bg-muted/40 py-12 md:py-16">
+               <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+                   <Card className="text-center">
+                       <CardHeader>
+                            <div className="mx-auto bg-destructive/10 p-3 rounded-full w-fit">
+                               <AlertTriangle className="h-10 w-10 text-destructive" />
+                           </div>
+                           <CardTitle className="font-headline text-2xl md:text-3xl font-bold text-destructive mt-4">
+                               Not Eligible for Certificate
+                           </CardTitle>
+                       </CardHeader>
+                       <CardContent className="space-y-4">
+                          <p className="text-muted-foreground">
+                               Student <span className="font-bold text-foreground">{studentData.studentInfo.name_on_certificate}</span> is not eligible to receive the certificate for this course at this time.
+                          </p>
+                       </CardContent>
+                   </Card>
+               </div>
+           </main>
+       )
+    }
+
     const averageGrade = parseFloat(enrollment.assignment_grades.average_grade);
     
     const getFinalGrade = () => {
@@ -174,7 +198,7 @@ function ResultsViewComponent() {
                         height={62}
                         className="h-auto w-48 mx-auto hidden dark:block dark:brightness-0 dark:invert"
                     />
-                    {enrollment.certificate_eligibility && (
+                     {enrollment.certificate_eligibility && (
                         <>
                             <h1 className="font-headline text-2xl md:text-3xl font-bold text-primary mt-6">{t('certResultTitle')}</h1>
                             <p className="text-muted-foreground">{t('certResultSubtitle')}</p>
