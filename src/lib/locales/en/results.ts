@@ -9,7 +9,7 @@ export const results = {
   courseDetails: 'Course Details',
 
   // Field Labels
-  certStudentName: 'Certificate Name',
+  certStudentName: 'Name',
   certIndexNo: 'Index Number',
   certCourseName: 'Course Name',
   certCourseCode: 'Course Code',

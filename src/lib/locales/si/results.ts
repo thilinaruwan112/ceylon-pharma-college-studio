@@ -6,7 +6,7 @@ export const results = {
   studentInfo: 'ශිෂ්‍ය තොරතුරු',
   courseDetails: 'පාඨමාලා විස්තර',
 
-  certStudentName: 'සහතිකයේ නම',
+  certStudentName: 'නම',
   certIndexNo: 'විභාග අංකය',
   certCourseName: 'පාඨමාලාවේ නම',
   certCourseCode: 'පාඨමාලා කේතය',
