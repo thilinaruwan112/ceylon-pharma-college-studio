@@ -12,7 +12,7 @@ const siteConfig = {
   name: 'Ceylon Pharma College',
   description: 'At Ceylon Pharma College, we’re passionate about providing high-quality education in pharmacy practice. Our goal is to help you build a successful and meaningful career in healthcare. Whether you are working as or willing to become a pharmacist, pharmacy assistant, caregiver, or healthcare professional, our courses are designed just for you.',
   url: 'https://www.pharmacollege.lk',
-  ogImage: 'https://content-provider.pharmacollege.lk/logo/logo-cpc.png',
+  ogImage: 'https://content-provider.pharmacollege.lk/website/meta-seo-image.webp',
   tagline: 'Learn, Play & Level up your Skill',
 };
 
