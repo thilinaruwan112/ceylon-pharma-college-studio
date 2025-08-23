@@ -25,3 +25,5 @@ const departmentData = {
 export default function PharmaceuticalDepartmentPage() {
     return <DepartmentPage departmentData={departmentData} />;
 }
+
+    

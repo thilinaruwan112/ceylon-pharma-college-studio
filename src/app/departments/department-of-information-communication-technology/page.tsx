@@ -24,3 +24,5 @@ const departmentData = {
 export default function IctDepartmentPage() {
     return <DepartmentPage departmentData={departmentData} />;
 }
+
+    

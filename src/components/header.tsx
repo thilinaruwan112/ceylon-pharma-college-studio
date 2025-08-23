@@ -67,9 +67,9 @@ const mainNavConfig = {
     {
       titleKey: 'departments',
       items: [
-        { key: 'deptNamePharmaceutical', href: '/departments/pharmaceutical' },
-        { key: 'deptNameEnglish', href: '/departments/english' },
-        { key: 'deptNameIct', href: '/departments/ict' },
+        { key: 'deptNamePharmaceutical', href: '/departments/department-of-pharmaceutical' },
+        { key: 'deptNameEnglish', href: '/departments/department-of-english' },
+        { key: 'deptNameIct', href: '/departments/department-of-information-communication-technology' },
       ],
     },
     {
@@ -310,3 +310,5 @@ export default function Header() {
     </header>
   );
 }
+
+    

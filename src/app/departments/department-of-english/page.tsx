@@ -25,3 +25,5 @@ const departmentData = {
 export default function EnglishDepartmentPage() {
     return <DepartmentPage departmentData={departmentData} />;
 }
+
+    
