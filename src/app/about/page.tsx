@@ -9,11 +9,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Target, Users } from 'lucide-react';
 
 const lecturePanel = [
-  "Mr Dilip Fonseka",
-  "Ms Dilshani Gunasekara",
+  "Mr. Dilip Fonseka",
+  "Ms. Dilshani Gunasekara",
   "Dr. Vajira Senevirathna",
   "Prof. Vishan Rudrigoo",
-  "Ms.Nilanka Senevirathna",
+  "Ms. Nilanka Senevirathna",
   "Ms. Hansi Senevirathna",
   "Mr. Thilina Doloswala"
 ];
