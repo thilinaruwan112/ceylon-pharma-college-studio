@@ -27,7 +27,7 @@ const CourseCardSkeleton = () => (
     <div className="p-1 h-full">
         <Card className="overflow-hidden h-full flex flex-col">
             <CardContent className="p-0 flex flex-col flex-grow">
-                <Skeleton className="aspect-video w-full" />
+                <Skeleton className="aspect-square w-full" />
                 <div className="p-4 bg-card border-t flex flex-col flex-grow">
                     <Skeleton className="h-6 w-3/4 mb-2" />
                     <Skeleton className="h-4 w-1/2" />
@@ -91,7 +91,7 @@ export default function CourseSlider() {
                     <div className="p-1 h-full">
                       <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                         <CardContent className="p-0 flex flex-col flex-grow">
-                          <div className="relative aspect-video">
+                          <div className="relative aspect-square">
                              {(course.id === "1" || course.id === "2") && (
                                 <Badge className="absolute top-3 right-3 z-10 bg-blue-600 text-white border-blue-600 text-sm py-1 px-3">Trending</Badge>
                              )}
