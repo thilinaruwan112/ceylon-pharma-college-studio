@@ -105,18 +105,18 @@ export default function CourseSlider() {
                           </div>
                           <div className="p-4 bg-card border-t flex flex-col flex-grow">
                             <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.course_name}</h3>
-                             <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-                                <div className="flex items-center gap-2">
-                                    <Clock className="w-4 h-4 text-primary" />
-                                    <span>{course.course_duration} Months</span>
+                             <div className="mt-4 flex items-center justify-between text-xs text-muted-foreground">
+                                <div className="flex items-center gap-1.5">
+                                    <Clock className="w-3.5 h-3.5 text-primary" />
+                                    <span>{course.course_duration} M</span>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <BookOpen className="w-4 h-4 text-primary" />
+                                 <div className="flex items-center gap-1.5">
+                                    <BookOpen className="w-3.5 h-3.5 text-primary" />
                                     <span>{course.skill_level}</span>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <ClipboardList className="w-4 h-4 text-primary" />
-                                    <span>{course.assessments} Assessments</span>
+                                <div className="flex items-center gap-1.5">
+                                    <ClipboardList className="w-3.5 h-3.5 text-primary" />
+                                    <span>{course.assessments} A</span>
                                 </div>
                             </div>
                             <div className="flex-grow" />
