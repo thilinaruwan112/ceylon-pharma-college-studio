@@ -2,7 +2,7 @@
 "use client";
 
 import Link from 'next/link';
-import { Facebook, Twitter, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Phone, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslation } from '@/context/language-context';
 
@@ -27,8 +27,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/60 text-muted-foreground">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-4 md:px-6">
-        <div className="flex flex-col items-start gap-4 md:col-span-2">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-12 md:px-6">
+        <div className="flex flex-col items-start gap-4 md:col-span-4">
           <Link href="/" className="flex items-center">
             <Image
               src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
@@ -54,7 +54,7 @@ export default function Footer() {
             <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-5 w-5" /></a>
           </div>
         </div>
-        <div className="grid gap-4">
+        <div className="grid gap-4 md:col-span-2">
           <h4 className="font-headline text-base font-semibold text-foreground">{t('footerPolicies')}</h4>
           <div className="text-sm font-body space-y-2">
             {policies.map((link) => (
@@ -64,7 +64,7 @@ export default function Footer() {
             ))}
           </div>
         </div>
-         <div className="grid gap-4">
+         <div className="grid gap-4 md:col-span-2">
           <h4 className="font-headline text-base font-semibold text-foreground">{t('footerCompany')}</h4>
           <div className="text-sm font-body space-y-2">
              {company.map((link) => (
@@ -73,6 +73,23 @@ export default function Footer() {
                 </Link>
             ))}
           </div>
+        </div>
+        <div className="grid gap-4 md:col-span-4">
+            <h4 className="font-headline text-base font-semibold text-foreground">{t('contactUs')}</h4>
+             <div className="text-sm font-body space-y-3">
+                <div className="flex items-start gap-3">
+                    <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <span>{t('contactHeadOfficeAddress')}</span>
+                </div>
+                <div className="flex items-start gap-3">
+                    <Mail className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <a href="mailto:info@pharmacollege.lk" className="hover:text-primary">info@pharmacollege.lk</a>
+                </div>
+                <div className="flex items-start gap-3">
+                    <Phone className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                    <a href="tel:0715884884" className="hover:text-primary">0715 884 884</a>
+                </div>
+             </div>
         </div>
       </div>
       <div className="border-t">
