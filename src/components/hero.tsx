@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="relative z-20 h-full flex flex-col items-center justify-center text-center text-white container mx-auto px-4 md:px-6">
         <div className="mb-4">
           <Image
-            src="https://pharmacollege.lk/assets/logo/logo-cpc.png"
+            src="https://content-provider.pharmacollege.lk/logo/logo-cpc-white.png"
             alt="Ceylon Pharma College Logo"
             width={240}
             height={75}

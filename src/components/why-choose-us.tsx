@@ -11,7 +11,7 @@ export default function WhyChooseUs() {
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center px-4 md:px-6">
         <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden shadow-lg">
           <Image
-            src="https://www.pharmacollege.lk/assets/images/why-chose.jpg"
+            src="https://content-provider.pharmacollege.lk/website/why-chose.webp"
             alt="Students listening to a lecture at Ceylon Pharma College"
             fill
             className="object-cover"
