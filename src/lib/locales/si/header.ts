@@ -12,7 +12,7 @@ export const header = {
   departments: 'දෙපාර්තමේන්තු',
   students: 'ශිෂ්‍යයන්',
   reviews: 'සමාලෝචන',
-  deptPharmaceutical: 'ඖෂධවේදී විද්‍යා',
+  deptPharmaceutical: 'ඖෂධ',
   deptEnglish: 'ඉංග්‍රීසි',
   deptIct: 'තොරතුරු තාක්ෂණ',
   studentLife: 'ශිෂ්‍ය ජීවිතය',

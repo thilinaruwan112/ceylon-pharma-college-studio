@@ -17,7 +17,7 @@ export const header = {
   reviews: 'விமர்சனங்கள்',
 
   // Dropdowns
-  deptPharmaceutical: 'மருந்தியல் விஞ்ஞானம்',
+  deptPharmaceutical: 'மருந்தியல்',
   deptEnglish: 'ஆங்கிலம்',
   deptIct: 'தகவல் தொழில்நுட்பம்',
   studentLife: 'மாணவர் வாழ்க்கை',

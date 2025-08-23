@@ -17,7 +17,7 @@ export const header = {
   reviews: 'Reviews',
 
   // Dropdowns
-  deptPharmaceutical: 'Pharmaceutical Sciences',
+  deptPharmaceutical: 'Pharmaceutical',
   deptEnglish: 'English',
   deptIct: 'ICT',
   studentLife: 'Student Life',

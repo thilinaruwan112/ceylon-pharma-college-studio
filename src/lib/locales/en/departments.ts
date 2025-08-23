@@ -9,8 +9,8 @@ export const departments = {
   deptPageViewProgram: 'View Program Details',
 
   // Department Names & Descriptions
-  deptNamePharmaceutical: 'Department of Pharmaceutical Sciences',
-  deptDescPharmaceutical: 'The Department of Pharmaceutical Sciences is dedicated to advancing the field of pharmacy through cutting-edge research, comprehensive education, and community engagement. We prepare students to become competent pharmacists and leaders in the healthcare industry.',
+  deptNamePharmaceutical: 'Department of Pharmaceutical',
+  deptDescPharmaceutical: 'The Department of Pharmaceutical is dedicated to advancing the field of pharmacy through cutting-edge research, comprehensive education, and community engagement. We prepare students to become competent pharmacists and leaders in the healthcare industry.',
   
   deptNameEnglish: 'Department of English',
   deptDescEnglish: 'Our Department of English offers robust programs designed to enhance communication skills, critical thinking, and literary appreciation. We equip students with the linguistic proficiency needed for professional success in a globalized world.',
