@@ -2,7 +2,6 @@ import Accreditations from '@/components/accreditations';
 import CertificateVerifier from '@/components/certificate-verifier';
 import CourseSlider from '@/components/course-slider';
 import EventCalendar from '@/components/event-calendar';
-import MultimediaGallery from '@/components/multimedia-gallery';
 import Testimonials from '@/components/testimonials';
 import Hero from '@/components/hero';
 import WhyChooseUs from '@/components/why-choose-us';
@@ -18,7 +17,6 @@ export default function Home() {
       <Achievements />
       <Testimonials />
       <EventCalendar />
-      <MultimediaGallery />
       <Accreditations />
     </main>
   );
