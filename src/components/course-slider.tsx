@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Clock, BookOpen, ClipboardList } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Skeleton } from './ui/skeleton';
 import { Badge } from "@/components/ui/badge";
@@ -18,16 +18,19 @@ interface Course {
   course_fee: string;
   course_img: string;
   slug: string;
-  display: string;
+  course_duration: string;
+  skill_level: string;
+  assessments: string;
 }
 
 const CourseCardSkeleton = () => (
     <div className="p-1 h-full">
         <Card className="overflow-hidden h-full flex flex-col">
             <CardContent className="p-0 flex flex-col flex-grow">
-                <Skeleton className="aspect-square w-full" />
+                <Skeleton className="aspect-video w-full" />
                 <div className="p-4 bg-card border-t flex flex-col flex-grow">
-                    <Skeleton className="h-6 w-3/4" />
+                    <Skeleton className="h-6 w-3/4 mb-2" />
+                    <Skeleton className="h-4 w-1/2" />
                     <div className="flex-grow" />
                     <div className="flex justify-between items-center mt-4">
                         <Skeleton className="h-8 w-1/2" />
@@ -88,7 +91,7 @@ export default function CourseSlider() {
                     <div className="p-1 h-full">
                       <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                         <CardContent className="p-0 flex flex-col flex-grow">
-                          <div className="relative aspect-square">
+                          <div className="relative aspect-video">
                              {(course.id === "1" || course.id === "2") && (
                                 <Badge className="absolute top-3 right-3 z-10 bg-blue-600 text-white border-blue-600 text-sm py-1 px-3">Trending</Badge>
                              )}
@@ -102,8 +105,22 @@ export default function CourseSlider() {
                           </div>
                           <div className="p-4 bg-card border-t flex flex-col flex-grow">
                             <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.course_name}</h3>
+                             <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+                                <div className="flex items-center gap-2">
+                                    <Clock className="w-4 h-4 text-primary" />
+                                    <span>{course.course_duration} Months</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <BookOpen className="w-4 h-4 text-primary" />
+                                    <span>{course.skill_level}</span>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <ClipboardList className="w-4 h-4 text-primary" />
+                                    <span>{course.assessments} Assessments</span>
+                                </div>
+                            </div>
                             <div className="flex-grow" />
-                            <div className="flex justify-between items-center mt-4">
+                            <div className="flex justify-between items-center mt-4 pt-4 border-t">
                               <p className="font-bold text-lg font-body text-primary">LKR {parseFloat(course.course_fee).toLocaleString()}</p>
                               <ArrowRight className="h-5 w-5 text-primary opacity-0 transform -translate-x-2 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300" />
                             </div>
