@@ -9,6 +9,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { ArrowRight } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Skeleton } from './ui/skeleton';
+import { Badge } from "@/components/ui/badge";
 
 interface Course {
   id: string;
@@ -17,6 +18,7 @@ interface Course {
   course_fee: string;
   course_img: string;
   slug: string;
+  display: string;
 }
 
 const CourseCardSkeleton = () => (
@@ -87,6 +89,9 @@ export default function CourseSlider() {
                       <Card className="overflow-hidden h-full flex flex-col transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
                         <CardContent className="p-0 flex flex-col flex-grow">
                           <div className="relative aspect-square">
+                             {course.display === "1" && (
+                                <Badge className="absolute top-2 right-2 z-10 bg-accent text-accent-foreground">Trending</Badge>
+                             )}
                             <Image
                               src={`https://content-provider.pharmacollege.lk/courses/${course.course_code}/${course.course_img}`}
                               alt={course.course_name}
