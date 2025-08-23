@@ -11,6 +11,7 @@ export const footer = {
   footerAddress: 'L35, බටහිර කුළුණ, ලෝක වෙළඳ මධ්‍යස්ථානය, කොළඹ 01',
   footerEmail: 'විද්‍යුත් තැපෑල: ',
   footerPhone: 'පාරිභෝගික සේවය: ',
-  copyright: '© {year} සිලෝන් ෆාමා විද්‍යාලය. සියලුම හිමිකම් ඇවිරිණි.',
+  copyright: '© {year} Ceylon Pharma College. All Rights Reserved.',
   poweredBy: 'බල ගැන්වීම ',
 };
+

@@ -11,6 +11,7 @@ export const footer = {
   footerAddress: 'L35, மேற்கு கோபுரம், உலக வர்த்தக மையம், கொழும்பு 01',
   footerEmail: 'மின்னஞ்சல்: ',
   footerPhone: 'வாடிக்கையாளர் சேவை: ',
-  copyright: '© {year} சிலோன் பார்மா கல்லூரி. அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+  copyright: '© {year} Ceylon Pharma College. All Rights Reserved.',
   poweredBy: 'ஆதரவுடன் ',
 };
+
