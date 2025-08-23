@@ -11,10 +11,7 @@ const departmentData = {
     phone: '0715 884 884',
     email: 'ict@pharmacollege.lk',
   },
-  faculty: [
-    { name: 'Mr. Roshan Fernando', titleKey: 'facultyTitleHOD', image: 'https://placehold.co/150x150.png', hint: 'male hod ict' },
-    { name: 'Ms. Anusha Kumar', titleKey: 'facultyTitleInstructor', image: 'https://placehold.co/150x150.png', hint: 'female instructor' },
-  ],
+  faculty: [],
   programs: [
     { nameKey: 'programNameIctDip', descriptionKey: 'programDescComingSoon', slug: '#' },
     { nameKey: 'programNameIctWeb', descriptionKey: 'programDescComingSoon', slug: '#' },

@@ -11,10 +11,7 @@ const departmentData = {
     phone: '0715 884 884',
     email: 'english@pharmacollege.lk',
   },
-  faculty: [
-    { name: 'Mr. David Smith', titleKey: 'facultyTitleHOD', image: 'https://placehold.co/150x150.png', hint: 'male hod english' },
-    { name: 'Ms. Sarah Johnson', titleKey: 'facultyTitleSeniorLecturer', image: 'https://placehold.co/150x150.png', hint: 'female senior lecturer' },
-  ],
+  faculty: [],
   programs: [
     { nameKey: 'programNameEnglishFree', descriptionKey: 'programDescEnglishFree', slug: '#' },
     { nameKey: 'programNameEnglishCert', descriptionKey: 'programDescComingSoon', slug: '#' },

@@ -11,11 +11,7 @@ const departmentData = {
     phone: '0715 884 884',
     email: 'pharma@pharmacollege.lk',
   },
-  faculty: [
-    { name: 'Dr. Nimali Fernando', titleKey: 'facultyTitleHOD', image: 'https://placehold.co/150x150.png', hint: 'female hod' },
-    { name: 'Prof. Rohan Silva', titleKey: 'facultyTitleSeniorLecturer', image: 'https://placehold.co/150x150.png', hint: 'male senior lecturer' },
-    { name: 'Ms. Fathima Rizwan', titleKey: 'facultyTitleLecturer', image: 'https://placehold.co/150x150.png', hint: 'female lecturer' },
-  ],
+  faculty: [],
   programs: [
     { nameKey: 'courseTitleDPP', descriptionKey: 'programDescPharma', slug: 'diploma-in-pharmacy-practice' },
     { nameKey: 'courseTitleACP', descriptionKey: 'programDescPharma', slug: 'advanced-community-pharmacy-practice' },

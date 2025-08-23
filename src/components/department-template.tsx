@@ -104,25 +104,6 @@ export default function DepartmentPage({ departmentData }: { departmentData: Dep
                         </div>
                     </div>
 
-                    {/* Faculty Section */}
-                    <div>
-                        <h2 className="text-3xl font-headline font-bold text-foreground">{t('deptPageFaculty')}</h2>
-                        <div className="w-20 h-1 bg-primary mt-2 mb-4" />
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {department.faculty.map((member) => (
-                                <Card key={member.name} className="text-center">
-                                    <CardContent className="p-6">
-                                        <Avatar className="h-24 w-24 mx-auto mb-4">
-                                            <AvatarImage src={member.image} alt={member.name} data-ai-hint={member.hint} />
-                                            <AvatarFallback>{member.name.split(' ').map((n: string) => n[0]).join('')}</AvatarFallback>
-                                        </Avatar>
-                                        <h3 className="font-headline font-semibold text-foreground">{member.name}</h3>
-                                        <p className="text-sm text-primary">{t(member.titleKey as any)}</p>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
-                    </div>
                 </main>
                 <aside className="lg:col-span-1">
                     <div className="sticky top-24">
