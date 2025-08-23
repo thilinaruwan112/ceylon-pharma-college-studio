@@ -38,14 +38,6 @@ export const courses = {
   enrollNowSubtext: 'For inquiries, call: 0715 884 884',
   materialsProvided: 'Materials Provided',
 
-  // Key Features
-  keyFeatureTitle1: 'Comprehensive Curriculum',
-  keyFeatureDesc1: 'Learn all aspects of pharmacy practice through a well-designed program.',
-  keyFeatureTitle2: 'Hands-on Practice',
-  keyFeatureDesc2: 'Gain practical experience through simulated pharmacy settings and real-world case studies.',
-  keyFeatureTitle3: 'Recognized Certification',
-  keyFeatureDesc3: 'Earn a certificate recognized by ACTD and the Skill Development Council of Canada.',
-
   // Assessment Methods
   assessmentMethodTitle1: 'Assessments',
   assessmentMethodDesc1: 'Evaluations during the course to track your progress.',

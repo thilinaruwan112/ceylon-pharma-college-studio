@@ -51,12 +51,6 @@ interface Course {
   quizzes: string;
 }
 
-const keyFeatures = [
-    { icon: Library, title: "keyFeatureTitle1", description: "keyFeatureDesc1" },
-    { icon: UserCheck, title: "keyFeatureTitle2", description: "keyFeatureDesc2" },
-    { icon: Target, title: "keyFeatureTitle3", description: "keyFeatureDesc3" },
-];
-
 const certificationRequirements = [
     "certReq1",
     "certReq2",
@@ -202,19 +196,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                         ) : (
                             <div className="prose prose-sm md:prose-base max-w-none text-muted-foreground font-body" dangerouslySetInnerHTML={{ __html: translatedDescription }} />
                         )}
-                        <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            {keyFeatures.map((feature, index) => (
-                                <Card key={index} className="bg-card/50">
-                                    <CardContent className="p-6 text-center">
-                                        <div className="inline-block p-3 bg-primary/10 rounded-full mb-3">
-                                            <feature.icon className="w-7 h-7 text-primary" />
-                                        </div>
-                                        <h3 className="font-headline font-semibold text-foreground">{t(feature.title as any)}</h3>
-                                        <p className="text-sm text-muted-foreground mt-1">{t(feature.description as any)}</p>
-                                    </CardContent>
-                                </Card>
-                            ))}
-                        </div>
                     </div>
                     
                      {/* Assessment Method */}
