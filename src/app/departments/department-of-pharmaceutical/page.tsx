@@ -8,7 +8,7 @@ const departmentData = {
   descriptionKey: 'deptDescPharmaceutical',
   image: 'https://images.unsplash.com/photo-1583324113620-91542302de3e?q=80&w=2070&auto=format&fit=crop',
   contact: {
-    phone: '011 2 345 678',
+    phone: '0715 884 884',
     email: 'pharma@pharmacollege.lk',
   },
   faculty: [

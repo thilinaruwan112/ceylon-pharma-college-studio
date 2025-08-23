@@ -8,7 +8,7 @@ const departmentData = {
   descriptionKey: 'deptDescIct',
   image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop',
   contact: {
-    phone: '011 2 345 680',
+    phone: '0715 884 884',
     email: 'ict@pharmacollege.lk',
   },
   faculty: [
