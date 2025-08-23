@@ -4,7 +4,7 @@
 import { useSearchParams, notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Book, Award, AlertTriangle } from 'lucide-react';
+import { User, Book, Award, AlertTriangle, UserCheck } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
@@ -178,62 +178,55 @@ function ResultsViewComponent() {
                     <p className="text-muted-foreground">{t('certResultSubtitle')}</p>
                 </div>
                 
-                <div className="space-y-6">
-                    <Card>
-                        <CardHeader className="flex-row items-center gap-4">
-                            <User className="w-6 h-6 text-primary"/>
-                            <CardTitle className="font-headline text-xl">{t('studentInfo')}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                             <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certStudentName')}</span>
-                                <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
+                <Card>
+                    <CardContent className="p-6 space-y-6">
+                        <div>
+                            <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><UserCheck className="h-5 w-5 text-primary" />{t('studentInfo')}</h3>
+                             <div className="space-y-2 text-sm">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certStudentName')}</span>
+                                    <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certIndexNo')}</span>
+                                    <span className="font-semibold">{studentData.studentInfo.username}</span>
+                                </div>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certIndexNo')}</span>
-                                <span className="font-semibold">{studentData.studentInfo.username}</span>
-                            </div>
-                        </CardContent>
-                    </Card>
+                        </div>
 
-                     <Card>
-                        <CardHeader className="flex-row items-center gap-4">
-                            <Book className="w-6 h-6 text-primary"/>
-                            <CardTitle className="font-headline text-xl">{t('courseDetails')}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                             <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certCourseName')}</span>
-                                <span className="font-semibold">{enrollment.parent_course_name}</span>
+                        <div className="border-t pt-6">
+                             <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><Book className="h-5 w-5 text-primary" />{t('courseDetails')}</h3>
+                             <div className="space-y-2 text-sm">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certCourseName')}</span>
+                                    <span className="font-semibold text-right">{enrollment.parent_course_name}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certCourseCode')}</span>
+                                    <span className="font-semibold">{enrollment.course_code}</span>
+                                </div>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certCourseCode')}</span>
-                                <span className="font-semibold">{enrollment.course_code}</span>
-                            </div>
-                        </CardContent>
-                    </Card>
+                        </div>
 
-                    <Card>
-                        <CardHeader className="flex-row items-center gap-4">
-                            <Award className="w-6 h-6 text-primary"/>
-                            <CardTitle className="font-headline text-xl">{t('resultsTitle')}</CardTitle>
-                        </CardHeader>
-                        <CardContent className="space-y-4">
-                             <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certFinalGrade')}</span>
-                                <span className="font-semibold">{finalGrade}</span>
+                         <div className="border-t pt-6">
+                            <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><Award className="h-5 w-5 text-primary" />{t('resultsTitle')}</h3>
+                             <div className="space-y-2 text-sm">
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certFinalGrade')}</span>
+                                    <span className="font-semibold">{finalGrade}</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="text-muted-foreground">{t('certRating')}</span>
+                                    {rating > 0 ? (
+                                        <StarRating rating={rating} />
+                                    ) : (
+                                        <span className="font-semibold">{t('certNoGrade')}</span>
+                                    )}
+                                </div>
                             </div>
-                            <div className="flex justify-between items-center">
-                                <span className="text-muted-foreground">{t('certRating')}</span>
-                                {rating > 0 ? (
-                                    <StarRating rating={rating} />
-                                ) : (
-                                    <span className="font-semibold">{t('certNoGrade')}</span>
-                                )}
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
         </main>
     )
@@ -246,5 +239,3 @@ export default function ResultsViewPage() {
         </Suspense>
     )
 }
-
-    
