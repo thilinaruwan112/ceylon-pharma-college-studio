@@ -174,8 +174,12 @@ function ResultsViewComponent() {
                         height={62}
                         className="h-auto w-48 mx-auto hidden dark:block dark:brightness-0 dark:invert"
                     />
-                    <h1 className="font-headline text-2xl md:text-3xl font-bold text-primary mt-6">{t('certResultTitle')}</h1>
-                    <p className="text-muted-foreground">{t('certResultSubtitle')}</p>
+                    {enrollment.certificate_eligibility && (
+                        <>
+                            <h1 className="font-headline text-2xl md:text-3xl font-bold text-primary mt-6">{t('certResultTitle')}</h1>
+                            <p className="text-muted-foreground">{t('certResultSubtitle')}</p>
+                        </>
+                    )}
                 </div>
                 
                 <Card>
