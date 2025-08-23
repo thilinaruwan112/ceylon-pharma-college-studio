@@ -21,4 +21,18 @@ export const footer = {
   footerCompany: 'Company',
   blogs: 'Blogs',
   event: 'Event',
+
+  // Policy Page Content
+  privacyPolicyContent: `This is a placeholder for the Privacy Policy content. You should replace this with your actual policy.
+
+This policy outlines how Ceylon Pharma College collects, uses, and protects your personal information. We are committed to ensuring that your privacy is protected.`,
+  refundPolicyContent: `This is a placeholder for the Refund Policy content. You should replace this with your actual policy.
+
+This policy describes the circumstances under which refunds will be provided for course fees and other payments made to Ceylon Pharma College.`,
+  termsOfServiceContent: `This is a placeholder for the Terms of Service content. You should replace this with your actual policy.
+
+These terms and conditions outline the rules and regulations for the use of Ceylon Pharma College's website and services.`,
+  shippingPolicyContent: `This is a placeholder for the Shipping Policy content. You should replace this with your actual policy.
+
+This policy details the shipping methods, costs, and timelines for any physical materials or documents sent from Ceylon Pharma College.`,
 };

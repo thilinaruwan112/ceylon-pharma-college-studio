@@ -11,10 +11,10 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const policies = [
-    { key: 'privacyPolicy', href: '#' },
-    { key: 'refundPolicy', href: '#' },
-    { key: 'termsOfService', href: '#' },
-    { key: 'shippingPolicy', href: '#' },
+    { key: 'privacyPolicy', href: '/policies/privacy-policy' },
+    { key: 'refundPolicy', href: '/policies/refund-policy' },
+    { key: 'termsOfService', href: '/policies/terms-of-service' },
+    { key: 'shippingPolicy', href: '/policies/shipping-policy' },
   ];
 
   const company = [

@@ -20,6 +20,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/students/academic-calendar',
     '/students/examinations',
     '/students/student-life',
+    '/policies/privacy-policy',
+    '/policies/refund-policy',
+    '/policies/terms-of-service',
+    '/policies/shipping-policy',
   ].map((route) => ({
     url: `${BASE_URL}${route}`,
     lastModified: new Date().toISOString(),
