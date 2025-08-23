@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
         <div className="grid gap-4">
           <h4 className="font-headline text-base font-semibold text-foreground">{t('quickLinks')}</h4>
-          <div className="grid grid-cols-2 gap-2 text-sm font-body">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm font-body">
             <Link href="/" className="hover:text-primary transition-colors">{t('footerHome')}</Link>
             <Link href="/about" className="hover:text-primary transition-colors">{t('footerAbout')}</Link>
             <Link href="/courses" className="hover:text-primary transition-colors">{t('footerCourses')}</Link>
