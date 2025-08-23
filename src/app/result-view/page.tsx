@@ -4,7 +4,7 @@
 import { useSearchParams, notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Book, Award, AlertTriangle, UserCheck } from 'lucide-react';
+import { User, Book, Award, AlertTriangle, UserCheck, GraduationCap } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
@@ -179,10 +179,10 @@ function ResultsViewComponent() {
                 </div>
                 
                 <Card>
-                    <CardContent className="p-6 space-y-6">
+                    <CardContent className="p-6 space-y-8">
                         <div>
-                            <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><UserCheck className="h-5 w-5 text-primary" />{t('studentInfo')}</h3>
-                             <div className="space-y-2 text-sm">
+                            <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><UserCheck className="h-5 w-5 text-primary" />{t('studentInfo')}</h3>
+                             <div className="space-y-4 text-sm pl-9">
                                 <div className="flex justify-between items-center">
                                     <span className="text-muted-foreground">{t('certStudentName')}</span>
                                     <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
@@ -194,9 +194,11 @@ function ResultsViewComponent() {
                             </div>
                         </div>
 
-                        <div className="border-t pt-6">
-                             <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><Book className="h-5 w-5 text-primary" />{t('courseDetails')}</h3>
-                             <div className="space-y-2 text-sm">
+                        <div className="border-t my-6"></div>
+
+                        <div>
+                             <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><GraduationCap className="h-5 w-5 text-primary" />{t('courseDetails')}</h3>
+                             <div className="space-y-4 text-sm pl-9">
                                 <div className="flex justify-between items-center">
                                     <span className="text-muted-foreground">{t('certCourseName')}</span>
                                     <span className="font-semibold text-right">{enrollment.parent_course_name}</span>
@@ -207,10 +209,12 @@ function ResultsViewComponent() {
                                 </div>
                             </div>
                         </div>
+                        
+                        <div className="border-t my-6"></div>
 
-                         <div className="border-t pt-6">
-                            <h3 className="font-headline text-lg font-semibold flex items-center gap-2 mb-4"><Award className="h-5 w-5 text-primary" />{t('resultsTitle')}</h3>
-                             <div className="space-y-2 text-sm">
+                         <div>
+                            <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><Award className="h-5 w-5 text-primary" />{t('resultsTitle')}</h3>
+                             <div className="space-y-4 text-sm pl-9">
                                 <div className="flex justify-between items-center">
                                     <span className="text-muted-foreground">{t('certFinalGrade')}</span>
                                     <span className="font-semibold">{finalGrade}</span>
