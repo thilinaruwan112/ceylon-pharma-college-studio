@@ -1,7 +1,6 @@
 
 export const footer = {
   footerSlogan: 'ඉගෙන ගන්න, ක්‍රීඩා කරන්න සහ ඔබේ කුසලතා වර්ධනය කරගන්න',
-  quickLinks: 'ඉක්මන් සබැඳි',
   footerHome: 'මුල් පිටුව',
   footerAbout: 'අපි ගැන',
   footerCourses: 'පාඨමාලා',

@@ -1,7 +1,6 @@
 
 export const footer = {
   footerSlogan: 'Learn, Play & Level up your Skill',
-  quickLinks: 'Quick Links',
   footerHome: 'Home',
   footerAbout: 'About Us',
   footerCourses: 'Courses',

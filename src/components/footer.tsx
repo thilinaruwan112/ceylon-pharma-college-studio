@@ -12,7 +12,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/60 text-muted-foreground">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:px-6">
         <div className="flex flex-col items-start gap-4">
           <Link href="/" className="flex items-center">
             <Image
@@ -33,16 +33,6 @@ export default function Footer() {
           <p className="text-sm font-body">
             {t('footerSlogan')}
           </p>
-        </div>
-        <div className="grid gap-4">
-          <h4 className="font-headline text-base font-semibold text-foreground">{t('quickLinks')}</h4>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-1 text-sm font-body">
-            <Link href="/" className="hover:text-primary transition-colors">{t('footerHome')}</Link>
-            <Link href="/about" className="hover:text-primary transition-colors">{t('footerAbout')}</Link>
-            <Link href="/courses" className="hover:text-primary transition-colors">{t('footerCourses')}</Link>
-            <Link href="/contact" className="hover:text-primary transition-colors">{t('footerContact')}</Link>
-            <Link href="#verify" className="hover:text-primary transition-colors">{t('footerVerify')}</Link>
-          </div>
         </div>
         <div className="grid gap-4">
           <h4 className="font-headline text-base font-semibold text-foreground">{t('footerContactUs')}</h4>
