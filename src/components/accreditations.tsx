@@ -13,11 +13,11 @@ const accreditations = [
   { src: 'https://content-provider.pharmacollege.lk/website/skildevlopment.jpg', alt: 'Skill Development Council Canada' },
   { src: 'https://content-provider.pharmacollege.lk/website/actd.png', alt: 'American Council of Training and Development' },
   { 
-    src: 'https://www.pharmacollege.lk/assets/logo/iaf.jpg', 
+    src: 'https://content-provider.pharmacollege.lk/website/iaf.jpg', 
     alt: 'International Accreditation Forum',
     href: 'https://www.iafcertsearch.org/certified-entity/zTC8qmAcjlCUiN6U4BWdPqYB'
   },
-  { src: 'https://www.pharmacollege.lk/assets/logo/scc.png', alt: 'SCC Accredited CB-MS' },
+  { src: 'https://content-provider.pharmacollege.lk/website/scc.png', alt: 'SCC Accredited CB-MS' },
   { src: 'https://www.pharmacollege.lk/assets/logo/iqa.png', alt: 'International Qualifications & Assessments' },
   { src: 'https://www.pharmacollege.lk/assets/logo/wes.svg', alt: 'World Education Services' },
   { src: 'https://www.pharmacollege.lk/assets/logo/acuk.png', alt: 'Accreditation UK' },
