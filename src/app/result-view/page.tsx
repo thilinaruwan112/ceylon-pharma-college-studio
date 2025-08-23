@@ -184,52 +184,50 @@ function ResultsViewComponent() {
                 
                 <Card>
                     <CardContent className="p-6 space-y-8">
-                        <div>
-                            <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><UserCheck className="h-5 w-5 text-primary" />{t('studentInfo')}</h3>
-                             <div className="space-y-4 text-sm pl-9">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certStudentName')}</span>
-                                    <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certIndexNo')}</span>
-                                    <span className="font-semibold">{studentData.studentInfo.username}</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="border-t my-6"></div>
-
-                        <div>
-                             <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><GraduationCap className="h-5 w-5 text-primary" />{t('courseDetails')}</h3>
-                             <div className="space-y-4 text-sm pl-9">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certCourseName')}</span>
-                                    <span className="font-semibold text-right">{enrollment.parent_course_name}</span>
-                                </div>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certCourseCode')}</span>
-                                    <span className="font-semibold">{enrollment.course_code}</span>
+                        <div className="space-y-6">
+                            <div>
+                                <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><UserCheck className="h-5 w-5 text-primary" />{t('studentInfo')}</h3>
+                                <div className="space-y-4 text-sm pl-9">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certStudentName')}</span>
+                                        <span className="font-semibold">{studentData.studentInfo.name_on_certificate}</span>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certIndexNo')}</span>
+                                        <span className="font-semibold">{studentData.studentInfo.username}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <div className="border-t my-6"></div>
 
-                         <div>
-                            <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><Award className="h-5 w-5 text-primary" />{t('resultsTitle')}</h3>
-                             <div className="space-y-4 text-sm pl-9">
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certFinalGrade')}</span>
-                                    <span className="font-semibold">{finalGrade}</span>
+                            <div>
+                                <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><GraduationCap className="h-5 w-5 text-primary" />{t('courseDetails')}</h3>
+                                <div className="space-y-4 text-sm pl-9">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certCourseName')}</span>
+                                        <span className="font-semibold text-right">{enrollment.parent_course_name}</span>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certCourseCode')}</span>
+                                        <span className="font-semibold">{enrollment.course_code}</span>
+                                    </div>
                                 </div>
-                                <div className="flex justify-between items-center">
-                                    <span className="text-muted-foreground">{t('certRating')}</span>
-                                    {rating > 0 ? (
-                                        <StarRating rating={rating} />
-                                    ) : (
-                                        <span className="font-semibold">{t('certNoGrade')}</span>
-                                    )}
+                            </div>
+                            
+                            <div>
+                                <h3 className="font-headline text-lg font-semibold flex items-center gap-3 mb-4"><Award className="h-5 w-5 text-primary" />{t('resultsTitle')}</h3>
+                                <div className="space-y-4 text-sm pl-9">
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certFinalGrade')}</span>
+                                        <span className="font-semibold">{finalGrade}</span>
+                                    </div>
+                                    <div className="flex justify-between items-center">
+                                        <span className="text-muted-foreground">{t('certRating')}</span>
+                                        {rating > 0 ? (
+                                            <StarRating rating={rating} />
+                                        ) : (
+                                            <span className="font-semibold">{t('certNoGrade')}</span>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
