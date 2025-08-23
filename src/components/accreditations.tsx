@@ -10,7 +10,7 @@ const accreditations = [
     alt: 'ISO 9001:2015 Certified',
     href: 'https://www.iafcertsearch.org/certification/pDsZb8ThfWbogEl0TKDgKAg7'
   },
-  { src: 'https://www.pharmacollege.lk/assets/logo/skildevlopment.jpg', alt: 'Skill Development Council Canada' },
+  { src: 'https://content-provider.pharmacollege.lk/website/skildevlopment.jpg', alt: 'Skill Development Council Canada' },
   { src: 'https://www.pharmacollege.lk/assets/logo/actd.png', alt: 'American Council of Training and Development' },
   { 
     src: 'https://www.pharmacollege.lk/assets/logo/iaf.jpg', 
