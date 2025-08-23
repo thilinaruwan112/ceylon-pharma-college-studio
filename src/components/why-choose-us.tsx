@@ -28,7 +28,7 @@ export default function WhyChooseUs() {
           </p>
           <div className="mt-12 grid grid-cols-2 gap-8">
             <div className="text-center">
-              <p className="text-4xl md:text-5xl font-headline font-bold text-primary">4729+</p>
+              <p className="text-4xl md:text-5xl font-headline font-bold text-primary">4700+</p>
               <p className="mt-1 text-muted-foreground font-body tracking-wide">{t('whyChooseUsStat1')}</p>
             </div>
             <div className="text-center">
