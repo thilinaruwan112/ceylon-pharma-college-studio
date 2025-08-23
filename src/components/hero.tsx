@@ -18,7 +18,7 @@ export default function Hero() {
         playsInline 
         className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
-        <source src="https://www.pharmacollege.lk/assets/videos/hero-video.mp4" type="video/mp4" />
+        <source src="https://content-provider.pharmacollege.lk/website/hero-video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <div className="absolute inset-0 bg-black/50 z-10"></div>
