@@ -108,17 +108,13 @@ export default function CourseSlider() {
                           <div className="p-4 bg-card border-t flex flex-col flex-grow">
                             <h3 className="font-headline font-bold text-base h-12 leading-tight">{course.course_name}</h3>
                              <div className="mt-4 flex items-start justify-around text-center">
-                                <div className="flex flex-col items-center gap-1.5 w-1/3">
+                                <div className="flex flex-col items-center gap-1.5 w-1/2">
                                     <Clock className="w-5 h-5 text-primary" />
                                     <span className="text-xs text-muted-foreground">{course.course_duration} Months</span>
                                 </div>
-                                 <div className="flex flex-col items-center gap-1.5 w-1/3">
+                                 <div className="flex flex-col items-center gap-1.5 w-1/2">
                                     <BookOpen className="w-5 h-5 text-primary" />
                                     <span className="text-xs text-muted-foreground">{course.skill_level}</span>
-                                </div>
-                                <div className="flex flex-col items-center gap-1.5 w-1/3">
-                                    <ClipboardList className="w-5 h-5 text-primary" />
-                                    <span className="text-xs text-muted-foreground">{course.assessments} Assessments</span>
                                 </div>
                             </div>
                             <div className="flex-grow" />
