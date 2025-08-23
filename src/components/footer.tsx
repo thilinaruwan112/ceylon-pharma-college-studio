@@ -27,7 +27,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-muted/60 text-muted-foreground">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-12 md:px-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 items-start gap-8 px-4 py-12 md:px-6">
         <div className="flex flex-col items-start gap-4 md:col-span-4">
           <Link href="/" className="flex items-center">
             <Image
