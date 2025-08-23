@@ -7,7 +7,7 @@ import WhyChooseUs from '@/components/why-choose-us';
 import Accreditations from '@/components/accreditations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { BookOpen, Target, Heart, Lightbulb, Users, CheckCircle } from 'lucide-react';
+import { BookOpen, Target } from 'lucide-react';
 
 const leadership = [
   {
@@ -32,23 +32,6 @@ const leadership = [
     hint: "male operations manager"
   },
 ];
-
-const coreValues = [
-    { icon: BookOpen, titleKey: "coreValueTitle1", descKey: "coreValueDesc1" },
-    { icon: Target, titleKey: "coreValueTitle2", descKey: "coreValueDesc2" },
-    { icon: Heart, titleKey: "coreValueTitle3", descKey: "coreValueDesc3" },
-    { icon: Lightbulb, titleKey: "coreValueTitle4", descKey: "coreValueDesc4" },
-    { icon: Users, titleKey: "coreValueTitle5", descKey: "coreValueDesc5" },
-];
-
-const historyMilestones = [
-  { year: "2002", eventKey: "historyEvent1" },
-  { year: "2010", eventKey: "historyEvent2" },
-  { year: "2015", eventKey: "historyEvent3" },
-  { year: "2020", eventKey: "historyEvent4" },
-  { year: "2023", eventKey: "historyEvent5" },
-];
-
 
 export default function AboutPage() {
   const { t } = useTranslation();
@@ -108,51 +91,6 @@ export default function AboutPage() {
           </div>
       </section>
       
-       <section className="py-16 md:py-24 bg-card/50">
-        <div className="container mx-auto px-4 md:px-6">
-            <div className="text-center">
-                <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">{t('historyTitle')}</h2>
-                <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">{t('historySubtitle')}</p>
-                 <div className="w-24 h-1 bg-primary mx-auto mt-4" />
-            </div>
-            <div className="relative mt-12">
-                 <div className="absolute left-1/2 h-full w-0.5 bg-border -translate-x-1/2 hidden md:block" />
-                 {historyMilestones.map((item, index) => (
-                    <div key={item.year} className={`relative md:w-1/2 mb-8 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:pr-8'}`}>
-                        <div className="hidden md:block absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-primary rounded-full" style={index % 2 === 0 ? { left: '-8px' } : { right: '-8px' }}></div>
-                         <Card className="shadow-lg">
-                            <CardContent className="p-6">
-                                <h3 className="font-headline text-xl font-bold text-primary">{item.year}</h3>
-                                <p className="mt-2 text-muted-foreground">{t(item.eventKey as any)}</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-                ))}
-            </div>
-        </div>
-      </section>
-
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-headline font-bold text-foreground">{t('coreValuesTitle')}</h2>
-            <p className="mt-2 max-w-2xl mx-auto text-muted-foreground font-body">{t('coreValuesSubtitle')}</p>
-             <div className="w-24 h-1 bg-primary mx-auto mt-4" />
-          </div>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-            {coreValues.map((value) => (
-              <div key={value.titleKey} className="text-center">
-                 <div className="inline-block p-4 bg-primary/10 rounded-full mb-4">
-                    <value.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-headline font-semibold text-lg text-foreground">{t(value.titleKey as any)}</h3>
-                <p className="text-muted-foreground text-sm mt-1">{t(value.descKey as any)}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <WhyChooseUs />
 
       <section className="py-16 md:py-24">
