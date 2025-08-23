@@ -18,10 +18,10 @@ const accreditations = [
     href: 'https://www.iafcertsearch.org/certified-entity/zTC8qmAcjlCUiN6U4BWdPqYB'
   },
   { src: 'https://content-provider.pharmacollege.lk/website/scc.png', alt: 'SCC Accredited CB-MS' },
-  { src: 'https://www.pharmacollege.lk/assets/logo/iqa.png', alt: 'International Qualifications & Assessments' },
-  { src: 'https://www.pharmacollege.lk/assets/logo/wes.svg', alt: 'World Education Services' },
-  { src: 'https://www.pharmacollege.lk/assets/logo/acuk.png', alt: 'Accreditation UK' },
-  { src: 'https://www.pharmacollege.lk/assets/logo/gatehouse.png', alt: 'Gatehouse Awards' },
+  { src: 'https://content-provider.pharmacollege.lk/website/iqa.png', alt: 'International Qualifications & Assessments' },
+  { src: 'https://content-provider.pharmacollege.lk/website/wes.svg', alt: 'World Education Services' },
+  { src: 'https://content-provider.pharmacollege.lk/website/acuk.png', alt: 'Accreditation UK' },
+  { src: 'https://content-provider.pharmacollege.lk/website/gatehouse.png', alt: 'Gatehouse Awards' },
 ];
 
 export default function Accreditations() {
