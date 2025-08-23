@@ -52,7 +52,7 @@ export default function AboutPage() {
           </div>
           <div className="relative h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
             <Image
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop"
+              src="https://content-provider.pharmacollege.lk/website/about-image-optimized.webp"
               alt="The modern facade of the Ceylon Pharma College building"
               fill
               className="object-cover"
