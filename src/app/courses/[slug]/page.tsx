@@ -198,33 +198,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                         )}
                     </div>
                     
-                     {/* Assessment Method */}
-                    <div>
-                        <h2 className="text-3xl font-headline font-bold text-foreground">{t('assessmentMethod')}</h2>
-                        <div className="w-20 h-1 bg-primary mt-2 mb-4" />
-                        <p className="text-muted-foreground font-body leading-relaxed mb-8">{t('assessmentMethodDesc')}</p>
-                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            <Card className="bg-card/50 text-center">
-                                <CardContent className="p-6">
-                                    <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                                        <span className="font-headline font-bold text-primary text-2xl">{course.assessments}</span>
-                                    </div>
-                                    <h3 className="font-headline font-semibold text-foreground">{t('assessmentMethodTitle1')}</h3>
-                                    <p className="text-sm text-muted-foreground mt-1">{t('assessmentMethodDesc1')}</p>
-                                </CardContent>
-                            </Card>
-                            <Card className="bg-card/50 text-center">
-                                <CardContent className="p-6">
-                                    <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
-                                        <span className="font-headline font-bold text-primary text-2xl">{course.quizzes}</span>
-                                    </div>
-                                    <h3 className="font-headline font-semibold text-foreground">{t('assessmentMethodTitle2')}</h3>
-                                    <p className="text-sm text-muted-foreground mt-1">{t('assessmentMethodDesc2')}</p>
-                                </CardContent>
-                            </Card>
-                        </div>
-                    </div>
-
                 </main>
 
                 {/* Sidebar */}

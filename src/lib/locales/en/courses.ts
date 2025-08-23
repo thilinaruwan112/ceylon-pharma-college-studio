@@ -16,8 +16,6 @@ export const courses = {
   whatYouWillLearn: "What You'll Learn",
   whatYouWillLearnDesc: 'By the end of this course, you will be able to:',
   courseTopics: 'Course Topics',
-  assessmentMethod: 'Assessment Method for Course',
-  assessmentMethodDesc: 'Your progress in the Certificate Course in Pharmacy Practice will be evaluated through the following methods:',
   certification: 'Certification for Course',
   certificationDesc: 'After successfully completing the Certificate Course in Pharmacy Practice and passing all required modules, you will receive an official certificate. To qualify, you must:',
   howToEnroll: 'How to Enroll',
@@ -37,14 +35,6 @@ export const courses = {
   entryRequirements: 'Entry Requirements',
   enrollNowSubtext: 'For inquiries, call: 0715 884 884',
   materialsProvided: 'Materials Provided',
-
-  // Assessment Methods
-  assessmentMethodTitle1: 'Assessments',
-  assessmentMethodDesc1: 'Evaluations during the course to track your progress.',
-  assessmentMethodTitle2: 'Quizzes',
-  assessmentMethodDesc2: 'Regular quizzes to reinforce your knowledge.',
-  assessmentMethodTitle3: 'Mid & Final Exam',
-  assessmentMethodDesc3: 'Hands-on evaluation of your practical skills.',
 
   // Certification Requirements
   certReq1: 'Complete all course modules.',
