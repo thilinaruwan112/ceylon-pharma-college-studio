@@ -76,10 +76,20 @@ export default function Footer() {
         </div>
         <div className="grid gap-4 md:col-span-4">
             <h4 className="font-headline text-base font-semibold text-foreground">{t('contactUs')}</h4>
-             <div className="text-sm font-body space-y-3">
-                <div className="flex items-start gap-3">
-                    <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
-                    <span>{t('contactHeadOfficeAddress')}</span>
+             <div className="text-sm font-body space-y-4">
+                 <div>
+                    <h5 className="font-semibold text-foreground mb-1">{t('contactHeadOffice')}</h5>
+                    <div className="flex items-start gap-3">
+                        <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                        <span>{t('contactHeadOfficeAddress')}</span>
+                    </div>
+                </div>
+                 <div>
+                    <h5 className="font-semibold text-foreground mb-1">{t('contactOperationsBranch')}</h5>
+                    <div className="flex items-start gap-3">
+                        <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
+                        <span>{t('contactOperationsBranchAddress')}</span>
+                    </div>
                 </div>
                 <div className="flex items-start gap-3">
                     <Mail className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
