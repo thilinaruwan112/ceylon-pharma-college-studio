@@ -3,7 +3,7 @@
 
 import Image from 'next/image';
 import { useTranslation } from '@/context/language-context';
-import WhyChooseUs from '@/components/why-choose-us';
+import WhyChooseUsAbout from '@/components/why-choose-us-about';
 import Accreditations from '@/components/accreditations';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { BookOpen, Target, Users } from 'lucide-react';
@@ -76,7 +76,7 @@ export default function AboutPage() {
           </div>
       </section>
       
-      <WhyChooseUs />
+      <WhyChooseUsAbout />
 
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-6">
