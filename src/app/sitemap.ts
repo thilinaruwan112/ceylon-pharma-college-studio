@@ -19,7 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/csr',
     '/students/academic-calendar',
     '/students/examinations',
-    '/students/student-life',
     '/policies/privacy-policy',
     '/policies/refund-policy',
     '/policies/terms-of-service',

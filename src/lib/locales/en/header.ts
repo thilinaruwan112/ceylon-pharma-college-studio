@@ -20,7 +20,6 @@ export const header = {
   deptPharmaceutical: 'Pharmaceutical',
   deptEnglish: 'English',
   deptIct: 'ICT',
-  studentLife: 'Student Life',
   academicCalendar: 'Academic Calendar',
   examinations: 'Examinations',
 };

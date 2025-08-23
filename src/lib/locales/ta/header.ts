@@ -20,7 +20,6 @@ export const header = {
   deptPharmaceutical: 'மருந்தியல்',
   deptEnglish: 'ஆங்கிலம்',
   deptIct: 'தகவல் தொழில்நுட்பம்',
-  studentLife: 'மாணவர் வாழ்க்கை',
   academicCalendar: 'கல்வி நாட்காட்டி',
   examinations: 'தேர்வுகள்',
 };

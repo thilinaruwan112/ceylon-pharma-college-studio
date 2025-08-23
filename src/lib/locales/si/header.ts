@@ -15,7 +15,6 @@ export const header = {
   deptPharmaceutical: 'ඖෂධ',
   deptEnglish: 'ඉංග්‍රීසි',
   deptIct: 'තොරතුරු තාක්ෂණ',
-  studentLife: 'ශිෂ්‍ය ජීවිතය',
   academicCalendar: 'අධ්‍යයන දින දර්ශනය',
   examinations: 'විභාග',
 };

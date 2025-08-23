@@ -75,7 +75,6 @@ const mainNavConfig = {
     {
       titleKey: 'students',
       items: [
-        { key: 'studentLife', href: '/students/student-life' },
         { key: 'academicCalendar', href: '/students/academic-calendar' },
         { key: 'examinations', href: '/students/examinations' },
       ],
@@ -310,5 +309,3 @@ export default function Header() {
     </header>
   );
 }
-
-    
