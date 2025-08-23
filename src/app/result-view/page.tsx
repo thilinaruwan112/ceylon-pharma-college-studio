@@ -9,6 +9,7 @@ import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
 import { Button } from '@/components/ui/button';
+import { Skeleton } from '@/components/ui/skeleton';
 
 // --- New Interfaces for the API response ---
 
@@ -89,7 +90,48 @@ function ResultsViewComponent() {
     }, [loggedUser]);
     
     if (loading) {
-        return <div className="container mx-auto text-center py-24">Loading student results...</div>;
+        return (
+            <main className="bg-muted/40 py-12 md:py-16">
+                <div className="container mx-auto px-4 md:px-6 max-w-2xl">
+                    <div className="text-center mb-8">
+                        <Skeleton className="h-16 w-48 mx-auto" />
+                        <Skeleton className="h-8 w-2/3 mx-auto mt-6" />
+                        <Skeleton className="h-4 w-1/2 mx-auto mt-2" />
+                    </div>
+                    
+                    <Card>
+                        <CardContent className="p-6 space-y-6">
+                            <div className="space-y-4">
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-1/2" />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-1/3" />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-2/3" />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-1/3" />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-1/4" />
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <Skeleton className="h-4 w-1/4" />
+                                    <Skeleton className="h-4 w-1/2" />
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+            </main>
+        )
     }
 
     if (!studentData) {
