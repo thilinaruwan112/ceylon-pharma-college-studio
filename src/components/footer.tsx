@@ -10,10 +10,25 @@ export default function Footer() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
 
+  const policies = [
+    { key: 'privacyPolicy', href: '#' },
+    { key: 'refundPolicy', href: '#' },
+    { key: 'termsOfService', href: '#' },
+    { key: 'shippingPolicy', href: '#' },
+  ];
+
+  const company = [
+    { key: 'home', href: '/' },
+    { key: 'about', href: '/about' },
+    { key: 'contact', href: '/contact' },
+    { key: 'blogs', href: '#' },
+    { key: 'event', href: '#' },
+  ];
+
   return (
     <footer className="bg-muted/60 text-muted-foreground">
-      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-2 md:px-6">
-        <div className="flex flex-col items-start gap-4">
+      <div className="container mx-auto grid grid-cols-1 gap-8 px-4 py-12 md:grid-cols-4 md:px-6">
+        <div className="flex flex-col items-start gap-4 md:col-span-2">
           <Link href="/" className="flex items-center">
             <Image
               src="https://content-provider.pharmacollege.lk/logo/logo-cpc.png"
@@ -33,25 +48,30 @@ export default function Footer() {
           <p className="text-sm font-body">
             {t('footerSlogan')}
           </p>
-        </div>
-        <div className="grid gap-4">
-          <h4 className="font-headline text-base font-semibold text-foreground">{t('footerContactUs')}</h4>
-          <div className="text-sm font-body space-y-2">
-            <div>
-              <p className="font-semibold text-foreground">{t('contactHeadOffice')}</p>
-              <p>{t('contactHeadOfficeAddress')}</p>
-            </div>
-             <div>
-              <p className="font-semibold text-foreground">{t('contactOperationsBranch')}</p>
-              <p>{t('contactOperationsBranchAddress')}</p>
-            </div>
-             <p>{t('footerEmail')}<a href="mailto:info@pharmacollege.lk" className="hover:text-primary transition-colors">info@pharmacollege.lk</a></p>
-            <p>{t('footerPhone')}<a href="tel:0117494335" className="hover:text-primary transition-colors">011 74 94 335</a></p>
-          </div>
-          <div className="flex items-center gap-4 mt-2">
+           <div className="flex items-center gap-4 mt-2">
             <a href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></a>
             <a href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="h-5 w-5" /></a>
             <a href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-5 w-5" /></a>
+          </div>
+        </div>
+        <div className="grid gap-4">
+          <h4 className="font-headline text-base font-semibold text-foreground">{t('footerPolicies')}</h4>
+          <div className="text-sm font-body space-y-2">
+            {policies.map((link) => (
+                <Link key={link.key} href={link.href} className="block hover:text-primary transition-colors">
+                    {t(link.key as any)}
+                </Link>
+            ))}
+          </div>
+        </div>
+         <div className="grid gap-4">
+          <h4 className="font-headline text-base font-semibold text-foreground">{t('footerCompany')}</h4>
+          <div className="text-sm font-body space-y-2">
+             {company.map((link) => (
+                <Link key={link.key} href={link.href} className="block hover:text-primary transition-colors">
+                    {t(link.key as any)}
+                </Link>
+            ))}
           </div>
         </div>
       </div>

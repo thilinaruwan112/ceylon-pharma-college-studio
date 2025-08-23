@@ -11,4 +11,14 @@ export const footer = {
   footerPhone: 'வாடிக்கையாளர் சேவை: ',
   copyright: '© {year} Ceylon Pharma College. All Rights Reserved.',
   poweredBy: 'ஆதரவுடன் ',
+
+  // New links
+  footerPolicies: 'எங்கள் கொள்கைகள்',
+  privacyPolicy: 'தனியுரிமைக் கொள்கை',
+  refundPolicy: 'திரும்பப்பெறும் கொள்கை',
+  termsOfService: 'சேவை விதிமுறைகள்',
+  shippingPolicy: 'கப்பல் கொள்கை',
+  footerCompany: 'நிறுவனம்',
+  blogs: 'வலைப்பதிவுகள்',
+  event: 'நிகழ்வு',
 };
