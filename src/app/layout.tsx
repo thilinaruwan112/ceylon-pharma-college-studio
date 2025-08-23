@@ -10,7 +10,7 @@ import Preloader from '@/components/preloader';
 
 const siteConfig = {
   name: 'Ceylon Pharma College',
-  description: 'Leading pharmaceutical education in Sri Lanka, offering a range of accredited courses and programs. Nurturing skilled, ethical pharmacy professionals for the global health landscape.',
+  description: 'At Ceylon Pharma College, we’re passionate about providing high-quality education in pharmacy practice. Our goal is to help you build a successful and meaningful career in healthcare. Whether you are working as or willing to become a pharmacist, pharmacy assistant, caregiver, or healthcare professional, our courses are designed just for you.',
   url: 'https://www.pharmacollege.lk',
   ogImage: 'https://content-provider.pharmacollege.lk/logo/logo-cpc.png',
   tagline: 'Learn, Play & Level up your Skill',
