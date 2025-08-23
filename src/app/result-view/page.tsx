@@ -4,7 +4,7 @@
 import { useSearchParams, notFound, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Book, Award, AlertTriangle, UserCheck, GraduationCap } from 'lucide-react';
+import { User, Book, Award, AlertTriangle, UserCheck, GraduationCap, Loader2 } from 'lucide-react';
 import { useTranslation } from '@/context/language-context';
 import { Suspense, useEffect, useState } from 'react';
 import StarRating from '@/components/star-rating';
@@ -94,9 +94,11 @@ function ResultsViewComponent() {
             <main className="bg-muted/40 py-12 md:py-16">
                 <div className="container mx-auto px-4 md:px-6 max-w-2xl">
                     <div className="text-center mb-8">
+                         <div className="flex justify-center items-center gap-4 mb-4 text-primary">
+                            <Loader2 className="h-8 w-8 animate-spin" />
+                            <p className="text-lg font-semibold">Loading Results...</p>
+                        </div>
                         <Skeleton className="h-16 w-48 mx-auto" />
-                        <Skeleton className="h-8 w-2/3 mx-auto mt-6" />
-                        <Skeleton className="h-4 w-1/2 mx-auto mt-2" />
                     </div>
                     
                     <Card>
