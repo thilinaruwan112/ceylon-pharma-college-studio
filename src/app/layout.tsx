@@ -9,7 +9,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import Preloader from '@/components/preloader';
 
 export const metadata: Metadata = {
-  title: 'Ceylon Pharma College Hub',
+  title: 'Ceylon Pharma College',
   description: 'Leading pharmaceutical education in Ceylon.',
 };
 
