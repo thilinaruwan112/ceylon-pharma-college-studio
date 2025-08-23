@@ -110,7 +110,7 @@ export default function CourseSlider() {
                              <div className="mt-4 flex items-start justify-around text-center">
                                 <div className="flex flex-col items-center gap-1.5 w-1/2">
                                     <Clock className="w-5 h-5 text-primary" />
-                                    <span className="text-xs text-muted-foreground">{course.course_duration} Months</span>
+                                    <span className="text-xs text-muted-foreground">{course.course_duration}</span>
                                 </div>
                                  <div className="flex flex-col items-center gap-1.5 w-1/2">
                                     <BookOpen className="w-5 h-5 text-primary" />
