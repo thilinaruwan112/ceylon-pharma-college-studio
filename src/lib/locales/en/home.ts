@@ -1,3 +1,4 @@
+
 export const home = {
   // Hero Section
   heroSloganLine1: 'Learn, Play &',
@@ -18,10 +19,10 @@ export const home = {
   certVerifierDescription: "The Certificate Verification section enables users to confirm the authenticity of accreditation certificates issued by Ceylon Pharma College. By entering the unique certificate number, users can instantly access verified information such as the student's name, course title, and status. This system helps maintain the integrity of our certifications and builds trust among students, institutes, and external stakeholders.",
   
   // Why Choose Us
-  whyChooseUsTitle: 'Why Choose Us?',
-  whyChooseUsPara1: "At Ceylon Pharma College, we believe in cultivating tomorrow's leaders today. Our commitment to excellence and innovation sets us apart. With a dedicated and talented academic staff, and a strong emphasis on practical learning, we provide a comprehensive education that prepares you for nothing but success in the real world.",
-  whyChooseUsPara2: "Choosing Ceylon Pharma College means choosing a future where your ambitions are realized. We're not just an institution; we're a launchpad for your dreams. At Ceylon Pharma College, you'll gain the knowledge, skills, and confidence needed to excel in your chosen field. Join us, and embark on a journey of personal and professional growth, all within an inspiring and supportive academic community.",
-  whyChooseUsStat1: 'Over 4729 students',
+  whyChooseUsTitle: 'What makes us special?',
+  whyChooseUsPara1: "Our expert educators use modern, easy to follow teaching methods to give you a strong foundation in pharmaceuticals. Plus, you can learn from anywhere in the world through our exclusive online platform! We don’t just stop at education we also help connect you with trusted employers in the private healthcare sector so you can kickstart your career with confidence. If you’re ready to take your first step into the world of healthcare, join us today and see how we can help you achieve your goals! Ceylon Pharma College – Your Pathway to a Brighter Future in Healthcare.",
+  whyChooseUsPara2: "",
+  whyChooseUsStat1: 'Over 4700+ students',
   whyChooseUsStat2: 'OVER 6 COURSES',
 
   // Achievements
