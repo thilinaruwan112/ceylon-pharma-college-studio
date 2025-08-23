@@ -226,6 +226,7 @@ const MobileNav = ({ closeSheet }: { closeSheet: () => void }) => {
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const closeSheet = () => setIsOpen(false);
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background shadow-md print:hidden">
@@ -237,7 +238,7 @@ export default function Header() {
             alt="Ceylon Pharma College Logo"
             width={200}
             height={62}
-            className="h-14 w-auto dark:hidden"
+            className="h-12 w-auto dark:hidden"
             priority
           />
           <Image
@@ -245,7 +246,7 @@ export default function Header() {
             alt="Ceylon Pharma College Logo"
             width={200}
             height={62}
-            className="h-14 w-auto hidden dark:block dark:brightness-0 dark:invert"
+            className="h-12 w-auto hidden dark:block dark:brightness-0 dark:invert"
             priority
           />
         </Link>
@@ -263,6 +264,9 @@ export default function Header() {
               <div className="hidden md:block">
                 <ThemeToggle />
               </div>
+              <Button asChild variant="secondary" className="md:hidden text-xs h-9 px-3">
+                <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer">{t('login')}</a>
+              </Button>
               <div className="md:hidden">
                 <Sheet open={isOpen} onOpenChange={setIsOpen}>
                   <SheetTrigger asChild>
