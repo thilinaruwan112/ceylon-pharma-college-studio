@@ -46,9 +46,16 @@ export default function Footer() {
         </div>
         <div className="grid gap-4">
           <h4 className="font-headline text-base font-semibold text-foreground">{t('footerContactUs')}</h4>
-          <div className="text-sm font-body space-y-1">
-            <p>{t('footerAddress')}</p>
-            <p>{t('footerEmail')}<a href="mailto:info@pharmacollege.lk" className="hover:text-primary transition-colors">info@pharmacollege.lk</a></p>
+          <div className="text-sm font-body space-y-2">
+            <div>
+              <p className="font-semibold text-foreground">{t('contactHeadOffice')}</p>
+              <p>{t('contactHeadOfficeAddress')}</p>
+            </div>
+             <div>
+              <p className="font-semibold text-foreground">{t('contactOperationsBranch')}</p>
+              <p>{t('contactOperationsBranchAddress')}</p>
+            </div>
+             <p>{t('footerEmail')}<a href="mailto:info@pharmacollege.lk" className="hover:text-primary transition-colors">info@pharmacollege.lk</a></p>
             <p>{t('footerPhone')}<a href="tel:0117494335" className="hover:text-primary transition-colors">011 74 94 335</a></p>
           </div>
           <div className="flex items-center gap-4 mt-2">
@@ -69,5 +76,3 @@ export default function Footer() {
     </footer>
   );
 }
-
-    

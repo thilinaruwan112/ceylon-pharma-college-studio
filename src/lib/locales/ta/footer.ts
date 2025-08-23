@@ -8,10 +8,8 @@ export const footer = {
   footerContact: 'தொடர்பு',
   footerVerify: 'சான்றிதழைச் சரிபார்க்கவும்',
   footerContactUs: 'தொடர்பு கொள்ள',
-  footerAddress: 'L35, மேற்கு கோபுரம், உலக வர்த்தக மையம், கொழும்பு 01',
   footerEmail: 'மின்னஞ்சல்: ',
   footerPhone: 'வாடிக்கையாளர் சேவை: ',
   copyright: '© {year} Ceylon Pharma College. All Rights Reserved.',
   poweredBy: 'ஆதரவுடன் ',
 };
-

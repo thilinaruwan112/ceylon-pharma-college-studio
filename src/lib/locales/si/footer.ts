@@ -8,10 +8,8 @@ export const footer = {
   footerContact: 'සම්බන්ධ වන්න',
   footerVerify: 'සහතිකය තහවුරු කරන්න',
   footerContactUs: 'අප අමතන්න',
-  footerAddress: 'L35, බටහිර කුළුණ, ලෝක වෙළඳ මධ්‍යස්ථානය, කොළඹ 01',
   footerEmail: 'විද්‍යුත් තැපෑල: ',
   footerPhone: 'පාරිභෝගික සේවය: ',
   copyright: '© {year} Ceylon Pharma College. All Rights Reserved.',
   poweredBy: 'බල ගැන්වීම ',
 };
-
