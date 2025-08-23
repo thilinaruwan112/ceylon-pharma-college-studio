@@ -15,7 +15,7 @@ export const departments = {
   deptNameEnglish: 'Department of English',
   deptDescEnglish: 'Our Department of English offers robust programs designed to enhance communication skills, critical thinking, and literary appreciation. We equip students with the linguistic proficiency needed for professional success in a globalized world.',
   
-  deptNameIct: 'Department of ICT',
+  deptNameIct: 'Department of Information & Communication Technology',
   deptDescIct: 'The Department of ICT is at the forefront of technological innovation. We provide students with hands-on training in the latest software, hardware, and networking technologies, preparing them for dynamic careers in the ever-evolving tech industry.',
   
   // Faculty Titles
