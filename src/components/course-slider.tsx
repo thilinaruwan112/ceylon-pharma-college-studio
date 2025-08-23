@@ -21,6 +21,7 @@ interface Course {
   course_duration: string;
   skill_level: string;
   assessments: string;
+  display: string;
 }
 
 const CourseCardSkeleton = () => (
@@ -51,7 +52,8 @@ export default function CourseSlider() {
       try {
         const response = await fetch('https://qa-api.pharmacollege.lk/parent-main-course');
         const data = await response.json();
-        setCourses(data);
+        const visibleCourses = data.filter((course: Course) => course.display !== '0');
+        setCourses(visibleCourses);
       } catch (error) {
         console.error("Failed to fetch courses:", error);
       } finally {
