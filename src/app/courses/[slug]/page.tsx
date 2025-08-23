@@ -244,34 +244,6 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                         </div>
                     </div>
 
-                    {/* Certification */}
-                    <div>
-                        <h2 className="text-3xl font-headline font-bold text-foreground">{t('certification')}</h2>
-                         <div className="w-20 h-1 bg-primary mt-2 mb-4" />
-                        <div className="flex flex-col md:flex-row gap-8 items-center">
-                            <div className="flex-1">
-                                <p className="text-muted-foreground font-body leading-relaxed mb-6">{t('certificationDesc')}</p>
-                                <ul className="space-y-3">
-                                    {certificationRequirements.map((req, index) => (
-                                        <li key={index} className="flex items-center gap-3">
-                                            <CheckCircle2 className="w-5 h-5 text-primary" />
-                                            <span className="text-foreground">{t(req as any)}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="flex-shrink-0">
-                                <div className="border-2 border-primary rounded-lg p-6 text-center w-64">
-                                    <ClipboardCheck className="w-12 h-12 text-primary mx-auto mb-3" />
-                                    <p className="font-headline font-bold text-foreground">{t('certificate')}</p>
-                                    <p className="text-sm text-muted-foreground">{course.course_name}</p>
-                                    <div className="my-3 border-t-2 border-dashed"></div>
-                                    <p className="text-xs text-muted-foreground">Recognized Internationally</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </main>
 
                 {/* Sidebar */}
