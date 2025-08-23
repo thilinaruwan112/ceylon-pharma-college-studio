@@ -265,7 +265,7 @@ export default function Header() {
                 <ThemeToggle />
               </div>
               <Button asChild variant="secondary" className="md:hidden text-xs h-9 px-3">
-                <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer">{t('login')}</a>
+                <a href="https://lms.pharmacollge.lk" target="_blank" rel="noopener noreferrer">{t('studentLogin')}</a>
               </Button>
               <div className="md:hidden">
                 <Sheet open={isOpen} onOpenChange={setIsOpen}>

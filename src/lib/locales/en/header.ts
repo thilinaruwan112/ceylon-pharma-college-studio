@@ -9,6 +9,7 @@ export const header = {
   csrProjects: 'CSR Projects',
   library: 'Library',
   login: 'Login',
+  studentLogin: 'Student Login',
 
   // Main Nav
   certificate: 'Certificate',

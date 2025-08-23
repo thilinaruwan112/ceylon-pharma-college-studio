@@ -9,6 +9,7 @@ export const header = {
   csrProjects: 'பெருநிறுவன சமூகப் பொறுப்பு திட்டங்கள்',
   library: 'நூலகம்',
   login: 'உள்நுழை',
+  studentLogin: 'மாணவர் உள்நுழைவு',
 
   // Main Nav
   certificate: 'சான்றிதழ்',

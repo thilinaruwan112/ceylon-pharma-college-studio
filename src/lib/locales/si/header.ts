@@ -8,6 +8,7 @@ export const header = {
   csrProjects: 'සමාජ සත්කාර ව්‍යාපෘති',
   library: 'පුස්තකාලය',
   login: 'ඇතුල් වන්න',
+  studentLogin: 'ශිෂ්‍ය පිවිසුම',
   certificate: 'සහතිකය',
   departments: 'දෙපාර්තමේන්තු',
   students: 'ශිෂ්‍යයන්',
