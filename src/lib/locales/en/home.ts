@@ -20,8 +20,8 @@ export const home = {
   
   // Why Choose Us
   whyChooseUsTitle: 'What makes us special?',
-  whyChooseUsPara1: "At Ceylon Pharma College, we’re passionate about providing high-quality education in pharmacy practice. Our goal is to help you build a successful and meaningful career in healthcare. Whether you are working as or willing to become a pharmacist, pharmacy assistant, caregiver, or healthcare professional, our courses are designed just for you.",
-  whyChooseUsPara2: "",
+  whyChooseUsPara1: "At Ceylon Pharma College, we’re passionate about providing high-quality education in pharmacy practice. Our goal is to help you build a successful and meaningful career in healthcare.",
+  whyChooseUsPara2: "Whether you are working as or willing to become a pharmacist, pharmacy assistant, caregiver, or healthcare professional, our courses are designed just for you.",
   whyChooseUsStat1: 'Over 4700+ students',
   whyChooseUsStat2: 'OVER 6 COURSES',
 
