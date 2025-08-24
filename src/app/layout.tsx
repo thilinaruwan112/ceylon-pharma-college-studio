@@ -65,6 +65,26 @@ export const metadata: Metadata = {
       'ta-LK': '/ta',
     },
   },
+  icons: {
+    icon: [
+      { url: 'https://content-provider.pharmacollege.lk/website/app-icon/favicon.ico', type: 'image/x-icon' },
+      { url: 'https://content-provider.pharmacollege.lk/website/app-icon/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: 'https://content-provider.pharmacollege.lk/website/app-icon/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: [
+      { url: 'https://content-provider.pharmacollege.lk/website/app-icon/apple-touch-icon.png' },
+    ],
+    other: [
+      {
+        rel: 'android-chrome-192x192',
+        url: 'https://content-provider.pharmacollege.lk/website/app-icon/android-chrome-192x192.png',
+      },
+      {
+        rel: 'android-chrome-512x512',
+        url: 'https://content-provider.pharmacollege.lk/website/app-icon/android-chrome-512x512.png',
+      }
+    ]
+  }
 };
 
 
