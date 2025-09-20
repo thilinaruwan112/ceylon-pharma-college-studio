@@ -8,6 +8,10 @@ export const home = {
   heroLogoLine1: 'CEYLON',
   heroLogoLine2: 'PHARMA COLLEGE',
   
+  // Special Intake
+  specialIntakeTitle: 'Special Batch Intake Now Open!',
+  specialIntakeSubtitle: 'Enroll in our flagship Diploma in Pharmacy Practice and take the first step towards a rewarding career. Limited seats available.',
+  
   // Course Slider
   courseSliderTitle: 'Explore Our Programs',
 

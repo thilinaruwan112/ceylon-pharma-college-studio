@@ -6,11 +6,13 @@ import Testimonials from '@/components/testimonials';
 import Hero from '@/components/hero';
 import WhyChooseUs from '@/components/why-choose-us';
 import Achievements from '@/components/achievements';
+import SpecialBatchIntake from '@/components/special-batch-intake';
 
 export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <SpecialBatchIntake />
       <CourseSlider />
       <CertificateVerifier />
       <WhyChooseUs />
