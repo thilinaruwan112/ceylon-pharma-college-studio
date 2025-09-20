@@ -10,7 +10,7 @@ export const home = {
   
   // Special Intake
   specialIntakeTitle: 'Special Batch Intake Now Open!',
-  specialIntakeSubtitle: 'Enroll in our flagship Diploma in Pharmacy Practice and take the first step towards a rewarding career. Limited seats available.',
+  specialIntakeSubtitle: "Our 'Certificate Course in Pharmacy Practice' is now open for enrollment! This 6-month online course offers a practical learning experience with real-life simulations, making it perfect for aspiring Pharmacy Assistants, Medical Reps, and anyone interested in medicine. Learn pharmacology, dispensing, and more, with eligibility starting from GCE O/L. Enroll now to kickstart your career in healthcare.",
   
   // Course Slider
   courseSliderTitle: 'Explore Our Programs',
