@@ -36,8 +36,8 @@ export default function SpecialBatchIntake() {
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="p-8 md:p-12 flex flex-col justify-center">
                         <h2 className="font-headline font-bold text-primary leading-tight">
-                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md whitespace-nowrap text-xl md:text-2xl lg:text-3xl">{t('specialIntakeTitlePrefix')}</span>
-                            <span className="ml-0 mt-2 md:mt-0 md:ml-2 block md:inline-block text-3xl md:text-4xl lg:text-5xl">{t('specialIntakeTitleSuffix')}</span>
+                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md whitespace-nowrap text-lg md:text-xl lg:text-2xl">{t('specialIntakeTitlePrefix')}</span>
+                            <span className="ml-0 mt-2 md:mt-0 md:ml-2 block md:inline-block text-2xl md:text-3xl lg:text-4xl">{t('specialIntakeTitleSuffix')}</span>
                         </h2>
                         <p className="mt-4 text-muted-foreground font-body leading-relaxed">{t('specialIntakeSubtitle')}</p>
                         
