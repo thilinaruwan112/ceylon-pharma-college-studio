@@ -24,7 +24,7 @@ export default function SpecialBatchIntake() {
                                 <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
                             </Button>
                              <Button asChild size="lg" variant="outline">
-                                <Link href="/courses/diploma-in-pharmacy-practice">{t('learnMore')}</Link>
+                                <a href="https://pharmacollege.lk/courses/certificate-course-in-pharmacy-practice" target="_blank" rel="noopener noreferrer">{t('learnMore')}</a>
                             </Button>
                         </div>
                     </div>
