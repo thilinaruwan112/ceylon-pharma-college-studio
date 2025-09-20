@@ -81,7 +81,7 @@ export default function SpecialBatchIntake() {
                             src="https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-09-20%20at%2010.56.49_69cedaa2.jpg"
                             alt="Special Batch Intake for Diploma in Pharmacy Practice"
                             fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            className="object-cover transition-transform duration-500"
                             data-ai-hint="pharmacy students class"
                          />
                     </div>
