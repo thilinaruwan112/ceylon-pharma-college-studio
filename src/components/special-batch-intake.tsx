@@ -28,7 +28,7 @@ export default function SpecialBatchIntake() {
                             </Button>
                         </div>
                     </div>
-                    <div className="relative min-h-[300px] md:min-h-full">
+                    <div className="relative aspect-square">
                          <Image 
                             src="https://content-provider.pharmacollege.lk/courses/CS0001/WhatsApp%20Image%202025-09-20%20at%2010.56.49_69cedaa2.jpg"
                             alt="Special Batch Intake for Diploma in Pharmacy Practice"
