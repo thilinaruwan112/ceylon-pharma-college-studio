@@ -9,7 +9,8 @@ export const home = {
   heroLogoLine2: 'PHARMA COLLEGE',
   
   // Special Intake
-  specialIntakeTitle: 'Special Intake: Certificate Course in Pharmacy Practice',
+  specialIntakeTitlePrefix: 'Special Intake:',
+  specialIntakeTitleSuffix: 'Certificate Course in Pharmacy Practice',
   specialIntakeSubtitle: "Enrollment is now open for our popular 6-month online course! It offers a practical learning experience with real-life simulations, making it perfect for aspiring Pharmacy Assistants, Medical Reps, and anyone interested in medicine. Learn pharmacology, dispensing, and more, with eligibility starting from GCE O/L.",
   whoCanJoinTitle: "Who Can Join?",
   whatWillYouLearnTitle: "What Will You Learn?",
