@@ -35,10 +35,9 @@ export default function SpecialBatchIntake() {
             <CardContent className="p-0">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="p-8 md:p-12 flex flex-col justify-center">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary leading-tight">
-                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md">{t('specialIntakeTitlePrefix')}</span>
-                            <br className="md:hidden" />
-                            <span className="ml-2">{t('specialIntakeTitleSuffix')}</span>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-headline font-bold text-primary leading-tight block md:inline">
+                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md whitespace-nowrap">{t('specialIntakeTitlePrefix')}</span>
+                            <span className="ml-0 mt-2 md:mt-0 md:ml-2 inline-block">{t('specialIntakeTitleSuffix')}</span>
                         </h2>
                         <p className="mt-4 text-muted-foreground font-body leading-relaxed">{t('specialIntakeSubtitle')}</p>
                         
