@@ -35,9 +35,9 @@ export default function SpecialBatchIntake() {
             <CardContent className="p-0">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     <div className="p-8 md:p-12 flex flex-col justify-center">
-                        <h2 className="font-headline font-bold text-primary leading-tight">
-                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md whitespace-nowrap text-lg md:text-xl lg:text-2xl">{t('specialIntakeTitlePrefix')}</span>
-                            <span className="ml-0 mt-2 md:mt-0 md:ml-2 block md:inline-block text-2xl md:text-3xl lg:text-4xl">{t('specialIntakeTitleSuffix')}</span>
+                        <h2 className="font-headline font-bold text-primary leading-tight flex flex-col md:flex-row md:items-baseline md:gap-2">
+                            <span className="bg-[#d3191a] text-white px-2 py-1 rounded-md whitespace-nowrap text-lg">{t('specialIntakeTitlePrefix')}</span>
+                            <span className="mt-2 md:mt-0 text-2xl text-foreground">{t('specialIntakeTitleSuffix')}</span>
                         </h2>
                         <p className="mt-4 text-muted-foreground font-body leading-relaxed">{t('specialIntakeSubtitle')}</p>
                         
@@ -68,7 +68,7 @@ export default function SpecialBatchIntake() {
 
                         <div className="mt-8 flex flex-col sm:flex-row gap-4">
                             <Button asChild size="lg" className="font-bold">
-                                <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
+                                <a href="https://sos.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
                             </Button>
                              <Button asChild size="lg" variant="outline">
                                 <a href="https://pharmacollege.lk/courses/certificate-course-in-pharmacy-practice" target="_blank" rel="noopener noreferrer" className="group/button">

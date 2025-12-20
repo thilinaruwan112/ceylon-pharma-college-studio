@@ -172,7 +172,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             <p className="mt-2 text-lg text-primary-foreground/90 max-w-3xl">{t('coursePageSubtitle')}</p>
              <div className="mt-6 flex gap-4">
                 <Button asChild size="lg" variant="secondary" className="font-bold">
-                    <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
+                    <a href="https://sos.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
                 </Button>
             </div>
         </div>
@@ -230,7 +230,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
                                 </div>
                                 
                                 <Button asChild className="w-full mt-6 font-bold text-lg" size="lg">
-                                  <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
+                                  <a href="https://sos.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('enrollNow')}</a>
                                 </Button>
                                 <p className="text-xs text-center text-muted-foreground mt-2">{t('enrollNowSubtext')}</p>
                             </CardContent>
@@ -270,7 +270,7 @@ export default function CoursePage({ params }: { params: { slug: string } }) {
             </div>
             <p className="mt-12 font-headline text-lg">{t('startYourCareer')}</p>
             <Button asChild size="lg" variant="secondary" className="mt-4 font-bold">
-              <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
+              <a href="https://sos.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('applyNow')}</a>
             </Button>
         </div>
       </section>

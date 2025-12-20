@@ -41,7 +41,7 @@ export default function Hero() {
         </h1>
         <div className="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
           <Button asChild size="lg" className="font-bold w-48">
-            <a href="https://portal.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('heroApplyNow')}</a>
+            <a href="https://sos.pharmacollege.lk/register" target="_blank" rel="noopener noreferrer">{t('heroApplyNow')}</a>
           </Button>
           <Button asChild size="lg" variant="accent" className="font-bold w-48">
             <a href="https://lms.pharmacollege.lk" target="_blank" rel="noopener noreferrer">{t('heroStudentLogin')}</a>
